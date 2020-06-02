@@ -4,7 +4,7 @@ This is a work area for edcom.  Note that the actual reports are located at: <ht
 
 Browsing within this repo you can see the source HTML files for the various reports. To view one of the HTML files from this repo as a Web page, go to <https://unicode-org.github.io/unicode-reports/> and browse from there.
 
-Note; while viewing this page on githum.com, ignore the raw html / script below. (It's used to generate the browseable view on unicode-org.github.io.)
+Note; while viewing this page on github.com, ignore the raw html / script below. (It's used to generate the browseable view on unicode-org.github.io.)
 
 ### Direct Links to HTML Views of the Head for the Reports in the Repository
 
