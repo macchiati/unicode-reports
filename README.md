@@ -2,15 +2,15 @@
 
 This is a work area for edcom.  Note that the actual reports are located at: <https://www.unicode.org/reports/>
 
-Browsing within this repo you can see the source HTML files for the various reports. Use the following links to view one of these HTML files as a Web page. (These show the pages in this repo, not the live pages on <https://www.unicode.org>.)
+Browsing within this repo you can see the source HTML files for the various reports. To view one of the HTML files from this repo as a Web page, go to <https://unicode-org.github.io/unicode-reports/> and browse from there.
+
+Note; while viewing this page on githum.com, ignore the raw html / script below. (It's used to generate the browseable view on unicode-org.github.io.)
 
 ### Direct Links to HTML Views of the Head for the Reports in the Repository
 
 <ul id='reports'>
     <i>(list of reports here)</i>
 </ul>
-
-This repository is browseable at: <https://unicode-org.github.io/unicode-reports/>
 
 <script
   src="https://code.jquery.com/jquery-3.5.1.min.js"
