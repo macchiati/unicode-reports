@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="Content-Language" content="en-us">
-<link rel="stylesheet" type="text/css" href="../reports-v2.css">
+<link rel="stylesheet" type="text/css" href="https://unicode.org/reports/reports-v2.css">
 <title>UTS #18: Unicode Regular Expressions</title>
 
 <style type="text/css">
@@ -612,16 +612,14 @@ ESCAPE           := &quot;\&quot;</pre>
 				</dd>
 			</dl>
 		</blockquote>
-    <div class='removed'>
+    <div>
         <table class="noborder">
 			<tr>
 				<td class="rule_head"><a name="C3_" href="#C3_" class="plain">C3</a>.</td>
-				<td class="rule_body">An implementation claiming conformance to
-					Level 3 of this specification shall satisfy C1 and C2, and meet the
-					requirements described in the following sections:</td>
+				<td class="rule_body changed">This conformance clause has been removed.</td>
 			</tr>
 		</table>
-		<blockquote>
+		<blockquote class='removed'>
 			<dl>
 				<dd>
 					<a href="#Tailored_Properties">RL3.1 Tailored Punctuation</a>
@@ -652,7 +650,7 @@ ESCAPE           := &quot;\&quot;</pre>
     </div>
 		<table class="noborder">
 			<tr>
-				<td class="rule_head"><a name="C3" href="#C3" class="plain"><span class="removed">C4</span><span class="changed">C3</span></a>.</td>
+				<td class="rule_head"><a name="C4" href="#C4" class="plain">C4</a>.</td>
 				<td class="rule_body">An implementation claiming <i>partial</i>
 					conformance to this specification shall clearly indicate which
 					levels are completely supported (C1-<span class="removed">C3</span><span class="changed">C2</span>), plus any additional
@@ -4496,7 +4494,8 @@ do {
           <li><strong>[^[^S]]</strong> is allowable</li>
           <li><strong>[C--S]</strong> is allowable</li>
           <li><strong>[C&amp;&amp;[^S]]</strong> resolves to <strong>[C--S]</strong> and is thus allowable — it does not contain any strings.</li>
-          <li><strong>[^C--S]</strong> is not valid</li>
+          <li><strong>[^C--S]</strong> is allowable</li>
+          <li><strong>[^S--C]</strong> is not valid</li>
         </ul>
         <p>A narrowed set of single characters can always be represented by intersecting with the set of single characters, such as <strong>[<span class="regex">\p{Basic_Emoji}-</span>\p{any}]</strong>. </p>
         <p>The following describes how a boolean expression can be resolved to  a Character Class with characters, a Character Class with strings, or a negated Character Class with strings.</p>
