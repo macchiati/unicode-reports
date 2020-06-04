@@ -99,9 +99,7 @@ a:hover.plain {
 				<td class='changed'><a href="#Modifications">20</a></td>
 			</tr>
 		</table>
-		<p>
 			<br>
-		</p>
 		<h3>
 			<i>Summary</i>
 		</h3>
@@ -1086,8 +1084,7 @@ Expressions involving Set properties, which have multiple values, are most often
 Expressions involving List properties may be tested for containment, but may have different semantics for the elements based on position. For example, each value of the <a href="http://www.unicode.org/reports/tr38/#kMandarin">kMandarin</a> property is a list of up to two String values: the first being preferred for zh-Hans and the second for zh-Hant (where the preference differs).
 </p>
 <p>
-<strong>Examples of Properties of Strings</strong>
-</p>
+<strong>Examples of Properties of Strings</strong></p>
 
 <table class='subtle'>
   <tr>
@@ -2402,7 +2399,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 			grapheme clusters are not the same as <i>tailored</i> grapheme
 			clusters, which are covered in <em>Section 3.2, 
             <a href="#Tailored_Graphemes_Clusters">Tailored Grapheme Clusters</a></em>.</span>
-	        <span class="changed">However, the  boundary definitions in <a href="https://cldr.unicode.org">CLDR</a> are strongly recommended:
+	        <span class="changed">However, the  boundary definitions in <a href="http://cldr.unicode.org">CLDR</a> are strongly recommended:
             they are more comprehensive than those defined in <a href="#UAX29">[UAX29]</a>
             and include Indic extended grapheme clusters such as <em>ksha</em>.</span></p>
 		<table class="noborder">
@@ -2414,7 +2411,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 				<td class="rule_body"></td>
 				<td class="rule_body"><i>To meet this requirement, an
 						implementation shall provide a mechanism for matching against an
-						arbitrary extended grapheme cluster, <span class='removed'>a literal cluster</span><span class='changed'>Character Classes with strings, and</span> extended grapheme cluster boundaries.</i></td>
+						arbitrary extended grapheme cluster, <span class='removed'>a literal cluster</span><span class='changed'>Character Classes with Strings, and</span> extended grapheme cluster boundaries.</i></td>
 			</tr>
 		</table>
 		<p>
@@ -2473,7 +2470,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 
 
 		<p>Regular expression engines should also provide some mechanism
-			for easily matching against <i><span class="changed">Character Classes with strings</span></i>, because they are more
+			for easily matching against <i><span class="changed">Character Classes with Strings</span></i>, because they are more
 			likely to match user expectations for many languages. One mechanism
 			for doing that is to have explicit syntax for <span class='changed'>strings in Character Classes</span>, as in
 			the following <span class='changed'>addition to the syntax of Section <a href="#character_ranges">0.1.1 Character Classes</a></span>:</p>
@@ -3254,16 +3251,16 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 				</tr>
 				<tr>
 					<td><a href="http://unicode.org/reports/tr44/#Age">Age</a></td>
-					<td class='removed'><a
-						href="http://unicode.org/reports/tr44/#Lowercase_Mapping">Lowercase_Mapping</a></td>
+					<td><a
+						href="http://unicode.org/reports/tr44/#Simple_Lowercase_Mapping">Simple_Lowercase_Mapping</a></td>
 					<td><a href="http://unicode.org/reports/tr44/#Joining_Type">Joining_Type</a></td>
 				</tr>
 				<tr>
 					<td><a
 						href="http://unicode.org/reports/tr44/#General_Category"
 						class="gray_background">General_Category</a></td>
-					<td class='removed'><a
-						href="http://unicode.org/reports/tr44/#Titlecase_Mapping">Titlecase_Mapping</a></td>
+					<td><a
+						href="http://unicode.org/reports/tr44/#Simple_Titlecase_Mapping">Simple_Titlecase_Mapping</a></td>
 					<td class='changed'><a href="https://unicode.org/reports/tr44/#Vertical_Orientation">Vertical_Orientation</a></td>
 				</tr>
 				<tr>
@@ -3271,37 +3268,34 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 						class="gray_background">Script</a> (<a
 						href="http://unicode.org/reports/tr44/#Script_Extensions"
 						class="gray_background">Script_Extensions</a>)</td>
-					<td class='removed'><a
-						href="http://unicode.org/reports/tr44/#Uppercase_Mapping">Uppercase_Mapping</a></td>
+					<td><a
+						href="http://unicode.org/reports/tr44/#Simple_Uppercase_Mapping">Simple_Uppercase_Mapping</a></td>
 					<td><a href="http://unicode.org/reports/tr44/#Line_Break">Line_Break</a></td>
 				</tr>
 				<tr>
 					<td><a href="http://unicode.org/reports/tr44/#White_Space"
 						class="gray_background">White_Space</a></td>
-					<td class='removed'><a href="http://unicode.org/reports/tr44/#Case_Folding">Case_Folding</a></td>
+					<td><a href="http://unicode.org/reports/tr44/#Simple_Case_Folding">Simple_Case_Folding</a></td>
 					<td><a
 						href="http://unicode.org/reports/tr44/#Grapheme_Cluster_Break">Grapheme_Cluster_Break</a></td>
 				</tr>
 				<tr>
 					<td><a href="http://unicode.org/reports/tr44/#Alphabetic"
 						class="gray_background">Alphabetic</a></td>
-					<td><a
-						href="http://unicode.org/reports/tr44/#Simple_Lowercase_Mapping">Simple_Lowercase_Mapping</a></td>
+					<td><a href="http://unicode.org/reports/tr44/#Soft_Dotted">Soft_Dotted</a></td>
 					<td><a href="http://unicode.org/reports/tr44/#Sentence_Break">Sentence_Break</a></td>
 				</tr>
 				<tr>
 					<td><a
 						href="http://unicode.org/reports/tr44/#Hangul_Syllable_Type">Hangul_Syllable_Type</a></td>
-					<td><a
-						href="http://unicode.org/reports/tr44/#Simple_Titlecase_Mapping">Simple_Titlecase_Mapping</a></td>
+					<td><a href="http://unicode.org/reports/tr44/#Cased">Cased</a></td>
 					<td><a href="http://unicode.org/reports/tr44/#Word_Break">Word_Break</a></td>
 				</tr>
 				<tr>
 					<td><a
 						href="http://unicode.org/reports/tr44/#Noncharacter_Code_Point"
 						class="gray_background">Noncharacter_Code_Point</a></td>
-					<td><a
-						href="http://unicode.org/reports/tr44/#Simple_Uppercase_Mapping">Simple_Uppercase_Mapping</a></td>
+					<td><a href="http://unicode.org/reports/tr44/#Case_Ignorable">Case_Ignorable</a></td>
 					<td><a
 						href="http://unicode.org/reports/tr44/#East_Asian_Width">East_Asian_Width</a></td>
 				</tr>
@@ -3309,162 +3303,142 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 					<td><a
 						href="http://unicode.org/reports/tr44/#Default_Ignorable_Code_Point"
 						class="gray_background">Default_Ignorable_Code_Point</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#Simple_Case_Folding">Simple_Case_Folding</a></td>
+					<td><a href="http://unicode.org/reports/tr44/#CWL">Changes_When_Lowercased</a></td>
 					<td><a 
 						href="http://unicode.org/reports/tr44/#Prepended_Concatenation_Mark">Prepended_Concatenation_Mark</a></td>
 				</tr>
 				<tr>
 					<td><a href="http://unicode.org/reports/tr44/#Deprecated">Deprecated</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#Soft_Dotted">Soft_Dotted</a></td>
+					<td><a href="http://unicode.org/reports/tr44/#CWU">Changes_When_Uppercased</a></td>
 					<td>&nbsp;</td>
 				</tr>
 				<tr>
 					<td><a href="http://unicode.org/reports/tr44/#Logical_Order_Exception">Logical_Order_Exception</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#Cased">Cased</a></td>
+					<td><a href="http://unicode.org/reports/tr44/#CWT">Changes_When_Titlecased</a></td>
 					<th>Bidirectional</th>
 				</tr>
 				<tr>
 					<td><a href="http://unicode.org/reports/tr44/#Variation_Selector">Variation_Selector</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#Case_Ignorable">Case_Ignorable</a></td>
+					<td><a href="http://unicode.org/reports/tr44/#CWCF">Changes_When_Casefolded</a></td>
 					<td><a href="http://unicode.org/reports/tr44/#Bidi_Class">Bidi_Class</a></td>
 				</tr>
 				<tr>
 					<td>&nbsp;</td>
-					<td><a href="http://unicode.org/reports/tr44/#CWL">Changes_When_Lowercased</a></td>
+					<td><a href="http://unicode.org/reports/tr44/#CWCM">Changes_When_Casemapped</a></td>
 					<td><a href="http://unicode.org/reports/tr44/#Bidi_Control">Bidi_Control</a></td>
 				</tr>
 				<tr>
 					<th>Numeric</th>
-					<td><a href="http://unicode.org/reports/tr44/#CWU">Changes_When_Uppercased</a></td>
+					<td>&nbsp;</td>
 					<td><a href="http://unicode.org/reports/tr44/#Bidi_Mirrored">Bidi_Mirrored</a></td>
 				</tr>
 				<tr>
 					<td><a href="http://unicode.org/reports/tr44/#Numeric_Value">Numeric_Value</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#CWT">Changes_When_Titlecased</a></td>
+					<th>Normalization</th>
 					<td><a href="http://unicode.org/reports/tr44/#Bidi_Mirroring_Glyph">Bidi_Mirroring_Glyph</a></td>
 				</tr>
 				<tr>
 					<td><a href="http://unicode.org/reports/tr44/#Numeric_Type">Numeric_Type</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#CWCF">Changes_When_Casefolded</a></td>
+					<td><a href="http://unicode.org/reports/tr44/#Canonical_Combining_Class">Canonical_Combining_Class</a></td>
 					<td><a href="http://unicode.org/reports/tr44/#Bidi_Paired_Bracket">Bidi_Paired_Bracket</a></td>
 				</tr>
 				<tr>
 					<td><a href="http://unicode.org/reports/tr44/#Hex_Digit">Hex_Digit</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#CWCM">Changes_When_Casemapped</a></td>
+					<td><a href="http://unicode.org/reports/tr44/#Decomposition_Type">Decomposition_Type</a></td>
 					<td><a href="http://unicode.org/reports/tr44/#Bidi_Paired_Bracket_Type">Bidi_Paired_Bracket_Type</a></td>
 				</tr>
 				<tr>
 					<td><a href="http://unicode.org/reports/tr44/#ASCII_Hex_Digit">ASCII_Hex_Digit</a></td>
-					<td>&nbsp;</td>
+					<td><a href="http://unicode.org/reports/tr44/#NFC_Quick_Check">NFC_Quick_Check</a></td>
 					<td>&nbsp;</td>
 				</tr>
 				<tr>
 					<td>&nbsp;</td>
-					<th>Normalization</th>
+					<td><a href="http://unicode.org/reports/tr44/#NFKC_Quick_Check">NFKC_Quick_Check</a></td>
 					<th>Miscellaneous</th>
 				</tr>
 				<tr>
 					<th>Identifiers</th>
-					<td><a href="http://unicode.org/reports/tr44/#Canonical_Combining_Class">Canonical_Combining_Class</a></td>
+					<td><a href="http://unicode.org/reports/tr44/#NFD_Quick_Check">NFD_Quick_Check</a></td>
 					<td><a href="http://unicode.org/reports/tr44/#Math">Math</a></td>
 				</tr>
 				<tr>
 					<td><a href="http://unicode.org/reports/tr44/#ID_Continue">ID_Continue</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#Decomposition_Type">Decomposition_Type</a></td>
+					<td><a href="http://unicode.org/reports/tr44/#NFKD_Quick_Check">NFKD_Quick_Check</a></td>
 					<td><a href="http://unicode.org/reports/tr44/#Quotation_Mark">Quotation_Mark</a></td>
 				</tr>
 				<tr>
 					<td><a href="http://unicode.org/reports/tr44/#ID_Start">ID_Start</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#NFC_Quick_Check">NFC_Quick_Check</a></td>
+					<td><a href="http://unicode.org/reports/tr44/#NFKC_Casefold">NFKC_Casefold</a></td>
 					<td><a href="http://unicode.org/reports/tr44/#Dash">Dash</a></td>
 				</tr>
 				<tr>
 					<td><a href="http://unicode.org/reports/tr44/#XID_Continue">XID_Continue</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#NFKC_Quick_Check">NFKC_Quick_Check</a></td>
+					<td class="changed"><a href="http://unicode.org/reports/tr44/#CWKCF">Changes_When_NFKC_Casefolded</a></td>
 					<td><a href="http://unicode.org/reports/tr44/#STerm">Sentence_Terminal</a></td>
 				</tr>
 				<tr>
 					<td><a href="http://unicode.org/reports/tr44/#XID_Start">XID_Start</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#NFD_Quick_Check">NFD_Quick_Check</a></td>
+					<td>&nbsp;</td>
 					<td><a href="http://unicode.org/reports/tr44/#Terminal_Punctuation">Terminal_Punctuation</a></td>
 				</tr>
 				<tr>
 					<td><a href="http://unicode.org/reports/tr44/#Pattern_Syntax">Pattern_Syntax</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#NFKD_Quick_Check">NFKD_Quick_Check</a></td>
+					<th class='changed'>Emoji</th>
 					<td><a href="http://unicode.org/reports/tr44/#Diacritic">Diacritic</a></td>
 				</tr>
 				<tr>
 					<td><a href="http://unicode.org/reports/tr44/#Pattern_White_Space">Pattern_White_Space</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#NFKC_Casefold">NFKC_Casefold</a></td>
+					<td class='changed'><a href="https://unicode.org/reports/tr51/#def_emoji_character">Emoji</a></td>
 					<td><a href="http://unicode.org/reports/tr44/#Extender">Extender</a></td>
 				</tr>
 				<tr class='changed'>
 					<td><a href="https://www.unicode.org/reports/tr39/#General_Security_Profile">Identifier_Status</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#CWKCF">Changes_When_NFKC_Casefolded</a></td>
+					<td><a href="https://unicode.org/reports/tr51/#def_emoji_presentation">Emoji_Presentation</a></td>
 					<td><a href="http://unicode.org/reports/tr44/#Grapheme_Base">Grapheme_Base</a></td>
 				</tr>
 				<tr>
 					<td class='changed'><a href="https://www.unicode.org/reports/tr39/#General_Security_Profile">Identifier_Type</a></td>
-					<td>&nbsp;</td>
+					<td class='changed'><a href="https://unicode.org/reports/tr51/#def_emoji_modifier">Emoji_Modifier</a></td>
 					<td><a href="http://unicode.org/reports/tr44/#Grapheme_Extend">Grapheme_Extend</a></td>
 				</tr>
 				<tr>
 					<td>&nbsp;</td>
-					<th class='changed'>Emoji</th>
+					<td class='changed'><a href="https://unicode.org/reports/tr51/#def_emoji_modifier_base">Emoji_Modifier_Base</a></td>
 					<td class='changed'><a href="https://unicode.org/reports/tr44/#Regional_Indicator">Regional_Indicator</a></td>
 				</tr>
 				<tr>
 				  <th>CJK</th>
-					<td class='changed'><a href="https://unicode.org/reports/tr51/#def_emoji_character">Emoji</a></td>
+				  <td class='changed'><a href="https://unicode.org/reports/tr51/#def_level2_emoji">Emoji_Component</a></td>
 					<td>&nbsp;</td>
 				</tr>
 				<tr>
 				  <td><a href="http://unicode.org/reports/tr44/#Ideographic">Ideographic</a></td>
-					<td class='changed'><a href="https://unicode.org/reports/tr51/#def_emoji_presentation">Emoji_Presentation</a></td>
+				  <td class='changed'><a href="https://unicode.org/reports/tr51/#def_level1_emoji">Extended_Pictographic</a></td>
 					<td>&nbsp;</td>
 				</tr>
 				<tr>
 				  <td><a href="http://unicode.org/reports/tr44/#Unified_Ideograph">Unified_Ideograph</a></td>
-					<td class='changed'><a href="https://unicode.org/reports/tr51/#def_emoji_modifier">Emoji_Modifier</a></td>
+				  <td class='changed'><a href='https://unicode.org/reports/tr51/#def_basic_emoji_set'>Basic_Emoji*</a></td>
 					<td>&nbsp;</td>
 				</tr>
 				<tr>
 				  <td><a href="http://unicode.org/reports/tr44/#Radical">Radical</a></td>
-					<td class='changed'><a href="https://unicode.org/reports/tr51/#def_emoji_modifier_base">Emoji_Modifier_Base</a></td>
+				  <td class='changed'><a href='https://unicode.org/reports/tr51/#def_std_emoji_modifier_sequence_set'>RGI_Emoji_Modifier_Sequence*</a></td>
 					<td>&nbsp;</td>
 				</tr>
 				<tr>
 				  <td><a href="http://unicode.org/reports/tr44/#IDS_Binary_Operator">IDS_Binary_Operator</a></td>
-				  <td class='changed'><a href="https://unicode.org/reports/tr51/#def_level2_emoji">Emoji_Component</a></td>
-				  <td>&nbsp;</td>
-			  </tr>
-				<tr>
-				  <td><a href="http://unicode.org/reports/tr44/#IDS_Trinary_Operator">IDS_Trinary_Operator</a></td>
-				  <td class='changed'><a href="https://unicode.org/reports/tr51/#def_level1_emoji">Extended_Pictographic</a></td>
-				  <td>&nbsp;</td>
-			  </tr>
-				<tr>
-				  <td class='changed'><a href="https://unicode.org/reports/tr44/#Equivalent_Unified_Ideograph">Equivalent_Unified_Ideograph</a></td>
-				  <td class='changed'><a href='https://unicode.org/reports/tr51/#def_basic_emoji_set'>Basic_Emoji*</a></td>
-				  <td>&nbsp;</td>
-			  </tr>
-				<tr>
-				  <td>&nbsp;</td>
-				  <td class='changed'><a href='https://unicode.org/reports/tr51/#def_std_emoji_modifier_sequence_set'>RGI_Emoji_Modifier_Sequence*</a></td>
-				  <td>&nbsp;</td>
-			  </tr>
-				<tr>
-				  <td>&nbsp;</td>
 				  <td class='changed'><a href='https://unicode.org/reports/tr51/#def_std_emoji_tag_sequence_set'>RGI_Emoji_Tag_Sequence*</a></td>
 				  <td>&nbsp;</td>
 			  </tr>
 				<tr>
-				  <td>&nbsp;</td>
+				  <td><a href="http://unicode.org/reports/tr44/#IDS_Trinary_Operator">IDS_Trinary_Operator</a></td>
 				  <td class='changed'><a href='https://unicode.org/reports/tr51/#def_emoji_ZWJ_sequences'>RGI_Emoji_ZWJ_Sequence*</a></td>
 				  <td>&nbsp;</td>
 			  </tr>
 				<tr>
-				  <td>&nbsp;</td>
+				  <td class='changed'><a href="https://unicode.org/reports/tr44/#Equivalent_Unified_Ideograph">Equivalent_Unified_Ideograph</a></td>
 				  <td class='changed'><a href='https://unicode.org/reports/tr51/#def_rgi_set'>RGI_Emoji*</a></td>
 				  <td>&nbsp;</td>
 			  </tr>
@@ -3506,13 +3480,13 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
           <tr>
             <td>[<a href="#UTS35">UTS35</a>]</td>
             <td>\p{Exemplar_Main=fil}</td>
-            <td>The main exemplar characters for Filipino, ie,<br>
+            <td>The main exemplar characters for Filipino:<br>
             [a-nñ \q{ng} o-z]</td>
           </tr>
           <tr>
             <td>[<a href="#UTS10">UTS10</a>]</td>
             <td>\p{Collation_Primary_en=η}  </td>
-            <td>Characters that sort as 'η' on a primary level  in Greek according to CLDR, ie,<br>
+            <td>Characters that sort as 'η' on a primary level  in Greek according to CLDR:<br>
               [η 𝞰 𝛈 𝜂 𝜼 𝝶 Η 𝜢 𝚮 𝛨 𝝜 𝞖 ἠ Ἠ ἤ Ἤ ᾔ ᾜ ἢ Ἢ ᾒ ᾚ ἦ Ἦ ᾖ ᾞ ᾐ ᾘ ἡ Ἡ ἥ Ἥ ᾕ ᾝ ἣ Ἣ ᾓ ᾛ ἧ Ἧ ᾗ ᾟ ᾑ ᾙ ή ή Ή Ή ῄ ὴ Ὴ ῂ ῆ ῇ ῃ ῌ]
 
 </td>
@@ -3521,7 +3495,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
             <td>Named&shy;<br>
             Sequences.txt</td>
             <td>\p{Named_Sequence=TAMIL CONSONANT K}<br></td>
-            <td>The matching named sequence, ie,<br>
+            <td>The matching named sequence:<br>
 \u{0B95 0BCD}<br>
             These should match any name according to the Name property, NamedAliases.txt, and NamedSequences.txt, so that \p{Named_Sequence=X} is a drop-in for \p{Name=X}.</td>
           </tr>
@@ -4394,7 +4368,7 @@ RegExSubmatcher clone(String parameter, Locale locale) {...}
 				href="#Sample_Collation_Character_Code">Annex B: Sample
 				Collation Grapheme Cluster Code</a>
 		</h2>
-		<p class='changed'><em>This annex was retracted with Level 3.</em></p>
+		<p class='changed'><em>This annex was retracted at the same time that Level 3 was retracted.</em></p>
 		<div class='removed'><p>The following provides sample code for doing Level 3 collation
 			grapheme cluster detection. This code is meant to be illustrative,
 			and has not been optimized. Although written in Java, it could be
@@ -4615,7 +4589,7 @@ do {
           <li><strong>[^S--C]</strong> is not valid</li>
         </ul>
         <p>A narrowed set of single characters can always be represented by intersecting with the set of single characters, such as <strong>[<span class="regex">\p{Basic_Emoji}&amp;&amp;</span>\p{any}]</strong>. </p>
-        <p>The following describes how a boolean expression can be resolved to  a Character Class with <em>only</em> characters, a Character Class with strings, or a negated Character Class with <em>only</em> characters.</p>
+        <p>The following describes how a boolean expression can be resolved to  a Character Class with <em>only</em> characters, a Character Class with strings, or a negated Character Class with <em>only</em> characters. As usual, this is a logical expression of the process; implementations can optimize as long as they get the same results.</p>
         <p>When incrementally parsing and building a resolved boolean expression, the process can be analyzed in terms of a series of core operations. In parsing Character Classes, the intermediate objects are logically <em>enhanced sets</em> of strings, such as A and B. The enhancement is the addition of a boolean flag to indicate whether the set is negated or not. The symbol ➕ stands for the flag value true/normal. The symbol ➖ stands for the flag value false/negative.</p>
         <h3>Creation and Unary Operations</h3>
         <ul>
@@ -4773,18 +4747,17 @@ do {
 </table>
 </div>
 
-<p>
+<blockquote><strong>
 Note: the operation A ~~ B is handled in terms of other operations according to its definition: (A∪B)∖(A∩B)
-        </p>
-<p>As usual, this is a logical expression of the process; implementations can optimize as long as they get the same results.</p>
-      </div>
+        </strong>      </blockquote>
+	  </div>
 
 <div class="changed">
 	<h2>
 		  <a name="Notation_for_Properties_of_Strings" href="#Notation_for_Properties_of_Strings">
 		  Annex E: Notation for Properties of Strings</a></h2>
 
-    <p><i>Properties of Strings</i> are properties that can apply to, or match, sequences of two or
+    <p>Properties of strings are properties that can apply to, or match, sequences of two or
 	more characters (in addition to single characters). This is in contrast to the more common
 	case of properties of characters, which are functions of individual code points only.
 	Those properties marked with an asterisk in the <a href="#Full_Properties">Full Properties</a>
@@ -5039,7 +5012,7 @@ Note: the operation A ~~ B is handled in terms of other operations according to 
 		<ul class='changed'>
 		  <li>General
 		    <ul>
-		      <li>The term &quot;character range&quot; has been replaced by Character Class, without highlighting each instance. Character Class is more widely used (and less misleading).</li>
+		      <li>The term &quot;character range&quot; has been replaced by Character Class. Character Class is more widely used (and less misleading).</li>
 	        </ul>
 		  </li>
 		  <li>Section 1.2 <a href="#Categories">Properties</a>
@@ -5110,7 +5083,7 @@ Note: the operation A ~~ B is handled in terms of other operations according to 
 		      <li>Moved from Section 1.2.3 <a href="#Other_Properties">Other Properties</a></li>
 		      <li>Made it clear that these are entirely optional.</li>
 		      <li>Removed some properties now covered in Section 2.7 <a href="#Full_Properties">Full Properties</a></li>
-              <li>Changed certain cases be properties of strings.</li>
+              <li>Changed certain cases to be properties of strings.</li>
               <li>Removed examples of toNFKC_CaseFold, CJK, and other properties</li>
               <li>Added Named sequences  (was previously included as part of Section
 		    2.5.1 <a href="#Individually_Named_Characters">Individually
