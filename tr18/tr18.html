@@ -168,7 +168,7 @@ a:hover.plain {
 							<li class="changed">1.2.4 <a href="#property_syntax">Property Syntax</a></li>
 							<li>1.2.<span class="changed">5</span> <a href="#General_Category_Property">General
 									Category Property</a></li>
-							<li>1.2.<span class="changed">6</span> <a href="#Script_Property">Script Property</a></li>
+							<li>1.2.<span class="changed">6</span> <a href="#Script_Property">Script <span class='changed'>and Script Extensions Properties</span></a></li>
 							<li class='removed'>1.2.3 <a href="#Other_Properties">Other Properties</a></li>
 							<li>1.2.<span>7</span> <a href="#Age">Age</a></li>
 							<li>1.2.<span class="changed">8</span> <a href="#Blocks">Blocks</a></li>
@@ -1081,7 +1081,7 @@ The following tables provide some examples of property values for each domain ty
 
     <strong>Note:</strong> The Script_Extensions property maps from code points to a <em>set</em> of enumerated Script property values. </p>
 <p>
-Expressions involving Set properties, which have multiple values, are most often tested for containment, not equality. An expression like \p{Script_Extensions=Hira} is interpreted as containment: matching each code point <em>cp</em> such that Script_Extensions(<em>cp</em>) ⊇ {Hira}. Thus, \p{Script_Extensions=Hira} will match both U+3032 〲 VERTICAL KANA REPEAT WITH VOICED SOUND MARK (with value {Hira Kana}) and U+3041 ぁ HIRAGANA LETTER SMALL A (with value {Hira}). That also allows the natural replacement of the regular expression \p{Script=Hira} by \p{Script_Extensions=Hira} — the latter just adds characters that may be <em>either</em> Hira <em>or</em> some other script. For a more detailed example, see <em>Section 1.2.2 <a href="https://unicode-org.github.io/unicode-reports/tr18/tr18.html#Script_Property">Script and Script Extensions Properties</a></em>.</p>
+Expressions involving Set properties, which have multiple values, are most often tested for containment, not equality. An expression like \p{Script_Extensions=Hira} is interpreted as containment: matching each code point <em>cp</em> such that Script_Extensions(<em>cp</em>) ⊇ {Hira}. Thus, \p{Script_Extensions=Hira} will match both U+3032 〲 VERTICAL KANA REPEAT WITH VOICED SOUND MARK (with value {Hira Kana}) and U+3041 ぁ HIRAGANA LETTER SMALL A (with value {Hira}). That also allows the natural replacement of the regular expression \p{Script=Hira} by \p{Script_Extensions=Hira} — the latter just adds characters that may be <em>either</em> Hira <em>or</em> some other script. For a more detailed example, see <em>Section 1.2.6 <a href="#Script_Property">Script and Script Extensions Properties</a></em>.</p>
 <p>
 Expressions involving List properties may be tested for containment, but may have different semantics for the elements based on position. For example, each value of the <a href="http://www.unicode.org/reports/tr38/#kMandarin">kMandarin</a> property is a list of up to two String values: the first being preferred for zh-Hans and the second for zh-Hant (where the preference differs).
 </p>
@@ -1158,20 +1158,6 @@ Expressions involving List properties may be tested for containment, but may hav
    <td>flag: France
    </td>
    <td>True
-   </td>
-  </tr>
-  <tr>
-   <td>
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
-   <td>
    </td>
   </tr>
 </table>
@@ -3495,8 +3481,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 			</em>. The <a href="http://unicode.org/reports/tr44/#Script">Script</a>
 			and <a href="http://unicode.org/reports/tr44/#Script_Extensions">Script_Extensions</a>
 			properties are used in \p{scx=…}. For more information, see <em>Section
-				1.2.2, <a href="#Script_Property">Script_Property</a>.
-		</em></p>
+				1.2.<span class="changed">6</span>, <a href="#Script_Property">Script <span class='changed'>and Script Extensions Properties</span></a></em>.</p>
 		<p class='changed'>To test whether a <em>string</em> is in a normalization format such as NFC requires special code. However, there are "quick-check" properties that can detect whether characters are allowed in a normalization format at all. Those can be used for cases like the following, which removes characters that cannot occur in NFC: [\p{<a href="http://unicode.org/reports/tr44/#Alphabetic">Alphabetic</a>}--\p{<a href="http://unicode.org/reports/tr44/#NFC_Quick_Check">NFC_Quick_Check</a>=No}]</p>
 		<p class='changed'>The  Emoji properties can be used to precisely parse text for valid emoji of different kinds, while the <a href="https://unicode.org/reports/tr44/#Equivalent_Unified_Ideograph">Equivalent_Unified_Ideograph</a> can be used to find radicals for unified ideographs (or vice versa): \p{<a href="https://unicode.org/reports/tr44/#Equivalent_Unified_Ideograph">Equivalent_Unified_Ideograph</a>=⼚} matches [⼚⺁厂].</p>
 		<p align="left">See also <a
