@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="Content-Language" content="en-us">
-<link rel="stylesheet" type="text/css" href="https://unicode.org/reports/reports-v2.css">
+<link rel="stylesheet" type="text/css" href="https://www.unicode.org/reports/reports-v2.css">
 <title>UTS #18: Unicode Regular Expressions</title>
 
 <style type="text/css">
@@ -48,11 +48,11 @@ a:hover.plain {
 
 	<table class="header" width="100%">
 		<tr>
-			<td class="icon"><a href="http://www.unicode.org"><img
+			<td class="icon"><a href="https://www.unicode.org"><img
 					align="middle" alt="[Unicode]" border="0"
-					src="http://www.unicode.org/webscripts/logo60s2.gif" width="34"
+					src="https://www.unicode.org/webscripts/logo60s2.gif" width="34"
 					height="33"></a>&nbsp; <a class="bar"
-				href="http://www.unicode.org/reports/">Technical Reports</a></td>
+				href="https://www.unicode.org/reports/">Technical Reports</a></td>
 		</tr>
 		<tr>
 			<td class="gray">&nbsp;</td>
@@ -60,13 +60,12 @@ a:hover.plain {
 	</table>
 
 	<div class="body">
-		<h2 class="uaxtitle"><span class='changed'>Proposed 
-		Update </span>Unicode® Technical Standard #18</h2>
+		<h2 class="uaxtitle">Unicode® Technical Standard #18</h2>
 		<h1>Unicode Regular Expressions</h1>
 		<table class="simple" width="90%">
 			<tr>
 				<td width="20%">Version</td>
-				<td class='changed'>20</td>
+				<td>21</td>
 			</tr>
 			<tr>
 				<td>Editors</td>
@@ -74,29 +73,29 @@ a:hover.plain {
 			</tr>
 			<tr>
 				<td>Date</td>
-				<td class='changed'>2020-06-03</td>
+				<td>2020-06-05</td>
 			</tr>
 			<tr>
-				<td>This Version</td>
-				<td class='changed'>
-				  <a href="http://www.unicode.org/reports/tr18/tr18-20.html">http://www.unicode.org/reports/tr18/tr18-20.html</a></td>
+				<td style="height: 31px">This Version</td>
+				<td>
+				  <a href="https://www.unicode.org/reports/tr18/tr18-21.html">https://www.unicode.org/reports/tr18/tr18-21.html</a></td>
 			</tr>
 			<tr>
 				<td>Previous Version</td>
-				<td class='changed'><a href="http://www.unicode.org/reports/tr18/tr18-19.html">http://www.unicode.org/reports/tr18/tr18-19.html</a></td>
+				<td><a href="https://www.unicode.org/reports/tr18/tr18-19.html">https://www.unicode.org/reports/tr18/tr18-19.html</a></td>
 			</tr>
 			<tr>
 				<td>Latest Version</td>
-				<td><a href="http://www.unicode.org/reports/tr18/">http://www.unicode.org/reports/tr18/</a></td>
+				<td><a href="https://www.unicode.org/reports/tr18/">https://www.unicode.org/reports/tr18/</a></td>
 			</tr>
 			<tr>
 				<td valign="top">Latest Proposed Update</td>
-				<td valign="top"><a href="http://www.unicode.org/reports/tr18/proposed.html">
-						http://www.unicode.org/reports/tr18/proposed.html</a></td>
+				<td valign="top"><a href="https://www.unicode.org/reports/tr18/proposed.html">
+						https://www.unicode.org/reports/tr18/proposed.html</a></td>
 			</tr>
 			<tr>
 				<td>Revision</td>
-				<td class='changed'><a href="#Modifications">20</a></td>
+				<td><a href="#Modifications">21</a></td>
 			</tr>
 		</table>
 			<br>
@@ -108,30 +107,30 @@ a:hover.plain {
 					regular expression engines to use Unicode.</em></i>
 		</p>
 	<h3><i>Status</i></h3>
-	  <!-- NOT YET APPROVED -->
-	  <p class="changed"><i>This is a <b><font color="#ff3333">draft</font></b> document which
+	  <!-- NOT YET APPROVED
+	  <p><i>This is a <b><font color="#ff3333">draft</font></b> document which
       may be updated, replaced, or superseded by other documents at any time.
       Publication does not imply endorsement by the Unicode Consortium. This is
       not a stable document; it is inappropriate to cite this document as other
       than a work in progress.</i></p>
-      <!-- END NOT YET APPROVED -->
-      <!-- APPROVED 
+       END NOT YET APPROVED -->
+      <!-- APPROVED -->
       <p><i>This document has been reviewed by Unicode members and other
 	  interested parties, and has been approved for publication by the Unicode
 	  Consortium. This is a stable document and may be used as reference
 	  material or cited as a normative reference by other specifications.</i></p>
-       END APPROVED -->
+      <!-- END APPROVED -->
 	<blockquote>
 		<p><i><b>A Unicode Technical Standard (UTS)</b> is an independent specification. 
 		Conformance to the Unicode Standard does not imply conformance to any UTS.</i></p>
 	</blockquote>
 	<p><i>Please submit corrigenda and other comments with the online reporting 
-	form [<a href="http://www.unicode.org/reporting.html">Feedback</a>]. 
+	form [<a href="https://www.unicode.org/reporting.html">Feedback</a>]. 
 	Related information that is useful in understanding this document is found in the
 	<a href="#References">References</a>. 
-	For the latest version of the Unicode Standard, see [<a href="http://www.unicode.org/versions/latest/">Unicode</a>]. 
-	For a list of current Unicode Technical Reports, see [<a href="http://www.unicode.org/reports/">Reports</a>]. 
-	For more information about versions of the Unicode Standard, see [<a href="http://www.unicode.org/versions/">Versions</a>].</i></p>
+	For the latest version of the Unicode Standard, see [<a href="https://www.unicode.org/versions/latest/">Unicode</a>]. 
+	For a list of current Unicode Technical Reports, see [<a href="https://www.unicode.org/reports/">Reports</a>]. 
+	For more information about versions of the Unicode Standard, see [<a href="https://www.unicode.org/versions/">Versions</a>].</i></p>
 
 
 
@@ -142,7 +141,7 @@ a:hover.plain {
 			<li>0 <a href="#Introduction">Introduction</a>
 				<ul class="toc">
 					<li>0.1 <a href="#Notation">Notation</a>
-					  <ul class="toc changed">
+					  <ul class="toc">
 					    <li><a href="#character_ranges">0.1.1 Character Classes</a></li>
 				      </ul>
 					</li>
@@ -160,16 +159,15 @@ a:hover.plain {
 					</li>
 					<li>1.2 <a href="#Categories">Properties</a>
 						<ul class="toc">
-							<li class="changed">1.2.1 <a href="#domain_of_properties">Domain of Properties</a></li>
-							<li class="changed">1.2.2 <a href="#codomain_of_properties">Codomain of Properties</a></li>
-							<li class="changed">1.2.3 <a href="#examples_of_properties">Examples of Properties</a></li>
-							<li class="changed">1.2.4 <a href="#property_syntax">Property Syntax</a></li>
-							<li>1.2.<span class="changed">5</span> <a href="#General_Category_Property">General
+							<li>1.2.1 <a href="#domain_of_properties">Domain of Properties</a></li>
+							<li>1.2.2 <a href="#codomain_of_properties">Codomain of Properties</a></li>
+							<li>1.2.3 <a href="#examples_of_properties">Examples of Properties</a></li>
+							<li>1.2.4 <a href="#property_syntax">Property Syntax</a></li>
+							<li>1.2.5 <a href="#General_Category_Property">General
 									Category Property</a></li>
-							<li>1.2.<span class="changed">6</span> <a href="#Script_Property">Script <span class='changed'>and Script Extensions Properties</span></a></li>
-							<li class='removed'>1.2.3 <a href="#Other_Properties">Other Properties</a></li>
-							<li>1.2.<span>7</span> <a href="#Age">Age</a></li>
-							<li>1.2.<span class="changed">8</span> <a href="#Blocks">Blocks</a></li>
+							<li>1.2.6 <a href="#Script_Property">Script and Script Extensions Properties</a></li>
+							<li>1.2.7 <a href="#Age">Age</a></li>
+							<li>1.2.8 <a href="#Blocks">Blocks</a></li>
 						</ul>
 					</li>
 					<li>1.3 <a href="#Subtraction_and_Intersection">Subtraction
@@ -188,9 +186,9 @@ a:hover.plain {
 					<li>2.1 <a href="#Canonical_Equivalents">Canonical
 							Equivalents</a></li>
 					<li>2.2 <a href="#Default_Grapheme_Clusters">Extended
-							Grapheme Clusters<span class="changed"> and Character Classes with Strings</span></a>
+							Grapheme Clusters and Character Classes with Strings</a>
 						    <ul>
-							  <li class='toc changed'>2.2.1 <a href="#Character_Ranges_with_Strings">Character Classes with Strings</a></li>
+							  <li class='toc'>2.2.1 <a href="#Character_Ranges_with_Strings">Character Classes with Strings</a></li>
 						</ul>
 					</li>
 					<li>2.3 <a href="#Default_Word_Boundaries">Default Word
@@ -206,39 +204,18 @@ a:hover.plain {
 					<li>2.6 <a href="#Wildcard_Properties">Wildcards in
 							Property Values</a></li>
 					<li>2.7 <a href="#Full_Properties">Full Properties</a></li>
-					<li><span class="changed">2.8 <a href="#optional_properties">Optional
-		  Properties</a></span></li>
+					<li>2.8 <a href="#optional_properties">Optional Properties</a></li>
 				</ul>
 			</li>
-			<li>3 <a href="#Tailored_Support">Tailored Support: Level 3 <span class="changed">(Retracted)</span></a>
-				<ul class="toc removed">
-					<li>3.1 <a href="#Tailored_Properties">Tailored
-							Punctuation</a></li>
-					<li>3.2 <a href="#Tailored_Graphemes_Clusters">Tailored
-							Grapheme Clusters</a></li>
-					<li>3.3 <a href="#Tailored_Word_Boundaries">Tailored Word
-							Boundaries</a></li>
-					<li>3.4 <a href="#Tailored_Loose_Matches">Tailored Loose
-							Matches (Retracted)</a></li>
-					<li>3.5 <a href="#Tailored_Ranges">Tailored Ranges
-							(Retracted)</a></li>
-					<li>3.6 <a href="#Context_Matching">Context Matching</a></li>
-					<li>3.7 <a href="#Partial_Matches">Incremental Matches</a></li>
-					<li>3.8 <a href="#Unicode_Set_Sharing">Unicode Set Sharing (Retracted)</a></li>
-					<li>3.9 <a href="#Possible_Match_Sets">Possible Match Sets</a></li>
-					<li>3.10 <a href="#Folded_Matching">Folded Matching
-							(Retracted)</a></li>
-					<li>3.11 <a href="#Submatchers">Submatchers</a></li>
-				</ul>
-			</li>
+			<li>3 <a href="#Tailored_Support">Tailored Support: Level 3 (Retracted)</a></li>
 			<li><a href="#Character_Blocks">Annex A: Character Blocks</a></li>
 			<li><a href="#Sample_Collation_Character_Code">Annex B:
-					Sample Collation Grapheme Cluster Code <span class="changed">(Retracted)</span></a></li>
+					Sample Collation Grapheme Cluster Code (Retracted)</a></li>
 			<li><a href="#Compatibility_Properties">Annex C:
 					Compatibility Properties</a></li>
-			<li class='changed'><a href="#Resolving_Character_Ranges_with_Strings">Annex D:
+			<li><a href="#Resolving_Character_Ranges_with_Strings">Annex D:
 		Resolving Character Classes with Strings</a></li>
-			<li class='changed'><a href="#Notation_for_Properties_of_Strings">
+			<li><a href="#Notation_for_Properties_of_Strings">
 				Annex E: Notation for Properties of Strings</a></li>
 			<li><a href="#References">References</a></li>
 			<li><a href="#Acknowledgments">Acknowledgments</a></li>
@@ -248,7 +225,7 @@ a:hover.plain {
 		<h2>
 			0 <a name="Introduction" href="#Introduction">Introduction</a>
 		</h2>
-		<p class='changed'>Regular expressions are a powerful tool for using patterns to search and modify text. They are a key component of many programming languages, databases, and spreadsheets. Starting in 1999, this document has supplied guidelines and conformance levels for supporting Unicode in regular expressions.The following
+		<p>Regular expressions are a powerful tool for using patterns to search and modify text. They are a key component of many programming languages, databases, and spreadsheets. Starting in 1999, this document has supplied guidelines and conformance levels for supporting Unicode in regular expressions.The following
 		issues are involved in supporting Unicode.</p>
 		<ul>
 			<li>Unicode is a large character set—regular expression engines
@@ -281,15 +258,6 @@ a:hover.plain {
 				support for end-user expectations than the raw level 1, without the
 				regular-expression writer needing to know about some of the
 				complications of Unicode encoding structure.</li>
-			<li class="removed"><b><a href="#Tailored_Support">Level 3</a>: Tailored
-					Support. </b>At this level, the regular expression engine also provides
-				for tailored treatment of characters, including country- or
-				language-specific behavior. For example, the characters <i>ch</i>
-				can behave as a single character in Slovak or traditional Spanish.
-				The results of a particular regular expression reflect the
-				end-users&#39; expectations of what constitutes a character in their
-				language, and the order of the characters. However, there is a
-				performance impact to support at this level.</li>
 		</ul>
 		<p>In particular:</p>
 		<ol>
@@ -302,9 +270,6 @@ a:hover.plain {
 				important than others: see <a href="#Extended_Unicode_Support">Level
 					2</a>.
 			</li>
-			<li class="removed">Level 3 contains information about extensions only useful
-				for specific applications. Features at this level may require
-				further investigation for effective implementation.</li>
 		</ol>
 		<p>One of the most important requirements for a regular expression
 			engine is to document clearly what Unicode features are and are not
@@ -376,17 +341,17 @@ a:hover.plain {
 			</tr>
 		</table>
 		</div>
-		<h4><a name="character_ranges" href="#character_ranges"><span class='changed'>0.1.1 </span>Character Classes</a></h4>
-		<p><span class="changed">A Character Class represents a set of 
-		characters. When a regex implementation follows <em>Section 2.2.1 <span class="toc changed">
-        <a href="#Character_Ranges_with_Strings">Character Classes with Strings</a></span></em> the set can include sequences of characters as well.</span>
-        The following syntax for Character Classes is used <span class="changed">and extended </span>in
-			successive <span class="changed">sections</span>.</p>
+		<h4><a name="character_ranges" href="#character_ranges">0.1.1 Character Classes</a></h4>
+		<p>A Character Class represents a set of 
+		characters. When a regex implementation follows <em>Section 2.2.1 
+        <a href="#Character_Ranges_with_Strings">Character Classes with Strings</a></em> the set can include sequences of characters as well.
+        The following syntax for Character Classes is used and extended in
+			successive sections.</p>
 		<blockquote>
-<pre><span class='changed'>CHARACTER_CLASS</span>  := &quot;[&quot; NEGATION? ITEM (<span class="changed">OPERATOR</span>? ITEM)* &quot;]&quot;
+<pre>CHARACTER_CLASS  := &quot;[&quot; NEGATION? ITEM (OPERATOR? ITEM)* &quot;]&quot;
 
-ITEM             := <span class='changed'>&quot;[&quot; CHARACTER_CLASS &quot;]&quot;
-                 := </span>CODE_POINT2
+ITEM             := &quot;[&quot; CHARACTER_CLASS &quot;]&quot;
+                 := CODE_POINT2
                  := CODE_POINT2 &quot;-&quot; CODE_POINT2 // range
 
 CODE_POINT2      := ESCAPE CODE_POINT
@@ -394,8 +359,8 @@ CODE_POINT2      := ESCAPE CODE_POINT
 
 NEGATION         := &quot;^&quot;
 
-<span class="changed">OPERATOR</span>         := &quot;&quot;   // union<span class='changed'> (no separator): A∪B</span>
-                 := &quot;||&quot; // union<span class='changed'> (where desired for clarity): A∪B</span>
+OPERATOR         := &quot;&quot;   // union (no separator): A∪B
+                 := &quot;||&quot; // union (where desired for clarity): A∪B
 
 ESCAPE           := &quot;\&quot;</pre>
 	  </blockquote>
@@ -403,12 +368,12 @@ ESCAPE           := &quot;\&quot;</pre>
 			U+10FFFF. Whitespace is allowed between any elements,
 			but to simplify the presentation the many occurrences of sequences
 			of spaces (&quot; &quot;*) are omitted.</p>
-		<p><span class="changed">Negation affects the entire value in square brackets. That is, [^a…z] = [^[a…z]].</span> </p>
-		<p><span class='changed'>For the purpose of regular expressions, in this document the terms “character” and 
-		“code point” are used interchangeably. Similarly, the terms “string” and “sequence of code points” are used interchangeably.</span> Typically the code points of interest will be those
-		representing characters.<span class='changed'> A Character Class is also 
-	  referred to as the set of all characters specified by that Character Class.</span></p>
-		<p><span class='changed'>In addition, for readability the simple parentheses are used where in practice a non-capturing group would be used. That is, (ab|c) is written instead of (?:ab|c).</span></p>
+		<p>Negation affects the entire value in square brackets. That is, [^a…z] = [^[a…z]]. </p>
+		<p>For the purpose of regular expressions, in this document the terms “character” and 
+		“code point” are used interchangeably. Similarly, the terms “string” and “sequence of code points” are used interchangeably. Typically the code points of interest will be those
+		representing characters. A Character Class is also 
+	  referred to as the set of all characters specified by that Character Class.</p>
+		<p>In addition, for readability the simple parentheses are used where in practice a non-capturing group would be used. That is, (ab|c) is written instead of (?:ab|c).</p>
 		<p>
 			Code points that are syntax characters or whitespace are typically
 			escaped. For more information see [<a href="#UAX31">UAX31</a>]. In
@@ -425,7 +390,7 @@ ESCAPE           := &quot;\&quot;</pre>
 					However, it is important to have a concrete syntax to correctly
 					illustrate the different issues. In general, the syntax here is
 					similar to that of <a
-					href="http://www.perl.com/pub/q/documentation">Perl Regular
+					href="https://perldoc.perl.org/">Perl Regular
 						Expressions</a> [<a href="#Perl">Perl</a>].) In some cases, this gives
 					multiple syntactic constructs that provide for the same
 					functionality.
@@ -474,34 +439,20 @@ ESCAPE           := &quot;\&quot;</pre>
 				<th>Note</th>
 			</tr>
 			<tr>
-				<td><span class="regex">\n<span class='changed'>+</span><br>
-				</span></td>
+				<td><span class="regex">\n+<br></span></td>
 				<td>As used within regular expressions, expands to the text
 					matching the <b>n</b><sup>th</sup> parenthesized group in the regular expression.
 					(à la Perl) 
 				</td>
-				<td class='changed'><strong>n</strong> is an ASCII digit. Implementations may impose limits on the number of digits.</td>
+				<td><strong>n</strong> is an ASCII digit. Implementations may impose limits on the number of digits.</td>
 			</tr>
 			<tr>
-				<td><span class="regex">$n<span class="changed">+</span></span></td>
+				<td><span class="regex">$n+</span></td>
 				<td>As used within replacement strings for regular expressions,
 					expands to the text matching the <b>n</b><sup>th</sup> parenthesized group in
 					a corresponding regular expression.  (à la Perl)
 				</td>
 				<td>The value of $0 is the entire expression.
-				</td>
-			</tr>
-			<tr class='removed'>
-				<td><span class="regex">$xyz</span></td>
-				<td>As used within regular expressions or replacement strings,
-					expands to an assigned variable value. 
-				</td>
-				<td>The &quot;xyz&quot; is of the
-					form of an identifier. For example, given <span class="regex">$greek_lower
-						= [[:greek:]&amp;&amp;[:lowercase:]]</span>, the regular expression
-					pattern &quot;<span class="regex">ab$greek_lower</span>&quot; is
-					equivalent to 
-					&quot;<span class="regex">ab[[:greek:]&amp;&amp;[:lowercase:]]</span>&quot;.
 				</td>
 			</tr>
 		</table>
@@ -518,18 +469,17 @@ ESCAPE           := &quot;\&quot;</pre>
 			0.2 <a name="Conformance" href="#Conformance">Conformance</a>
 		</h3>
 		<p>The following section describes the possible ways that an
-			implementation can claim conformance to this <span class="changed">
-		Unicode Technical Standard</span>.</p>
+			implementation can claim conformance to this Unicode Technical Standard.</p>
 		<p>
 			All syntax and API presented in this document is <i>only</i> for the
 			purpose of illustration; there is absolutely no requirement to follow
 			such syntax or API. Regular expression syntax varies widely: the
 			features discussed here would need to be adapted to the syntax of the
 			particular implementation. In general, the syntax in examples is
-			similar to that of <a href="http://www.perl.com/pub/q/documentation">Perl
+			similar to that of <a href="https://perldoc.perl.org/">Perl
 				Regular Expressions</a> [<a href="#Perl">Perl</a>], but it may not be
 			exactly the same. While the API examples generally follow <a
-				href="http://download.oracle.com/javase/6/docs/api/java/util/regex/package-summary.html">Java
+				href="https://docs.oracle.com/javase/6/docs/api/java/util/regex/package-summary.html">Java
 				style</a>, it is again <i>only</i> for illustration.
 		</p>
 		<table class="noborder">
@@ -593,7 +543,7 @@ ESCAPE           := &quot;\&quot;</pre>
 				</dd>
 				<dd>
 					<a href="#Default_Grapheme_Clusters">RL2.2 Extended Grapheme
-						Clusters<span class="changed"> and Character Classes with Strings</span></a>
+						Clusters and Character Classes with Strings</a>
 				</dd>
 				<dd>
 					<a href="#Default_Word_Boundaries">RL2.3 Default Word
@@ -614,48 +564,20 @@ ESCAPE           := &quot;\&quot;</pre>
 				</dd>
 			</dl>
 		</blockquote>
-    <div>
+
         <table class="noborder">
 			<tr>
 				<td class="rule_head"><a name="C3_" href="#C3_" class="plain">C3</a>.</td>
-				<td class="rule_body changed">This conformance clause has been removed.</td>
+				<td class="rule_body">This conformance clause has been removed.</td>
 			</tr>
 		</table>
-		<blockquote class='removed'>
-			<dl>
-				<dd>
-					<a href="#Tailored_Properties">RL3.1 Tailored Punctuation</a>
-				</dd>
-				<dd>
-					<a href="#Tailored_Graphemes_Clusters">RL3.2 Tailored Grapheme
-						Clusters</a>
-				</dd>
-				<dd>
-					<a href="#Tailored_Word_Boundaries">RL3.3 Tailored Word
-						Boundaries</a>
-				</dd>
-				<dd>
-					<a href="#Context_Matching">RL3.6 Context Matching</a>
-				</dd>
-				<dd>
-					<a href="#Partial_Matches">RL3.7 Incremental Matches</a>
-				</dd>
-				<dd>
-					<a href="#Possible_Match_Sets">RL3.9 Possible Match Sets</a>
-				</dd>
-				<dd>
-					<a href="#Submatchers">RL3.11 Submatchers</a>
-				</dd>
-				<dt>&nbsp;</dt>
-			</dl>
-		</blockquote>
-    </div>
+
 		<table class="noborder">
 			<tr>
 				<td class="rule_head"><a name="C4" href="#C4" class="plain">C4</a>.</td>
 				<td class="rule_body">An implementation claiming <i>partial</i>
 					conformance to this specification shall clearly indicate which
-					levels are completely supported (C1-<span class="removed">C3</span><span class="changed">C2</span>), plus any additional
+					levels are completely supported (C1-C2), plus any additional
 					supported features from higher levels.
 				</td>
 			</tr>
@@ -737,9 +659,9 @@ ESCAPE           := &quot;\&quot;</pre>
 &lt;codepoint&gt;  := &quot;\u&quot; HEX_CHAR HEX_CHAR HEX_CHAR HEX_CHAR
 &lt;codepoint&gt;  := &quot;\u{&quot; HEX_CHAR+ &quot;}&quot;
 &lt;codepoints&gt; := &quot;\u{&quot; HEX_CHAR+ (SEP HEX_CHAR+)* &quot;}&quot;
-<span class='changed'>SEP</span>          := \s+
+SEP          := \s+
 
-<span class='removed'>U_SHORT_MARK := &quot;u&quot; </span></pre>
+</pre>
 		</blockquote>
 		<p>
 			The following table gives examples of this hex notation:
@@ -926,7 +848,7 @@ ESCAPE           := &quot;\&quot;</pre>
 		<h3>
 			1.2 <a name="Categories" href="#Categories">Properties</a>
 		</h3>
-		<div class='changed'>
+
 	  <p>
 Because Unicode is a large character set that is regularly extended, a regular expression engine needs to provide for the recognition of whole categories of characters as well as simply literal sets of characters and strings; otherwise the listing of characters becomes impractical, out of date, and error-prone. This is done by providing syntax for sets of characters based on the Unicode character properties, as well as related properties and functions. Examples of such syntax are \p{Script=Greek} and [:Script=Greek:], which both stand for the set of characters that have the Script value of Greek. In addition to the basic syntax, regex engines also need to allow them to be combined with other sets defined by properties or with literal sets of characters and strings. An example is [\p{Script=Greek}--\p{General_Category=Letter}], which stands for the set of characters that have the Script value of Greek <em>and</em> that do not have the General_Category value of Letter.
 </p>
@@ -1081,7 +1003,7 @@ The following tables provide some examples of property values for each domain ty
 <p>
 Expressions involving Set properties, which have multiple values, are most often tested for containment, not equality. An expression like \p{Script_Extensions=Hira} is interpreted as containment: matching each code point <em>cp</em> such that Script_Extensions(<em>cp</em>) ⊇ {Hira}. Thus, \p{Script_Extensions=Hira} will match both U+3032 〲 VERTICAL KANA REPEAT WITH VOICED SOUND MARK (with value {Hira Kana}) and U+3041 ぁ HIRAGANA LETTER SMALL A (with value {Hira}). That also allows the natural replacement of the regular expression \p{Script=Hira} by \p{Script_Extensions=Hira} — the latter just adds characters that may be <em>either</em> Hira <em>or</em> some other script. For a more detailed example, see <em>Section 1.2.6 <a href="#Script_Property">Script and Script Extensions Properties</a></em>.</p>
 <p>
-Expressions involving List properties may be tested for containment, but may have different semantics for the elements based on position. For example, each value of the <a href="http://www.unicode.org/reports/tr38/#kMandarin">kMandarin</a> property is a list of up to two String values: the first being preferred for zh-Hans and the second for zh-Hant (where the preference differs).
+Expressions involving List properties may be tested for containment, but may have different semantics for the elements based on position. For example, each value of the <a href="https://www.unicode.org/reports/tr38/#kMandarin">kMandarin</a> property is a list of up to two String values: the first being preferred for zh-Hans and the second for zh-Hant (where the preference differs).
 </p>
 <p>
 <strong>Examples of Properties of Strings</strong></p>
@@ -1162,11 +1084,11 @@ Expressions involving List properties may be tested for containment, but may hav
 
 <p>
 
-    <strong>Note:</strong> Properties of strings can always be “narrowed” to just contain code points. For example, [\p{Basic_Emoji} && \p{any}] is the set of characters in Basic_Emoji.
+    <strong>Note:</strong> Properties of strings can always be “narrowed” to just contain code points. For example, [\p{Basic_Emoji} &amp;&amp; \p{any}] is the set of characters in Basic_Emoji.
 </p>
 			<h4>1.2.4 <a href="#property_syntax" name="property_syntax">Property Syntax</a></h4>
- 	  </div>
-       <p align="left">The recommended names <span class='changed'>(identifiers)</span> for UCD properties and property values are in <a href="#Prop">PropertyAliases.txt</a> and
+
+       <p align="left">The recommended names (identifiers) for UCD properties and property values are in <a href="#Prop">PropertyAliases.txt</a> and
             <a href="#PropValue">PropertyValueAliases.txt</a>. There
 			are both abbreviated names and longer, more descriptive names. It is
 			strongly recommended that both names be recognized, and that loose
@@ -1190,13 +1112,13 @@ Expressions involving List properties may be tested for containment, but may hav
 			match.
 		</p>
 		<blockquote>
-		<pre><span class='changed'>CHARACTER_CLASS := POSITIVE_SPEC | NEGATIVE_SPEC
+		<pre>CHARACTER_CLASS := POSITIVE_SPEC | NEGATIVE_SPEC
 
-</span>ITEM            := POSITIVE_SPEC | NEGATIVE_SPEC<br>
+ITEM            := POSITIVE_SPEC | NEGATIVE_SPEC<br>
 POSITIVE_SPEC   := (&quot;\p{&quot; PROP_SPEC &quot;}&quot;) | (&quot;[:&quot; PROP_SPEC &quot;:]&quot;)<br> 
 NEGATIVE_SPEC   := (&quot;\P{&quot; PROP_SPEC &quot;}&quot;) | (&quot;[:^&quot; PROP_SPEC &quot;:]&quot;)<br> 
 PROP_SPEC&nbsp;      := &lt;binary_unicode_property&gt;<br> 
-PROP_SPEC&nbsp;      := &lt;unicode_property&gt; (&quot;:&quot; | &quot;=&quot; | &quot;≠&quot; | &quot;!=&quot; ) <span class='changed'>PROP_</span>VALUE<br> 
+PROP_SPEC&nbsp;      := &lt;unicode_property&gt; (&quot;:&quot; | &quot;=&quot; | &quot;≠&quot; | &quot;!=&quot; ) PROP_VALUE<br> 
 PROP_SPEC&nbsp;      := &lt;script_or_category_property_value&gt;&nbsp;(&quot;|&quot; &lt;script_or_category_property_value&gt;)*<br> 
 PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicode_property_value&gt;)*
 		</pre>
@@ -1250,7 +1172,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 				<td><span class="regex">\p{Whitespace}</span></td>
 				<td>anything that has binary property value Whitespace = True</td>
 			</tr>
-		  <tr class='changed'>
+		  <tr>
 			  <td class="regex">\p{scx=Kana}</td>
 			  <td>The match is to all characters whose Script_Extensions property value <em>includes</em> the specified value(s). So this expression matches U+30FC, which has the Script_Extensions value {Hira, Kana}</td>
 		  </tr>
@@ -1284,23 +1206,23 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 					consisting of the following:
 					<ul>
 						<li><a
-							href="http://unicode.org/reports/tr44/#General_Category">General_Category</a></li>
-						<li><a href="http://unicode.org/reports/tr44/#Script">Script</a> and <a
-								href="http://unicode.org/reports/tr44/#Script_Extensions">Script_Extensions</a></li>
-						<li><a href="http://unicode.org/reports/tr44/#Alphabetic">Alphabetic</a></li>
-						<li><a href="http://unicode.org/reports/tr44/#Uppercase">Uppercase</a></li>
-						<li><a href="http://unicode.org/reports/tr44/#Lowercase">Lowercase</a></li>
-						<li><a href="http://unicode.org/reports/tr44/#White_Space">White_Space</a></li>
+							href="https://www.unicode.org/reports/tr44/#General_Category">General_Category</a></li>
+						<li><a href="https://www.unicode.org/reports/tr44/#Script">Script</a> and <a
+								href="https://www.unicode.org/reports/tr44/#Script_Extensions">Script_Extensions</a></li>
+						<li><a href="https://www.unicode.org/reports/tr44/#Alphabetic">Alphabetic</a></li>
+						<li><a href="https://www.unicode.org/reports/tr44/#Uppercase">Uppercase</a></li>
+						<li><a href="https://www.unicode.org/reports/tr44/#Lowercase">Lowercase</a></li>
+						<li><a href="https://www.unicode.org/reports/tr44/#White_Space">White_Space</a></li>
 						<li><a
-							href="http://unicode.org/reports/tr44/#Noncharacter_Code_Point">Noncharacter_Code_Point</a></li>
+							href="https://www.unicode.org/reports/tr44/#Noncharacter_Code_Point">Noncharacter_Code_Point</a></li>
 						<li><a
-							href="http://unicode.org/reports/tr44/#Default_Ignorable_Code_Point">Default_Ignorable_Code_Point</a></li>
+							href="https://www.unicode.org/reports/tr44/#Default_Ignorable_Code_Point">Default_Ignorable_Code_Point</a></li>
 						<li>ANY, ASCII, ASSIGNED</li>
 					</ul> The values for these properties must follow the Unicode
 					definitions, and include the property and property value aliases
 					from the UCD. Matching of Binary, Enumerated, Catalog, and Name
 					values, must follow the <a
-					href="http://unicode.org/reports/tr44/#Matching_Rules">Matching
+					href="https://www.unicode.org/reports/tr44/#Matching_Rules">Matching
 						Rules</a> from [<a href="#UAX44">UAX44</a>] with one exception:
                     implementations are not required to ignore an initial prefix string of "is" in property values.
 				</td>
@@ -1340,7 +1262,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 		</p>
         <p>
             Ignoring an initial "is" in property values is optional.
-            Loose matching rule <a href="http://unicode.org/reports/tr44/#UAX44-LM3">UAX44-LM3</a>
+            Loose matching rule <a href="https://www.unicode.org/reports/tr44/#UAX44-LM3">UAX44-LM3</a>
             in [<a href="#UAX44">UAX44</a>] specifies that occurrences of an initial prefix of "is" are ignored,
             so that, for example, "Greek" and "isGreek" are equivalent as property values.
             Because existing implementations of regular expressions commonly make distinctions based
@@ -1360,17 +1282,9 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 				class="regex">\p{script=latin}</span> the syntax could be <span
 				class="regex">\p{script_latin}</span>.
 		</p>
-		<p class='removed'>
-			When property<sub>x</sub> is defined to have values that are sets of
-			other values, the notation \p{property<sub>x</sub>=value<sub>y</sub>}
-			represents the set of all code points whose property values <em>contain</em>
-			value<sub>y</sub>. For example, the Script_Extensions property value
-			for U+30FC ( ー ) is the set {Hiragana, Katakana}. So U+30FC ( ー ) is
-			contained in \p{Script_Extensions=Hiragana}, and is also contained in
-			\p{Script_Extensions=Katakana}.
-		</p>
+
 		<h4>
-			1.2.<span class='changed'>5</span> <a name="General_Category_Property"
+			1.2.5 <a name="General_Category_Property"
 				href="#General_Category_Property">General Category Property</a>
 		</h4>
 		<p>
@@ -1381,7 +1295,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 			is the uppercase first character except for separators, which use Z.
 			The official data mapping Unicode characters to the General_Category
 			value is in <a
-				href="http://www.unicode.org/Public/UCD/latest/ucd/UnicodeData.txt">UnicodeData.txt</a>.
+				href="https://www.unicode.org/Public/UCD/latest/ucd/UnicodeData.txt">UnicodeData.txt</a>.
 		</p>
 		<p>
 			Each of these categories has different subcategories. For example,
@@ -1635,7 +1549,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 		</div>
 		<p>&nbsp;</p>
 		<h4>
-			1.2.<span class="changed">6</span> <a name="Script_Property" href="#Script_Property">
+			1.2.6 <a name="Script_Property" href="#Script_Property">
 				Script and Script Extensions Properties</a>
 		</h4>
 		<p>
@@ -1644,7 +1558,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 			the General Category. In particular, Unicode characters are also
 			divided into scripts as described in UAX #24, <em>Unicode
 					Script Property</em> [<a href="#UAX24">UAX24</a>] (for the data file,
-			see <a href="http://www.unicode.org/Public/UCD/latest/ucd/Scripts.txt">Scripts.txt</a>). 
+			see <a href="https://www.unicode.org/Public/UCD/latest/ucd/Scripts.txt">Scripts.txt</a>). 
 			Using a property such as <span
 				class="regex">\p{sc=Greek}
 			</span> allows implementations to test whether letters are Greek or not.
@@ -1741,17 +1655,17 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 			description in [<a href="#UAX24">UAX24</a>]. The values for Script_Extensions are likely be extended over
 			time as new information is gathered on the use of characters with
 			different scripts. For more information, see <a
-				href="http://unicode.org/reports/tr24/#Script_Extensions">
+				href="https://www.unicode.org/reports/tr24/#Script_Extensions">
 				        The Script_Extensions Property</a>
                 in UAX #24, <em>Unicode Script Property</em> 
                 [<a href="#UAX24">UAX24</a>].
 		</p>
 		<h4>
-			1.2.<span class="removed">7</span><a name="Age" href="#Age">Age</a>
+			1.2.7 <a name="Age" href="#Age">Age</a>
 		</h4>
 		<p>
 			As defined in the Unicode Standard, the Age property (in the <a
-				href="http://www.unicode.org/Public/UCD/latest/ucd/DerivedAge.txt">DerivedAge</a>
+				href="https://www.unicode.org/Public/UCD/latest/ucd/DerivedAge.txt">DerivedAge</a>
 			data file in the UCD) specifies the first version of the standard in
 			which each character was assigned. It does not refer to how long it
 			has been encoded, nor does it indicate the historic status of the
@@ -1769,7 +1683,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 		</p>
 
 		<h4>
-			1.2.<span class="changed">8</span> <a name="Blocks" href="#Blocks">Blocks</a>
+			1.2.8 <a name="Blocks" href="#Blocks">Blocks</a>
 		</h4>
 		<p>
 			Unicode blocks have an associated enumerated property, the Block
@@ -1807,28 +1721,25 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 		</table>
 		<p>The following is an example of a syntax extension to handle set operations:</p>
 		<blockquote>
-			<pre><span class='removed'>ITEM&nbsp;&nbsp;&nbsp;&nbsp; := &quot;[&quot; ITEM &quot;]&quot; // for grouping<br>
-</span>OPERATOR <span class='removed'>:= &quot;&quot;   // no separator = union<br>
-         := &quot;||&quot; // union: A∪B<br>
-         </span>:= &quot;&amp;&amp;&quot; // intersection<span class='changed'>: A∩B</span><br>
-         := &quot;--&quot; // set difference<span class='changed'>: A∖B</span><br>
-         := &quot;~~&quot; // symmetric difference<span class='changed'>: (A∪B)\(A∩B)</span><br></pre>
+			<pre>OPERATOR := &quot;&amp;&amp;&quot; // intersection: A∩B<br>
+         := &quot;--&quot; // set difference: A∖B<br>
+         := &quot;~~&quot; // symmetric difference: (A∪B)\(A∩B)<br></pre>
 		</blockquote>
 		<p>
 			The <a
-				href="http://mathworld.wolfram.com/SymmetricDifference.html">symmetric
-		difference</a> of two sets is <span class="changed">is defined as being the union minus the intersection, that is (A∪B)\(A∩B), or equivalently, the union of the asymmetric differences (A\B)∪(B\A).</span></p>
-		<p> <span class='changed'>There are two ways of adding syntax while maintaining backwards compatibility. One choice is to double the symbols, as in</span> the 
-			above notation<span class="changed">, which</span> allows the operators
+				href="https://mathworld.wolfram.com/SymmetricDifference.html">symmetric
+		difference</a> of two sets is defined as being the union minus the intersection, that is (A∪B)\(A∩B), or equivalently, the union of the asymmetric differences (A\B)∪(B\A).</p>
+		<p> There are two ways of adding syntax while maintaining backwards compatibility. One choice is to double the symbols, as in the 
+			above notation, which allows the operators
 		to appear adjacent to ranges without ambiguity, such as <span
-				class="regex">[\p{letter}--a-z]</span>.<span class='changed'> Alternatively, an engine can have  syntax that requires that both sides of every operator be sets or property expressions: <span class="regex">[\p{letter}-[a-z]</span>], which is arguably clearer.</span></p>
-		<p class='changed'>For discussions of support by various engines, see:</p>
-		<ul class='changed'>
+				class="regex">[\p{letter}--a-z]</span>. Alternatively, an engine can have  syntax that requires that both sides of every operator be sets or property expressions: <span class="regex">[\p{letter}-[a-z]</span>], which is arguably clearer.</p>
+		<p>For discussions of support by various engines, see:</p>
+		<ul>
 		  <li><a href="https://www.regular-expressions.info/charclassintersect.html">https://www.regular-expressions.info/charclassintersect.html</a></li>
 		  <li><a href="https://www.regular-expressions.info/charclasssubtract.html">https://www.regular-expressions.info/charclasssubtract.html</a></li>
       </ul>
 		<p>
-			Binding or precedence may vary by regular expression engine, so <span class="changed">as a user</span> it is
+			Binding or precedence may vary by regular expression engine, so as a user it is
 			safest to always disambiguate using brackets to be sure. In
 			particular, precedence may put all operators on the same level, or
 		may take union as binding more closely. For example, where A..F stand for expressions, not characters: </p>
@@ -1840,7 +1751,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 				<th>Interpreted as</th>
 				<th>Interpreted as</th>
 			</tr>
-			<tr class='changed'>
+			<tr>
 			  <td rowspan="2" nowrap style="vertical-align:middle"><span class="regex">[AB--CD&amp;&amp;EF]</span></td>
 				<td>Union, intersection, and difference bind at the same level</td>
 				<td><span class="regex">[[[[[AB]--C]D]&amp;&amp;E]F]</span></td>
@@ -1848,7 +1759,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 			    .remove(C).add(D)<br>
 			    .retain(E).add(F)</td>
 			</tr>
-			<tr class='changed'>
+			<tr>
 				<td>Union binds more closely than difference or intersection</td>
 				<td><span class="regex">[[[AB]--[CD]]&amp;&amp;[EF]]</span></td>
 				<td>clone(A).add(B)<br>
@@ -1857,7 +1768,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 			</tr>
 		</table>
 		</div>
-		<p><span class="changed">Binding at the same level is used in this specification.</span></p>
+		<p>Binding at the same level is used in this specification.</p>
 		<p>The following table shows various examples of set subtraction:</p>
 		<div align="center">
 		<table class="subtle">
@@ -1888,14 +1799,14 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 				<td>all assigned characters except for hex digits (using
 					a broad definition)</td>
 			</tr>
-		  <tr class='changed'>
+		  <tr>
 			  <td><span class="regex">[\p{letter}~~\p{ascii}]</span></td>
 			  <td>either <em>letter</em> or <em>ascii</em>, but not both. Equivalent to<br>			    
 		      <span class="regex">[[\p{letter}\p{ascii}]--[\p{letter}&amp;&amp;\p{ascii}]]</span></td>
 		  </tr>
 		</table>
 		</div>
-<div class='changed'>
+
 		<p>The boolean expressions can also involve properties of strings or <em><a href="#Character_Ranges_with_Strings">Character Classes with strings</a></em>. The only restriction is that  the complete boolean expression, once resolved, cannot be a negated set of strings. Thus  the following matches all code points that neither have a Script value of Greek nor are in Basic_Emoji:</p>
         <blockquote class="regex">[^[\p{Script=Greek} -- \p{Basic_Emoji}]]</blockquote>
         <p>whereas the following is malformed, and should result in a syntax error:</p>
@@ -1903,7 +1814,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
     <p>For more information, see 
 	<a href="#Resolving_Character_Ranges_with_Strings"><em>Annex D: Resolving Character Classes with Strings</em></a> and 
     <em>Section 2.2.1 <a href="#Character_Ranges_with_Strings">Character Classes with Strings</a></em>.</p>
-</div>
+
 		<h3>
 			1.4 <a name="Simple_Word_Boundaries"
 				href="#Simple_Word_Boundaries">Simple Word Boundaries</a>
@@ -1930,7 +1841,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 						<li>The class of <span class="regex">&lt;word_character&gt;</span>
 							includes all the Alphabetic values from the Unicode character
 							database, from <a
-							href="http://www.unicode.org/Public/UCD/latest/ucd/UnicodeData.txt">UnicodeData.txt</a>, plus the decimals
+							href="https://www.unicode.org/Public/UCD/latest/ucd/UnicodeData.txt">UnicodeData.txt</a>, plus the decimals
 							(General_Category=Decimal_Number, or equivalently
 							Numeric_Type=Decimal), and the U+200C ZERO WIDTH NON-JOINER and
 							U+200D ZERO WIDTH JOINER (Join_Control=True). See also <a
@@ -2220,8 +2131,8 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 			</tr>
 		</table>
 		<p>
-			UTF-16 uses pairs of <span class="changed">16-bit</span> code units to express code points above
-			FFFF<sub>16</sub><span class='changed'>, while UTF-8 uses from two to four 8-bit code units to represent code points above 7F<sub>16</sub></span>. Surrogate pairs (or their equivalents in other
+			UTF-16 uses pairs of 16-bit code units to express code points above
+			FFFF<sub>16</sub>, while UTF-8 uses from two to four 8-bit code units to represent code points above 7F<sub>16</sub>. Surrogate pairs (or their equivalents in other
 			encoding forms) are to be handled internally as single code point
 			values. In particular, <span class="regex">[\u{0}-\u{10000}]</span>
 			will match all the following sequence of code units:
@@ -2272,13 +2183,13 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 			</tr>
 		</table>
 		</div>
-<p class='changed'>For backwards compatibility, some regex engines allow for switches to reset matching to be by code unit instead of code point. Such usage is discouraged. For example, in order to match 👎 it is far better to write \u{1F44E) rather than \uD83D\uDC4E (using UTF-16) or \xF0\x9F\x91\x8E (using UTF-8).</p>
+<p>For backwards compatibility, some regex engines allow for switches to reset matching to be by code unit instead of code point. Such usage is discouraged. For example, in order to match 👎 it is far better to write \u{1F44E) rather than \uD83D\uDC4E (using UTF-16) or \xF0\x9F\x91\x8E (using UTF-8).</p>
 		<blockquote>
 		<p>
 			<strong>Note:</strong> It is permissible, but not required, to match
 			an isolated surrogate code point (such as \u{D800}), which may occur
-			in Unicode <span class="changed">16-bit</span> Strings. See <a
-				href="http://www.unicode.org/glossary/#unicode_string">Unicode
+			in Unicode 16-bit Strings. See <a
+				href="https://www.unicode.org/glossary/#unicode_string">Unicode
 				String</a> in the Unicode [<a href="#Glossary">Glossary</a>].		</p>
 		</blockquote>
 
@@ -2384,7 +2295,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 
 		<h3>
 			2.2 <a name="Default_Grapheme_Clusters" href="#Default_Grapheme_Clusters">
-		Extended Grapheme Clusters<span class='changed'> and Character Classes with Strings</span></a></h3>
+		Extended Grapheme Clusters and Character Classes with Strings</a></h3>
 		<p>
 			One or more Unicode characters may make up what the user thinks of as
 			a character. To avoid ambiguity with the computer use of the term <i>character,</i>
@@ -2392,26 +2303,22 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 			+ <i>acute-accent</i> is a grapheme cluster: it is thought of as a
 			single character by users, yet is actually represented by two Unicode
 			characters. The Unicode Standard defines <i>extended grapheme
-			clusters</i> that <span class='changed'>treat certain sequences as units, including</span> Hangul syllables
-            <span class='changed'>and  base characters with</span> combining marks. The precise definition
+			clusters</i> that treat certain sequences as units, including Hangul syllables
+            and  base characters with combining marks. The precise definition
 			is in UAX #29, <em>Unicode Text Segmentation </em>[<a href="#UAX29">UAX29</a>].
-            <span class="removed">These <i>extended</i>
-			grapheme clusters are not the same as <i>tailored</i> grapheme
-			clusters, which are covered in <em>Section 3.2, 
-            <a href="#Tailored_Graphemes_Clusters">Tailored Grapheme Clusters</a></em>.</span>
-	        <span class="changed">However, the  boundary definitions in <a href="http://cldr.unicode.org">CLDR</a> are strongly recommended:
+	        However, the  boundary definitions in <a href="http://cldr.unicode.org">CLDR</a> are strongly recommended:
             they are more comprehensive than those defined in <a href="#UAX29">[UAX29]</a>
-            and include Indic extended grapheme clusters such as <em>ksha</em>.</span></p>
+            and include Indic extended grapheme clusters such as <em>ksha</em>.</p>
 		<table class="noborder">
 			<tr>
 				<td class="rule_head"><a name="RL2.2" href="#RL2.2">RL2.2</a></td>
-				<td class="rule_head">Extended Grapheme Clusters<span class="changed"> and Character Classes with Strings</span></td>
+				<td class="rule_head">Extended Grapheme Clusters and Character Classes with Strings</td>
 			</tr>
 			<tr>
 				<td class="rule_body"></td>
 				<td class="rule_body"><i>To meet this requirement, an
 						implementation shall provide a mechanism for matching against an
-						arbitrary extended grapheme cluster, <span class='removed'>a literal cluster</span><span class='changed'>Character Classes with Strings, and</span> extended grapheme cluster boundaries.</i></td>
+						arbitrary extended grapheme cluster, Character Classes with Strings, and extended grapheme cluster boundaries.</i></td>
 			</tr>
 		</table>
 		<p>
@@ -2465,17 +2372,17 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 			characters (but at least one) to get to the next extended grapheme
 			cluster boundary.
 		</p>
-	  <h4 class='changed'>
+	  <h4>
 			2.2.1 <a name="Character_Ranges_with_Strings" href="#Character_Ranges_with_Strings">Character Classes with Strings</a></h4>
 
 
 		<p>Regular expression engines should also provide some mechanism
-			for easily matching against <i><span class="changed">Character Classes with Strings</span></i>, because they are more
+			for easily matching against <i>Character Classes with Strings</i>, because they are more
 			likely to match user expectations for many languages. One mechanism
-			for doing that is to have explicit syntax for <span class='changed'>strings in Character Classes</span>, as in
-			the following <span class='changed'>addition to the syntax of Section <a href="#character_ranges">0.1.1 Character Classes</a></span>:</p>
+			for doing that is to have explicit syntax for strings in Character Classes, as in
+			the following addition to the syntax of Section <a href="#character_ranges">0.1.1 Character Classes</a>:</p>
 		<blockquote>
-			<pre>ITEM := &quot;\q{&quot; <span class="changed">(</span>CODE_POINT<span class='changed'> (SP CODE_POINT)*)?</span> &quot;}&quot;<br><span class='changed'>SP   := \u{20}</span></pre>
+			<pre>ITEM := &quot;\q{&quot; (CODE_POINT (SP CODE_POINT)*)? &quot;}&quot;<br>SP   := \u{20}</pre>
 		</blockquote>
 		<p>The following table shows examples of use of the \q syntax:</p>
 		<div align="center">
@@ -2486,226 +2393,36 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 			</tr>
 			<tr>
 				<td><span class="regex">[a-z\q{x\u{323}}]</span></td>
-				<td><span class='changed'>The characters </span>a-z, and <span class="changed">the string</span> <em>x with an under-dot</em> (used in American Indian
+				<td>The characters a-z, and the string <em>x with an under-dot</em> (used in American Indian
 					languages)</td>
 			</tr>
 			<tr>
 				<td><span class="regex">[a-z\q{aa}]</span></td>
-				<td><span class="changed">The characters</span> a-z, and <span class="changed">the string</span> <em>aa</em> (treated as a single character in
+				<td>The characters a-z, and the string <em>aa</em> (treated as a single character in
 					Danish)</td>
 			</tr>
 			<tr>
 				<td><span class="regex">[a-z ñ \q{ch} \q{ll} \q{rr}]</span></td>
 				<td>Some lowercase characters in traditional Spanish</td>
 			</tr>
-		  <tr class='changed'>
+		  <tr>
 			  <td>[a-z \q{🧐}\q{🇫🇷}]</td>
 			  <td>Characters a-z and two emoji. Note that this is equivalent to [a-z 🧐\q{🇫🇷}] because the first emoji is a single code point, while the second is two codepoints and thus requires the \q syntax.</td>
 		  </tr>
 		</table>
 		</div>
 		<p>
-		In implementing <span class="changed">Character Classes with strings</span>, the expression 
-        <span class="regex">/[a-m \q{ch} <span class='changed'>\q{chh} </span>\q{rr} <span class='changed'>β-ξ</span>]/</span>
-        should behave as the alternation <span class="regex"><strong>/(<span class="changed">chh | </span>ch | rr | </strong>[a-m<span class="changed">β-ξ</span>])/</span>.
-        Note that <span class="changed">such an alternation must have</span> the strings ordered as longest-first to work
+		In implementing Character Classes with strings, the expression 
+        <span class="regex">/[a-m \q{ch} \q{chh} \q{rr} β-ξ]/</span>
+        should behave as the alternation <span class="regex"><strong>/(chh | ch | rr | </strong>[a-mβ-ξ])/</span>.
+        Note that such an alternation must have the strings ordered as longest-first to work
 			correctly in arbitrary regex engines, because some regex engines try
-		the leftmost matching alternative first. <span class='changed'>Therefore it does not work to have shorter strings first. The exception is where those shorter strings  are not initial substrings of longer strings.</span></p>
-		<p class="changed">If the implementation supports empty	alternations,	such as (ab|[ac-m]|), then it can also handle empty strings: [\q{ab}[ac-m]\q{}]. </p>
-		<p class="changed">Of course, such alternations can be optimized internally for speed and/or memory, such as (ab|[ac-m]|) → ((ab?)|[c-m]|).</p>
-		<p class='changed'>Like properties of strings, negated Character Classes with strings need to be handled specially: see 
-		  <a href="#Resolving_Character_Ranges_with_Strings">Annex D:
-	  Resolving Character Classes with Strings</a>.</p>
-		<div class='removed'>
-		<p >
-			Matching a <i>complemented</i> set containing strings like \q{ch} may
-			behave differently in the two different modes: the normal mode where
-			code points are the unit of matching, or the mode where extended
-			grapheme clusters are the unit of matching. That is, the expression <span
-				class="regex">[^ a-m \q{ch} \q{rr}]</span> should behave in the
-			following way:
-		</p>
-		<div align="center">
-		<table class="subtle">
-			<tr>
-				<th>Mode</th>
-				<th>Behavior</th>
-				<th>Description</th>
-			</tr>
-			<tr>
-				<td>normal</td>
-				<td nowrap><span class="regex">(?! ch | rr | [a-m] )<br>
-						[\u{0}-\u{10FFFF}]</span></td>
-				<td>failing with strings starting with a-m, ch, or rr, and
-					otherwise advancing by one code point</td>
-			</tr>
-			<tr>
-				<td>grapheme cluster</td>
-				<td nowrap><span class="regex">(?! ch | rr | [a-m] )<br>
-						\X</span></td>
-				<td>failing with strings starting with a-m, ch, or rr, and
-					otherwise advancing by one extended grapheme cluster</td>
-			</tr>
-		</table>
-		</div>
-		<p>
-			A<span class="changed">n extended</span> character set containing strings like <span class="regex">\q{ch}</span>
-			plus embedded complement operations is interpreted as if the
-			complement were pushed up to the top of the expression, using the
-			following rewrites recursively:
-		</p>
-		<div align="center">
-			<table class="subtle">
-				<tr>
-					<th>Original</th>
-					<th>Rewrite</th>
-				</tr>
-				<tr>
-					<td align="center" bgcolor="#eeeeee" style="text-align: center">^^x
-					</td>
-					<td align="center" style="text-align: center">x</td>
-				</tr>
-				<tr>
-					<td align="center" bgcolor="#eeeeee" style="text-align: center">^x
-						|| ^y</td>
-					<td align="center" style="text-align: center">^(x &amp;&amp;
-						y)</td>
-				</tr>
-				<tr>
-					<td align="center" bgcolor="#eeeeee" style="text-align: center">^x
-						|| y</td>
-					<td align="center" style="text-align: center">^(x -- y)</td>
-				</tr>
-				<tr>
-					<td align="center" bgcolor="#eeeeee" style="text-align: center">x
-						|| ^y</td>
-					<td align="center" style="text-align: center">^(y -- x)</td>
-				</tr>
-				<tr>
-					<td align="center" bgcolor="#eeeeee" style="text-align: center">^x
-						&amp;&amp; ^y</td>
-					<td align="center" rowspan="2"
-						style="vertical-align: middle; text-align: center">^(x || y)
-					</td>
-				</tr>
-				<tr>
-					<td align="center" bgcolor="#eeeeee" style="text-align: center">^x
-						-- y</td>
-				</tr>
-				<tr>
-					<td align="center" bgcolor="#eeeeee" style="text-align: center">^x
-						&amp;&amp; y</td>
-					<td align="center" rowspan="2"
-						style="vertical-align: middle; text-align: center">y -- x</td>
-				</tr>
-				<tr>
-					<td align="center" bgcolor="#eeeeee" style="text-align: center">^x
-						-- ^y</td>
-				</tr>
-				<tr>
-					<td align="center" bgcolor="#eeeeee" style="text-align: center">x
-						&amp;&amp; ^y</td>
-					<td align="center" style="text-align: center">x -- y</td>
-				</tr>
-				<tr>
-					<td align="center" bgcolor="#eeeeee" style="text-align: center">x
-						-- ^y</td>
-					<td align="center" style="text-align: center">x &amp;&amp; y</td>
-				</tr>
-				<tr>
-					<td align="center" bgcolor="#eeeeee" style="text-align: center">^x
-						~~ ^y</td>
-					<td align="center" style="text-align: center">x ~~ y</td>
-				</tr>
-				<tr>
-					<td align="center" bgcolor="#eeeeee" style="text-align: center">^x
-						~~ y</td>
-					<td align="center" rowspan="2"
-						style="vertical-align: middle; text-align: center">^(x ~~ y)</td>
-				</tr>
-				<tr>
-					<td align="center" bgcolor="#eeeeee" style="text-align: center">x
-						~~ ^y</td>
-				</tr>
-			</table>
-		</div>
-		<p>Applying these rewrites results in a simplification of the
-			regex expression. Either the complement operations will be completely
-			eliminated, or a single remaining complement operation will remain at
-			the top level of the expression. Logically, then, the rest of the
-			expression consists of a flat list of characters and/or
-			multi-character strings; matching strings can then can be handled as
-			described above.</p>
-			<h4>
-			2.2.1 <a name="Grapheme_Cluster_Mode" href="#Grapheme_Cluster_Mode">Grapheme
-		Cluster Mode</a></h4>
-		<p>
-			A grapheme cluster mode behaves more like users' expectations for
-			character boundaries, and is especially useful for handling
-			canonically equivalent matching. In a grapheme cluster mode, matches
-			are guaranteed to be on extended grapheme cluster boundaries. Each
-			atomic literal of the pattern matches complete extended grapheme
-			clusters, and thus behaves as if followed by <span class="regex">\b{g}</span>.
-			Atomic literals include: a dot, a character class (like <span
-				class="regex">[a-m]</span>), a sequence of characters (perhaps with
-			some being escaped) that matches as a unit, or syntax that is
-			equivalent to these. Note that in <span class="regex">/abc?/</span>,
-			the <span class="regex">"abc"</span> is not matching as a unit; the <span
-				class="regex">?</span> modifier is only affecting the last
-			character, and thus the <span class="regex">ab</span> and the <span
-				class="regex">c</span> are separate atomic literals. To summarize:
-		</p>
-
-		<div align="center">
-		<table class="subtle">
-			<tr>
-				<th>Syntax</th>
-				<th>Behaves Like
-				<th>Description</th>
-			</tr>
-			<tr>
-				<td><span class="regex">.</span></td>
-				<td><span class="regex">\X</span></td>
-				<td>
-					matches a full extended grapheme cluster going forward
-				</td>
-			</tr>
-			<tr>
-				<td><span class="regex">[abc{gh}]</span></td>
-				<td><span class="regex">[abc{gh}]\b{g}</span></td>
-				<td>matches only if the end point of the match is at a
-					grapheme cluster boundary
-				</td>
-			</tr>
-			<tr>
-				<td><span class="regex">abcd</span></td>
-				<td><span class="regex">abcd\b{g}</span></td>
-				<td>
-					matches only if the end point of the match is at a grapheme cluster
-					boundary
-				</td>
-			</tr>
-		</table>
-		</div>
-
-		<p>
-			Note that subdivisions can modify the behavior in this mode. Normally
-			<span class="regex">/(xy)/</span> is equivalent to <span
-				class="regex">/(x)(y)/</span> in terms of matching (where x and y
-			are arbitrary literal character strings); that is, only the grouping
-			is different. That is not true in grapheme cluster mode, where each
-			atomic literal acts as if it is followed by <span class="regex">\b{g}</span>.</p>
-	  <p>For example, <span class="regex">/(x\u{308})/</span> is not the same
-			as <span class="regex">/(x)(\u{308})/</span> in matching. The former
-			behaves like <span class="regex">/(x\u{308}\b{g})/</span> while the
-			latter behaves like <span class="regex">/(x\b{g})(\u{308}\b{g})/</span>.
-			The latter will never match in grapheme cluster mode, since it would
-			only match if there were a grapheme cluster boundary after the x and
-			if x is followed by \u{308}, but that can never happen
-			simultaneously.</p>
-
-</div>
-	  <h3>
+		the leftmost matching alternative first. Therefore it does not work to have shorter strings first. The exception is where those shorter strings  are not initial substrings of longer strings.</p>
+		<p>If the implementation supports empty	alternations,	such as (ab|[ac-m]|), then it can also handle empty strings: [\q{ab}[ac-m]\q{}]. </p>
+		<p>Of course, such alternations can be optimized internally for speed and/or memory, such as (ab|[ac-m]|) → ((ab?)|[c-m]|).</p>
+		<p>Like properties of strings, negated Character Classes with strings need to be handled specially: see 
+		  <a href="#Resolving_Character_Ranges_with_Strings">Annex D: Resolving Character Classes with Strings</a>.</p>
+		<h3>
 			2.3 <a name="Default_Word_Boundaries" href="#Default_Word_Boundaries">
 				Default Word Boundaries</a>
 		</h3>
@@ -2808,7 +2525,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 			properties in the UCD, as described in UAX #44, <em>Unicode
 					Character Database</em> [<a href="#UAX44">UAX44</a>], or computed as in
 			the case of CJK Ideographs or Hangul Syllables. Name matching rules
-			follow <a href="http://unicode.org/reports/tr44/#Matching_Rules">Matching
+			follow <a href="https://www.unicode.org/reports/tr44/#Matching_Rules">Matching
 				Rules</a> from [<a href="#UAX44">UAX44#UAX44-LM2</a>].
 		</p>
 		<p>The following provides examples of usage:</p>
@@ -2827,7 +2544,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 				<td><span class="regex">\p{name=zerowidthno breakspace}</span></td>
 				<td>[\u{FEFF}]</td>
 				<td>using the Name property, and <a
-					href="http://unicode.org/reports/tr44/#Matching_Rules">Matching
+					href="https://www.unicode.org/reports/tr44/#Matching_Rules">Matching
 						Rules</a> [<a href="#UAX44">UAX44</a>]
 				</td>
 			<tr>
@@ -2856,7 +2573,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 			Certain code points are not assigned names or name aliases in the
 			standard. With the exception of &quot;reserved&quot;, these should be
 			given names based on <em><a
-				href="http://www.unicode.org/reports/tr44/#Label_Tags_Table">Code
+				href="https://www.unicode.org/reports/tr44/#Label_Tags_Table">Code
 					Point Label Tags</a></em> table in [<a href="#UAX44">UAX44</a>],
 					as shown in the following examples:
 		</p>
@@ -2892,7 +2609,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 		</div>
 		<p>
 			Characters with the &lt;reserved&gt; tag in the <a
-				href="http://www.unicode.org/reports/tr44/#Label_Tags_Table">Code
+				href="https://www.unicode.org/reports/tr44/#Label_Tags_Table">Code
 				Point Label Tags</a> table of [<a href="#UAX44">UAX44</a>] are <em>excluded</em>:
 			the syntax \p{reserved-058F} would mean that the code point U+058F is
 			unassigned. While this code point was unassigned in Unicode 6.0, it <em>is</em>
@@ -2906,7 +2623,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 			introduced.</p>
 		<p>Previous versions of this specification recommended supporting
 			ISO control names from the Unicode 1.0 name field. These names are
-			now covered by the name aliases<span class='changed'> (see <a href="https://www.unicode.org/Public/UCD/latest/ucd/NameAliases.txt">NameAliases.txt</a>)</span>.In four cases, the name field
+			now covered by the name aliases (see <a href="https://www.unicode.org/Public/UCD/latest/ucd/NameAliases.txt">NameAliases.txt</a>).In four cases, the name field
 			included both the ISO control name as well as an abbreviation in
 			parentheses.</p>
 <blockquote>
@@ -2925,8 +2642,8 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 </blockquote>
 <p>The \p{name=...} syntax can be used meaningfully with
 				wildcards (see <em>Section 2.6 <a href="#Wildcard_Properties">Wildcards
-						in Property Values</a></em>). For example, in Unicode <span class='changed'>6</span>.1, \p{name=/ALIEN/}
-		would <span class='changed'>include</span> a set of two characters: </p>
+						in Property Values</a></em>). For example, in Unicode 6.1, \p{name=/ALIEN/}
+		would include a set of two characters: </p>
         <ul>
           <li>U+1F47D ( 👽 ) EXTRATERRESTRIAL ALIEN,</li>
           <li>U+1F47E ( 👾 ) ALIEN MONSTER	</li>
@@ -2941,42 +2658,24 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 		</h4>
 		<p>The following provides syntax for specifying a code point by
 			supplying the precise name. This syntax specifies a single code
-	  point, which can thus be used <span class="changed">wherever \u{...} can be used</span>.</p>
+	  point, which can thus be used wherever \u{...} can be used.</p>
 		<blockquote>
 			<pre>&lt;codepoint&gt; := &quot;\N{&quot; &lt;character_name&gt; &quot;}&quot;</pre>
 		</blockquote>
 		<p>The \N syntax is related to the syntax \p{name=...}, but there
-			are <span class='removed'>three</span> important distinctions:</p>
+			are important distinctions:</p>
 		<ol>
-			<li>\N matches a single character <span class='removed'>or a sequence</span>, while \p
-				matches a set of characters<span class='changed'> (when using wildcards).</span></li>
+			<li>\N matches a single character, while \p
+				matches a set of characters (when using wildcards).</li>
 			<li>The \p{name=&lt;character_name&gt;} may silently fail, if no
 				character exists with that name. The \N syntax should instead cause
 				a syntax error for an undefined name.			</li>
 		</ol>
-		<p>The namespace for the <span class='changed'>\N</span>{name=...} syntax is the namespace
+		<p>The namespace for the \N{name=...} syntax is the namespace
 		for character names plus name aliases. Name matching rules
-			follow <a href="http://unicode.org/reports/tr44/#Matching_Rules">Matching
+			follow <a href="https://www.unicode.org/reports/tr44/#Matching_Rules">Matching
 		Rules</a> from [<a href="#UAX44">UAX44#UAX44-LM2</a>].</p>
-		<p class='removed'>As with other property values, names should use a loose match,
-		  disregarding case, spaces and hyphen (the underbar character
-		  &quot;_&quot; cannot occur in Unicode character names). An
-		  implementation may also choose to allow namespaces, where some prefix
-		  like &quot;LATIN LETTER&quot; is set globally and used if there is no
-		  match otherwise.		</p>
-		<p class='removed'>There are, however, three instances that require special-casing
-			with loose matching, where an extra test shall be made for the
-			presence or absence of a hyphen.</p>
-		<ul class='removed'>
-			<li>U+0F68 TIBETAN LETTER A and<br> U+0F60 TIBETAN
-					LETTER <b>-A</b>
-			</li>
-			<li>U+0FB8 TIBETAN SUBJOINED LETTER A and<br> U+0FB0
-					TIBETAN SUBJOINED LETTER <b>-A</b>
-			</li>
-			<li>U+116C HANGUL JUNGSEONG OE and<br> U+1180 HANGUL
-					JUNGSEONG <b>O-E</b></li>
-		</ul>
+
 		<p>The following table gives examples of the \N syntax:</p>
 		<div align="center">
 			<table class="subtle">
@@ -3057,7 +2756,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 		<div align="center">
 		<table class="subtle">
 			<tr>
-				<th>Expression</th>
+				<th style="width: 317px">Expression</th>
 				<th>Matched Set</th>
 			</tr>
 			<tr>
@@ -3065,7 +2764,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 						(U+0062) in the value:</td>
 			</tr>
 			<tr>
-				<td nowrap><a
+				<td nowrap style="width: 317px"><a
 					href="http://unicode.org/cldr/utility/list-unicodeset.jsp?a=%5cp%7btoNfd=/b/%7d">\p{toNfd=/b/}</a></td>
 				<td>U+0062 ( b ) LATIN SMALL LETTER B<br>
 						U+1E03 ( ḃ ) LATIN SMALL LETTER B WITH DOT ABOVE<br> 
@@ -3073,11 +2772,11 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 						U+1E07 ( ḇ ) LATIN SMALL LETTER B WITH LINE BELOW</td>
 			</tr>
 			<tr>
-				<td colspan="2" class="gray_background"><span class="changed">Characters with names containing
-						"SMILING FACE" or "GRINNING FACE":</span></td>
+				<td colspan="2" class="gray_background">Characters with names containing
+						"SMILING FACE" or "GRINNING FACE":</td>
 			</tr>
-			<tr class="changed">
-				<td nowrap><a
+			<tr>
+				<td nowrap style="width: 317px"><a
 					href="http://unicode.org/cldr/utility/list-unicodeset.jsp?a=%5cp%7bname=/(SMILING%7cGRINNING)%20FACE/%7d">
                              \p{name=/(SMILING|GRINNING) FACE/}</a></td>
 				<td>U+263A ( ☺️ ) WHITE SMILING FACE<br>
@@ -3100,24 +2799,14 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 				</td>
 			</tr>
 			<tr>
-				<td colspan="2" class="gray_background"><span class="removed">Characters with names starting with &quot;LATIN
-						LETTER&quot; and ending with &quot;P&quot;:</span></td>
-			</tr>
-			<tr class="removed">
-				<td nowrap><a
-					href="http://unicode.org/cldr/utility/list-unicodeset.jsp?a=%5cp%7bname=/%5eLATIN%20LETTER.*P$/%7d">
-                             \p{name=/^LATIN LETTER.*P$/}</a></td>
-				<td>U+01AA ( ƪ ) LATIN LETTER REVERSED ESH LOOP<br> 
-					U+0294 ( ʔ ) LATIN LETTER GLOTTAL STOP<br> 
-					U+0296 ( ʖ ) LATIN LETTER INVERTED GLOTTAL STOP<br> 
-					U+1D18 ( ᴘ ) LATIN LETTER SMALL CAPITAL P</td>
+				<td colspan="2" class="gray_background"></td>
 			</tr>
 			<tr>
 				<td colspan="2" class="gray_background">Characters with names containing
 						&quot;VARIATION&quot; or &quot;VARIANT&quot;:</td>
 			</tr>
 			<tr>
-				<td nowrap><a
+				<td nowrap style="width: 317px"><a
 					href="http://unicode.org/cldr/utility/list-unicodeset.jsp?a=%5cp%7bname=/VARIA(TION%7cNT)/%7d">\p{name=/VARIA(TION|NT)/}</a></td>
 				<td>U+180B (&nbsp; ) MONGOLIAN FREE VARIATION SELECTOR ONE<br> 
 					… U+180D (&nbsp; ) MONGOLIAN FREE VARIATION SELECTOR THREE<br> 
@@ -3144,11 +2833,10 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 						with different toLowercase values:</td>
 			</tr>
 			<tr>
-				<td nowrap> <a class="changed" href=
+				<td nowrap style="width: 317px"> <a href=
 				    "http://unicode.org/cldr/utility/list-unicodeset.jsp?a=%5cp%7bBlock=Letterlike%20Symbols%7d-%5cp%7btoLowercase=@cp@%7d">
 					\p{Block=Letterlike Symbols}<br>-\p{toLowercase=@cp@}</a>
-                    <span class="removed"><br>[\p{toLowercase≠@cp@}<br> &amp;
-					\p{Block=Letterlike Symbols}</span></td>
+                </td>
 				<td>U+2126 ( Ω ) OHM SIGN<br> 
 					U+212A ( K ) KELVIN SIGN<br>
 					U+212B ( Å ) ANGSTROM SIGN<br> 
@@ -3209,13 +2897,13 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 				<td class="rule_body"></td>
 				<td><i>To meet this requirement, an implementation shall
 						support all of the properties listed below that are in the
-						supported version of <span class='changed'>the </span>Unicode<span class='changed'> Standard (or Unicode Technical Standard, respectively)</span>, with values that match the Unicode
+						supported version of the Unicode Standard (or Unicode Technical Standard, respectively), with values that match the Unicode
 						definitions for that version.</i></td>
 			</tr>
 		</table>
 		<p>To meet requirement RL2.7, the implementation must satisfy the
 			Unicode definition of the properties for the supported version of
-			Unicode<i><span class="changed"> (or Unicode Technical Standard, respectively)</span></i>, rather than other possible definitions. However, the names
+			Unicode<i> (or Unicode Technical Standard, respectively)</i>, rather than other possible definitions. However, the names
 			used by the implementation for these properties may differ from the
 			formal Unicode names for the properties. For example, if a regex
 			engine already has a property called &quot;Alphabetic&quot;, for
@@ -3228,7 +2916,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 			Unicode_Radical_Stroke, and the Unihan properties. The properties shown in the table with a
 			<span class="gray_background">gray background</span> are covered by <a href="#RL1.2">RL1.2</a> Properties. For
 			more information on properties, see UAX #44, <em>Unicode
-		Character Database</em> [<a href="#UAX44">UAX44</a>].<span class='changed'> Properties marked with * are properties of strings, not just single code points.</span></p>
+		Character Database</em> [<a href="#UAX44">UAX44</a>]. Properties marked with * are properties of strings, not just single code points.</p>
 		<div align="center">
 		  <table class="subtle">
 				<tr>
@@ -3237,236 +2925,236 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 					<th>Shaping and Rendering</th>
 				</tr>
 				<tr>
-					<td><a href="http://unicode.org/reports/tr44/#Name">Name</a> (<a
-						href="http://unicode.org/reports/tr44/#Name_Alias">Name_Alias</a>)</td>
-					<td><a href="http://unicode.org/reports/tr44/#Uppercase"
+					<td><a href="https://www.unicode.org/reports/tr44/#Name">Name</a> (<a
+						href="https://www.unicode.org/reports/tr44/#Name_Alias">Name_Alias</a>)</td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Uppercase"
 						class="gray_background">Uppercase</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#Join_Control">Join_Control</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Join_Control">Join_Control</a></td>
 				</tr>
 				<tr>
-					<td><a href="http://unicode.org/reports/tr44/#Block">Block</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#Lowercase"
+					<td><a href="https://www.unicode.org/reports/tr44/#Block">Block</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Lowercase"
 						class="gray_background">Lowercase</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#Joining_Group">Joining_Group</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Joining_Group">Joining_Group</a></td>
 				</tr>
 				<tr>
-					<td><a href="http://unicode.org/reports/tr44/#Age">Age</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Age">Age</a></td>
 					<td><a
-						href="http://unicode.org/reports/tr44/#Simple_Lowercase_Mapping">Simple_Lowercase_Mapping</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#Joining_Type">Joining_Type</a></td>
+						href="https://www.unicode.org/reports/tr44/#Simple_Lowercase_Mapping">Simple_Lowercase_Mapping</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Joining_Type">Joining_Type</a></td>
 				</tr>
 				<tr>
 					<td><a
-						href="http://unicode.org/reports/tr44/#General_Category"
+						href="https://www.unicode.org/reports/tr44/#General_Category"
 						class="gray_background">General_Category</a></td>
 					<td><a
-						href="http://unicode.org/reports/tr44/#Simple_Titlecase_Mapping">Simple_Titlecase_Mapping</a></td>
-					<td class='changed'><a href="https://unicode.org/reports/tr44/#Vertical_Orientation">Vertical_Orientation</a></td>
+						href="https://www.unicode.org/reports/tr44/#Simple_Titlecase_Mapping">Simple_Titlecase_Mapping</a></td>
+					<td><a href="https://unicode.org/reports/tr44/#Vertical_Orientation">Vertical_Orientation</a></td>
 				</tr>
 				<tr>
-					<td><a href="http://unicode.org/reports/tr44/#Script"
+					<td><a href="https://www.unicode.org/reports/tr44/#Script"
 						class="gray_background">Script</a> (<a
-						href="http://unicode.org/reports/tr44/#Script_Extensions"
+						href="https://www.unicode.org/reports/tr44/#Script_Extensions"
 						class="gray_background">Script_Extensions</a>)</td>
 					<td><a
-						href="http://unicode.org/reports/tr44/#Simple_Uppercase_Mapping">Simple_Uppercase_Mapping</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#Line_Break">Line_Break</a></td>
+						href="https://www.unicode.org/reports/tr44/#Simple_Uppercase_Mapping">Simple_Uppercase_Mapping</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Line_Break">Line_Break</a></td>
 				</tr>
 				<tr>
-					<td><a href="http://unicode.org/reports/tr44/#White_Space"
+					<td><a href="https://www.unicode.org/reports/tr44/#White_Space"
 						class="gray_background">White_Space</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#Simple_Case_Folding">Simple_Case_Folding</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Simple_Case_Folding">Simple_Case_Folding</a></td>
 					<td><a
-						href="http://unicode.org/reports/tr44/#Grapheme_Cluster_Break">Grapheme_Cluster_Break</a></td>
+						href="https://www.unicode.org/reports/tr44/#Grapheme_Cluster_Break">Grapheme_Cluster_Break</a></td>
 				</tr>
 				<tr>
-					<td><a href="http://unicode.org/reports/tr44/#Alphabetic"
+					<td><a href="https://www.unicode.org/reports/tr44/#Alphabetic"
 						class="gray_background">Alphabetic</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#Soft_Dotted">Soft_Dotted</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#Sentence_Break">Sentence_Break</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Soft_Dotted">Soft_Dotted</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Sentence_Break">Sentence_Break</a></td>
 				</tr>
 				<tr>
 					<td><a
-						href="http://unicode.org/reports/tr44/#Hangul_Syllable_Type">Hangul_Syllable_Type</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#Cased">Cased</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#Word_Break">Word_Break</a></td>
+						href="https://www.unicode.org/reports/tr44/#Hangul_Syllable_Type">Hangul_Syllable_Type</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Cased">Cased</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Word_Break">Word_Break</a></td>
 				</tr>
 				<tr>
 					<td><a
-						href="http://unicode.org/reports/tr44/#Noncharacter_Code_Point"
+						href="https://www.unicode.org/reports/tr44/#Noncharacter_Code_Point"
 						class="gray_background">Noncharacter_Code_Point</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#Case_Ignorable">Case_Ignorable</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Case_Ignorable">Case_Ignorable</a></td>
 					<td><a
-						href="http://unicode.org/reports/tr44/#East_Asian_Width">East_Asian_Width</a></td>
+						href="https://www.unicode.org/reports/tr44/#East_Asian_Width">East_Asian_Width</a></td>
 				</tr>
 				<tr>
 					<td><a
-						href="http://unicode.org/reports/tr44/#Default_Ignorable_Code_Point"
+						href="https://www.unicode.org/reports/tr44/#Default_Ignorable_Code_Point"
 						class="gray_background">Default_Ignorable_Code_Point</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#CWL">Changes_When_Lowercased</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#CWL">Changes_When_Lowercased</a></td>
 					<td><a 
-						href="http://unicode.org/reports/tr44/#Prepended_Concatenation_Mark">Prepended_Concatenation_Mark</a></td>
+						href="https://www.unicode.org/reports/tr44/#Prepended_Concatenation_Mark">Prepended_Concatenation_Mark</a></td>
 				</tr>
 				<tr>
-					<td><a href="http://unicode.org/reports/tr44/#Deprecated">Deprecated</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#CWU">Changes_When_Uppercased</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Deprecated">Deprecated</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#CWU">Changes_When_Uppercased</a></td>
 					<td>&nbsp;</td>
 				</tr>
 				<tr>
-					<td><a href="http://unicode.org/reports/tr44/#Logical_Order_Exception">Logical_Order_Exception</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#CWT">Changes_When_Titlecased</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Logical_Order_Exception">Logical_Order_Exception</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#CWT">Changes_When_Titlecased</a></td>
 					<th>Bidirectional</th>
 				</tr>
 				<tr>
-					<td><a href="http://unicode.org/reports/tr44/#Variation_Selector">Variation_Selector</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#CWCF">Changes_When_Casefolded</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#Bidi_Class">Bidi_Class</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Variation_Selector">Variation_Selector</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#CWCF">Changes_When_Casefolded</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Bidi_Class">Bidi_Class</a></td>
 				</tr>
 				<tr>
 					<td>&nbsp;</td>
-					<td><a href="http://unicode.org/reports/tr44/#CWCM">Changes_When_Casemapped</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#Bidi_Control">Bidi_Control</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#CWCM">Changes_When_Casemapped</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Bidi_Control">Bidi_Control</a></td>
 				</tr>
 				<tr>
 					<th>Numeric</th>
 					<td>&nbsp;</td>
-					<td><a href="http://unicode.org/reports/tr44/#Bidi_Mirrored">Bidi_Mirrored</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Bidi_Mirrored">Bidi_Mirrored</a></td>
 				</tr>
 				<tr>
-					<td><a href="http://unicode.org/reports/tr44/#Numeric_Value">Numeric_Value</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Numeric_Value">Numeric_Value</a></td>
 					<th>Normalization</th>
-					<td><a href="http://unicode.org/reports/tr44/#Bidi_Mirroring_Glyph">Bidi_Mirroring_Glyph</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Bidi_Mirroring_Glyph">Bidi_Mirroring_Glyph</a></td>
 				</tr>
 				<tr>
-					<td><a href="http://unicode.org/reports/tr44/#Numeric_Type">Numeric_Type</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#Canonical_Combining_Class">Canonical_Combining_Class</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#Bidi_Paired_Bracket">Bidi_Paired_Bracket</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Numeric_Type">Numeric_Type</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Canonical_Combining_Class">Canonical_Combining_Class</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Bidi_Paired_Bracket">Bidi_Paired_Bracket</a></td>
 				</tr>
 				<tr>
-					<td><a href="http://unicode.org/reports/tr44/#Hex_Digit">Hex_Digit</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#Decomposition_Type">Decomposition_Type</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#Bidi_Paired_Bracket_Type">Bidi_Paired_Bracket_Type</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Hex_Digit">Hex_Digit</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Decomposition_Type">Decomposition_Type</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Bidi_Paired_Bracket_Type">Bidi_Paired_Bracket_Type</a></td>
 				</tr>
 				<tr>
-					<td><a href="http://unicode.org/reports/tr44/#ASCII_Hex_Digit">ASCII_Hex_Digit</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#NFC_Quick_Check">NFC_Quick_Check</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#ASCII_Hex_Digit">ASCII_Hex_Digit</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#NFC_Quick_Check">NFC_Quick_Check</a></td>
 					<td>&nbsp;</td>
 				</tr>
 				<tr>
 					<td>&nbsp;</td>
-					<td><a href="http://unicode.org/reports/tr44/#NFKC_Quick_Check">NFKC_Quick_Check</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#NFKC_Quick_Check">NFKC_Quick_Check</a></td>
 					<th>Miscellaneous</th>
 				</tr>
 				<tr>
 					<th>Identifiers</th>
-					<td><a href="http://unicode.org/reports/tr44/#NFD_Quick_Check">NFD_Quick_Check</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#Math">Math</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#NFD_Quick_Check">NFD_Quick_Check</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Math">Math</a></td>
 				</tr>
 				<tr>
-					<td><a href="http://unicode.org/reports/tr44/#ID_Continue">ID_Continue</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#NFKD_Quick_Check">NFKD_Quick_Check</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#Quotation_Mark">Quotation_Mark</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#ID_Continue">ID_Continue</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#NFKD_Quick_Check">NFKD_Quick_Check</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Quotation_Mark">Quotation_Mark</a></td>
 				</tr>
 				<tr>
-					<td><a href="http://unicode.org/reports/tr44/#ID_Start">ID_Start</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#NFKC_Casefold">NFKC_Casefold</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#Dash">Dash</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#ID_Start">ID_Start</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#NFKC_Casefold">NFKC_Casefold</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Dash">Dash</a></td>
 				</tr>
 				<tr>
-					<td><a href="http://unicode.org/reports/tr44/#XID_Continue">XID_Continue</a></td>
-					<td class="changed"><a href="http://unicode.org/reports/tr44/#CWKCF">Changes_When_NFKC_Casefolded</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#STerm">Sentence_Terminal</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#XID_Continue">XID_Continue</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#CWKCF">Changes_When_NFKC_Casefolded</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#STerm">Sentence_Terminal</a></td>
 				</tr>
 				<tr>
-					<td><a href="http://unicode.org/reports/tr44/#XID_Start">XID_Start</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#XID_Start">XID_Start</a></td>
 					<td>&nbsp;</td>
-					<td><a href="http://unicode.org/reports/tr44/#Terminal_Punctuation">Terminal_Punctuation</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Terminal_Punctuation">Terminal_Punctuation</a></td>
 				</tr>
 				<tr>
-					<td><a href="http://unicode.org/reports/tr44/#Pattern_Syntax">Pattern_Syntax</a></td>
-					<th class='changed'>Emoji</th>
-					<td><a href="http://unicode.org/reports/tr44/#Diacritic">Diacritic</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Pattern_Syntax">Pattern_Syntax</a></td>
+					<th>Emoji</th>
+					<td><a href="https://www.unicode.org/reports/tr44/#Diacritic">Diacritic</a></td>
 				</tr>
 				<tr>
-					<td><a href="http://unicode.org/reports/tr44/#Pattern_White_Space">Pattern_White_Space</a></td>
-					<td class='changed'><a href="https://unicode.org/reports/tr51/#def_emoji_character">Emoji</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#Extender">Extender</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Pattern_White_Space">Pattern_White_Space</a></td>
+					<td><a href="https://unicode.org/reports/tr51/#def_emoji_character">Emoji</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Extender">Extender</a></td>
 				</tr>
-				<tr class='changed'>
+				<tr>
 					<td><a href="https://www.unicode.org/reports/tr39/#General_Security_Profile">Identifier_Status</a></td>
 					<td><a href="https://unicode.org/reports/tr51/#def_emoji_presentation">Emoji_Presentation</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#Grapheme_Base">Grapheme_Base</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Grapheme_Base">Grapheme_Base</a></td>
 				</tr>
 				<tr>
-					<td class='changed'><a href="https://www.unicode.org/reports/tr39/#General_Security_Profile">Identifier_Type</a></td>
-					<td class='changed'><a href="https://unicode.org/reports/tr51/#def_emoji_modifier">Emoji_Modifier</a></td>
-					<td><a href="http://unicode.org/reports/tr44/#Grapheme_Extend">Grapheme_Extend</a></td>
+					<td><a href="https://www.unicode.org/reports/tr39/#General_Security_Profile">Identifier_Type</a></td>
+					<td><a href="https://unicode.org/reports/tr51/#def_emoji_modifier">Emoji_Modifier</a></td>
+					<td><a href="https://www.unicode.org/reports/tr44/#Grapheme_Extend">Grapheme_Extend</a></td>
 				</tr>
 				<tr>
 					<td>&nbsp;</td>
-					<td class='changed'><a href="https://unicode.org/reports/tr51/#def_emoji_modifier_base">Emoji_Modifier_Base</a></td>
-					<td class='changed'><a href="https://unicode.org/reports/tr44/#Regional_Indicator">Regional_Indicator</a></td>
+					<td><a href="https://unicode.org/reports/tr51/#def_emoji_modifier_base">Emoji_Modifier_Base</a></td>
+					<td><a href="https://unicode.org/reports/tr44/#Regional_Indicator">Regional_Indicator</a></td>
 				</tr>
 				<tr>
 				  <th>CJK</th>
-				  <td class='changed'><a href="https://unicode.org/reports/tr51/#def_level2_emoji">Emoji_Component</a></td>
+				  <td><a href="https://unicode.org/reports/tr51/#def_level2_emoji">Emoji_Component</a></td>
 					<td>&nbsp;</td>
 				</tr>
 				<tr>
-				  <td><a href="http://unicode.org/reports/tr44/#Ideographic">Ideographic</a></td>
-				  <td class='changed'><a href="https://unicode.org/reports/tr51/#def_level1_emoji">Extended_Pictographic</a></td>
+				  <td><a href="https://www.unicode.org/reports/tr44/#Ideographic">Ideographic</a></td>
+				  <td><a href="https://unicode.org/reports/tr51/#def_level1_emoji">Extended_Pictographic</a></td>
 					<td>&nbsp;</td>
 				</tr>
 				<tr>
-				  <td><a href="http://unicode.org/reports/tr44/#Unified_Ideograph">Unified_Ideograph</a></td>
-				  <td class='changed'><a href='https://unicode.org/reports/tr51/#def_basic_emoji_set'>Basic_Emoji*</a></td>
+				  <td><a href="https://www.unicode.org/reports/tr44/#Unified_Ideograph">Unified_Ideograph</a></td>
+				  <td><a href='https://unicode.org/reports/tr51/#def_basic_emoji_set'>Basic_Emoji*</a></td>
 					<td>&nbsp;</td>
 				</tr>
 				<tr>
-				  <td><a href="http://unicode.org/reports/tr44/#Radical">Radical</a></td>
-				  <td class='changed'><a href='https://unicode.org/reports/tr51/#def_std_emoji_modifier_sequence_set'>RGI_Emoji_Modifier_Sequence*</a></td>
+				  <td><a href="https://www.unicode.org/reports/tr44/#Radical">Radical</a></td>
+				  <td><a href='https://unicode.org/reports/tr51/#def_std_emoji_modifier_sequence_set'>RGI_Emoji_Modifier_Sequence*</a></td>
 					<td>&nbsp;</td>
 				</tr>
 				<tr>
-				  <td><a href="http://unicode.org/reports/tr44/#IDS_Binary_Operator">IDS_Binary_Operator</a></td>
-				  <td class='changed'><a href='https://unicode.org/reports/tr51/#def_std_emoji_tag_sequence_set'>RGI_Emoji_Tag_Sequence*</a></td>
+				  <td><a href="https://www.unicode.org/reports/tr44/#IDS_Binary_Operator">IDS_Binary_Operator</a></td>
+				  <td><a href='https://unicode.org/reports/tr51/#def_std_emoji_tag_sequence_set'>RGI_Emoji_Tag_Sequence*</a></td>
 				  <td>&nbsp;</td>
 			  </tr>
 				<tr>
-				  <td><a href="http://unicode.org/reports/tr44/#IDS_Trinary_Operator">IDS_Trinary_Operator</a></td>
-				  <td class='changed'><a href='https://unicode.org/reports/tr51/#def_emoji_ZWJ_sequences'>RGI_Emoji_ZWJ_Sequence*</a></td>
+				  <td><a href="https://www.unicode.org/reports/tr44/#IDS_Trinary_Operator">IDS_Trinary_Operator</a></td>
+				  <td><a href='https://unicode.org/reports/tr51/#def_emoji_ZWJ_sequences'>RGI_Emoji_ZWJ_Sequence*</a></td>
 				  <td>&nbsp;</td>
 			  </tr>
 				<tr>
-				  <td class='changed'><a href="https://unicode.org/reports/tr44/#Equivalent_Unified_Ideograph">Equivalent_Unified_Ideograph</a></td>
-				  <td class='changed'><a href='https://unicode.org/reports/tr51/#def_rgi_set'>RGI_Emoji*</a></td>
+				  <td><a href="https://unicode.org/reports/tr44/#Equivalent_Unified_Ideograph">Equivalent_Unified_Ideograph</a></td>
+				  <td><a href='https://unicode.org/reports/tr51/#def_rgi_set'>RGI_Emoji*</a></td>
 				  <td>&nbsp;</td>
 			  </tr>
 			</table>
 		</div>
-	  <p class='changed'>The properties that are not in the UCD provide property metadata in their data file headers that can be used to support property syntax.
+	  <p>The properties that are not in the UCD provide property metadata in their data file headers that can be used to support property syntax.
 		That information  is used to match and validate properties and property values
 	  for syntax such as \p{pname=pvalue}, so that they can be used in the same way as UCD properties. These include the <a href="https://www.unicode.org/reports/tr39/#General_Security_Profile">Identifier_Status</a> and <a href="https://www.unicode.org/reports/tr39/#General_Security_Profile">Identifier_Type</a>, and the Emoji sequence properties.</p>
-		<p>The <a href="http://unicode.org/reports/tr44/#Name">Name</a> and <a
-				href="http://unicode.org/reports/tr44/#Name_Alias">Name_Alias</a>
+		<p>The <a href="https://www.unicode.org/reports/tr44/#Name">Name</a> and <a
+				href="https://www.unicode.org/reports/tr44/#Name_Alias">Name_Alias</a>
 			properties are used in \p{name=…} and \N{…}. The data in
 			NamedSequences.txt is also used in \N{…}. For more information see <em>Section
 				2.5, <a href="#Name_Properties">Name Properties</a>
-			</em>. The <a href="http://unicode.org/reports/tr44/#Script">Script</a>
-			and <a href="http://unicode.org/reports/tr44/#Script_Extensions">Script_Extensions</a>
+			</em>. The <a href="https://www.unicode.org/reports/tr44/#Script">Script</a>
+			and <a href="https://www.unicode.org/reports/tr44/#Script_Extensions">Script_Extensions</a>
 			properties are used in \p{scx=…}. For more information, see <em>Section
-				1.2.<span class="changed">6</span>, <a href="#Script_Property">Script <span class='changed'>and Script Extensions Properties</span></a></em>.</p>
-		<p class='changed'>To test whether a <em>string</em> is in a normalization format such as NFC requires special code. However, there are "quick-check" properties that can detect whether characters are allowed in a normalization format at all. Those can be used for cases like the following, which removes characters that cannot occur in NFC: [\p{<a href="http://unicode.org/reports/tr44/#Alphabetic">Alphabetic</a>}--\p{<a href="http://unicode.org/reports/tr44/#NFC_Quick_Check">NFC_Quick_Check</a>=No}]</p>
-		<p class='changed'>The  Emoji properties can be used to precisely parse text for valid emoji of different kinds, while the <a href="https://unicode.org/reports/tr44/#Equivalent_Unified_Ideograph">Equivalent_Unified_Ideograph</a> can be used to find radicals for unified ideographs (or vice versa): \p{<a href="https://unicode.org/reports/tr44/#Equivalent_Unified_Ideograph">Equivalent_Unified_Ideograph</a>=⼚} matches [⼚⺁厂].</p>
+				1.2.6, <a href="#Script_Property">Script and Script Extensions Properties</a></em>.</p>
+		<p>To test whether a <em>string</em> is in a normalization format such as NFC requires special code. However, there are "quick-check" properties that can detect whether characters are allowed in a normalization format at all. Those can be used for cases like the following, which removes characters that cannot occur in NFC: [\p{<a href="https://www.unicode.org/reports/tr44/#Alphabetic">Alphabetic</a>}--\p{<a href="https://www.unicode.org/reports/tr44/#NFC_Quick_Check">NFC_Quick_Check</a>=No}]</p>
+		<p>The  Emoji properties can be used to precisely parse text for valid emoji of different kinds, while the <a href="https://unicode.org/reports/tr44/#Equivalent_Unified_Ideograph">Equivalent_Unified_Ideograph</a> can be used to find radicals for unified ideographs (or vice versa): \p{<a href="https://unicode.org/reports/tr44/#Equivalent_Unified_Ideograph">Equivalent_Unified_Ideograph</a>=⼚} matches [⼚⺁厂].</p>
 		<p align="left">See also <a
 				href="#Name_Properties">2.5 Name Properties</a> and <a
 				href="#Wildcard_Properties">2.6 Wildcards in Property Values</a>. </p>
-        <h3 class='changed'>2.8 <a name="optional_properties" href="#optional_properties">Optional
+        <h3>2.8 <a name="optional_properties" href="#optional_properties">Optional
 		  Properties</a></h3>
         <p>Implementations may also add other regular expression
-          properties based on Unicode data that are not listed <span class='changed'>above</span><a href="#RL1.2"></a>.
-          Some <span class='changed'>possible</span> candidates include<span class='changed'> the following. These are optional, and are not required by any conformance clauses in this document, nor is the example syntax required</span>.</p>
-        <table class="subtle changed">
+          properties based on Unicode data that are not listed above<a href="#RL1.2"></a>.
+          Some possible candidates include the following. These are optional, and are not required by any conformance clauses in this document, nor is the example syntax required.</p>
+        <table class="subtle">
           <tr>
             <th>Source</th>
             <th>Example</th>
@@ -3511,761 +3199,21 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
             <td>See UCD description</td>
           </tr>
           <tr>
-            <td><span class="changed"><a href="https://unicode.org/reports/tr44/#Indic_Syllabic_Category">UCD</a></span></td>
+            <td><a href="https://unicode.org/reports/tr44/#Indic_Syllabic_Category">UCD</a></td>
             <td>\p{<a href="https://unicode.org/reports/tr44/#Indic_Syllabic_Category">Indic_Syllabic_Category=Avagraha}</a></td>
             <td>See UCD description</td>
           </tr>
         </table>
-        <p class='removed'>The following table gives examples of such
-          properties in use:</p>
-      <div align="center">
-          <table class="subtle removed">
-            <tr>
-              <th>String properties</th>
-              <th>Description</th>
-            </tr>
-            <tr>
-              <td><a
-						href="http://unicode.org/cldr/utility/list-unicodeset.jsp?a=%5B:toNFC=%C3%85:%5D"
-						target="list">[:toNFC=Å:]</a></td>
-              <td>The set of all <span class='changed'>strings</span> X such that toNFC(X) =
-                &quot;a&quot;</td>
-            </tr>
-            <tr>
-              <td><a
-						href="http://unicode.org/cldr/utility/list-unicodeset.jsp?a=%5B:toNFD=A%5Cu0300:%5D"
-						target="list">[:toNFD=A\u{300}:]</a></td>
-              <td>The set of all <span class="changed">strings</span> X such that toNFD(X) =
-                &quot;A\u{300}&quot;</td>
-            </tr>
-            <tr>
-              <td><a
-						href="http://unicode.org/cldr/utility/list-unicodeset.jsp?a=%5B:toNFKC=A:%5D"
-						target="list">[:toNFKC=A:]</a></td>
-              <td>The set of all <span class="changed">strings</span> X such that toNFKC(X) =
-                &quot;A&quot;</td>
-            </tr>
-            <tr>
-              <td><a
-						href="http://unicode.org/cldr/utility/list-unicodeset.jsp?a=%5B:toNFKD=A%5Cu0300:%5D"
-						target="list">[:toNFKD=A\u{300}:]</a></td>
-              <td>The set of all <span class="changed">strings</span> X such that toNFKD(X) =
-                &quot;A\u{300}&quot;</td>
-            </tr>
-            <tr>
-              <td><a target="list"
-						href="http://unicode.org/cldr/utility/list-unicodeset.jsp?a=%5B:toLowercase=a:%5D">[:toLowercase=a:]</a></td>
-              <td>The set of all <span class="changed">strings</span> X such that toLowercase(X) =
-                &quot;a&quot;</td>
-            </tr>
-            <tr>
-              <td><a target="list"
-						href="http://unicode.org/cldr/utility/list-unicodeset.jsp?a=%5B:toUppercase=A:%5D">[:toUppercase=A:]</a></td>
-              <td>The set of all <span class="changed">strings</span> X such that toUppercase(X) =
-                &quot;A&quot;</td>
-            </tr>
-            <tr>
-              <td><a target="list"
-						href="http://unicode.org/cldr/utility/list-unicodeset.jsp?a=%5B:toTitlecase=A:%5D">[:toTitlecase=A:]</a></td>
-              <td>The set of all <span class="changed">strings</span> X such that toTitlecase(X) =
-                &quot;A&quot;</td>
-            </tr>
-            <tr>
-              <td><a target="list"
-						href="http://unicode.org/cldr/utility/list-unicodeset.jsp?a=%5B:toCaseFold=a:%5D">[:toCaseFold=a:]</a></td>
-              <td>The set of all <span class="changed">strings</span> X such that toCasefold(X) =
-                &quot;A&quot;</td>
-            </tr>
-            <tr>
-              <td><span class="changed">[:Exemplar=ja:] or [:Exemplar_Punctuation=ja:]</span></td>
-              <td>Exemplar characters<span class="changed"> and strings</span> from <span class='changed'>CLDR (for Japanese) The string value must be a valid <a href="http://unicode.org/reports/tr35/#Unicode_language_identifier">Unicode language ID</a>.</span></td>
-            </tr>
-            <tr class="changed">
-              <td><span>[:Named_Sequence=KHMER CONSONANT SIGN COENG KA:]</span></td>
-              <td>The sequence named KHMER CONSONANT SIGN COENG KA in NamedSequences.txt.<br>
-                (To be most useful, this should match any name according to the Name property, NamedAliases.txt, and NamedSequences.txt, so that [:Named_Sequence=X:] is a drop-in for [:Name=X:].)</td>
-            </tr>
-          </table>
-        <p>&nbsp;</p>
-      </div>
-        <div align="center">
-          <table class="subtle removed">
-            <tr>
-              <th>Binary properties</th>
-              <th>Description</th>
-            </tr>
-            <tr>
-              <td><a
-						href="http://unicode.org/cldr/utility/list-unicodeset.jsp?a=%5b:isNFC:%5d">[:isNFC:]</a></td>
-              <td>The set of all characters X such that toNFC(X) = X</td>
-            </tr>
-            <tr>
-              <td><a
-						href="http://unicode.org/cldr/utility/list-unicodeset.jsp?a=%5b:isNFD:%5d">[:isNFD:]</a></td>
-              <td>The set of all characters X such that toNFD(X) = X</td>
-            </tr>
-            <tr>
-              <td><a
-						href="http://unicode.org/cldr/utility/list-unicodeset.jsp?a=%5b:isNFKC:%5d">[:isNFKC:]</a></td>
-              <td>The set of all characters X such that toNFKC(X) = X</td>
-            </tr>
-            <tr>
-              <td><a
-						href="http://unicode.org/cldr/utility/list-unicodeset.jsp?a=%5b:isNFKD:%5d">[:isNFKD:]</a></td>
-              <td>The set of all characters X such that toNFKD(X) = X</td>
-            </tr>
-            <tr>
-              <td><a target="list"
-						href="http://unicode.org/cldr/utility/list-unicodeset.jsp?a=%5B:isLowercase:%5D">[:isLowercase:]</a></td>
-              <td>The set of all characters X such that toLowercase(X) = X</td>
-            </tr>
-            <tr>
-              <td><a target="list"
-						href="http://unicode.org/cldr/utility/list-unicodeset.jsp?a=%5B:isUppercase:%5D">[:isUppercase:]</a></td>
-              <td>The set of all characters X such that toUppercase(X) = X</td>
-            </tr>
-            <tr>
-              <td><a target="list"
-						href="http://unicode.org/cldr/utility/list-unicodeset.jsp?a=%5B:isTitlecase:%5D">[:isTitlecase:]</a></td>
-              <td>The set of all characters X such that toTitlecase(X) = X</td>
-            </tr>
-            <tr>
-              <td><a target="list"
-						href="http://unicode.org/cldr/utility/list-unicodeset.jsp?a=%5B:isCaseFolded:%5D">[:isCaseFolded:]</a></td>
-              <td>The set of all characters X such that toCasefold(X) = X</td>
-            </tr>
-            <tr>
-              <td><a target="list"
-						href="http://unicode.org/cldr/utility/list-unicodeset.jsp?a=%5B:isCased:%5D">[:isCased:]</a></td>
-              <td>The set of all cased characters.</td>
-            </tr>
-          </table>
-      </div>
-        <p>&nbsp;</p>
+
+
 		<hr>
 	  <h2>
 			3 <a name="Tailored_Support" href="#Tailored_Support">Tailored
 				Support: Level 3</a><a name="Level_3" href="#Level_3"></a>
 	  </h2>
-		<p class='changed'>This section has been retracted. It last appeared in <a href="http://www.unicode.org/reports/tr18/tr18-19.html">version 19</a>.</p>
-    	<div class='removed'>
-		<p>All of the above deals with a default specification for a
-			regular expression. However, a regular expression engine also may
-			want to support tailored specifications, typically tailored for a
-			particular language or locale. This may be important when the regular
-			expression engine is being used by end-users instead of programmers,
-			such as in a word-processor allowing some level of regular
-			expressions in searching.</p>
-		<p>
-			For example, the order of Unicode characters may differ substantially
-			from the order expected by users of a particular language. The
-			regular expression engine has to decide, for example, whether the
-			list <span class="regex">[a-ä]</span> means:
-		</p>
-		<ul>
-			<li>the Unicode characters in binary order between <span
-				class="regex">0061<sub>16</sub></span> and <span class="regex">00E5<sub>16</sub></span>
-				(including &#39;<span class="regex">z</span>&#39;, &#39;<span
-				class="regex">Z</span>&#39;, &#39;[&#39;, and &#39;<span
-				class="regex">¼</span>&#39;), <i>or</i>
-			</li>
-			<li>the letters in that order in the users&#39; locale (which <i>does
-					not</i> include &#39;<span class="regex">z</span>&#39; in English, but
-				<i>does</i> include it in Swedish).
-			</li>
-		</ul>
-		<p>If both tailored and default regular expressions are supported,
-			then a number of different mechanism are affected. There are two main
-			alternatives for control of tailored support:</p>
-		<ul>
-			<li><i>coarse-grained support:</i> the whole regular expression
-				(or the whole script in which the regular expression occurs) can be
-				marked as being tailored.</li>
-			<li><i>fine-grained support:</i> any part of the regular
-				expression can be marked in some way as being tailored.</li>
-		</ul>
-		<p>
-			For example, fine-grained support could use some syntax such as the
-			following to indicate tailoring to a locale within a certain range:</p>
-		<blockquote>
-			<pre>\T{&lt;locale_id&gt;}..\E</pre>
-		</blockquote>
-			<p>Locale (or language) IDs should use the syntax from locale identifier
-			definition in [<a href="#UTS35">UTS35</a>], <i>Section 3. <a
-				href="http://unicode.org/reports/tr35/#Identifiers">Identifiers</a>
-			</i>. Note that the locale id of &quot;root&quot; or &quot;und&quot;
-			indicates the root locale, such as in the CLDR root collation.
-		</p>
-		<p>There must be some sort of syntax that will allow Level 3
-			support to be turned on and off, for two reasons. Level 3 support may
-			be considerably slower than Level 2, and most regular expressions may
-			require Level 1 or Level 2 matches to work properly. The syntax
-			should also specify the particular locale or other tailoring
-			customization that the pattern was designed for, because tailored
-			regular expression patterns are usually quite specific to the locale,
-			and will generally not work across different locales.</p>
-		<p>Sections 3.6 and following describe some additional
-			capabilities of regular expression engines that are very useful in a
-			Unicode environment, especially in dealing with the complexities of
-			the large number of writing systems and languages expressible in
-			Unicode.		</p>
-		<h3>
-			3.1 <a name="Tailored_Properties" href="#Tailored_Properties">
-				Tailored Punctuation</a>
-		</h3>
-		<p>
-			The Unicode character properties for punctuation may vary from
-			language to language or from country to country. In most cases, the
-			effects of such changes will be apparent in other operations, such as
-			a determination of word breaks. But there are other circumstances
-			where the effects should be apparent in the general APIs, such as
-			when testing whether a curly quotation mark is <i>opening</i> or <i>closing</i>
-			punctuation.
-		</p>
-		<table class="noborder">
-			<tr>
-				<td class="rule_head"><a name="RL3.1" href="#RL3.1">RL3.1</a></td>
-				<td class="rule_head">Tailored Punctuation</td>
-			</tr>
-			<tr>
-				<td class="rule_body"></td>
-				<td class="rule_body"><i>To meet this requirement, an
-						implementation shall allow for punctuation properties to be
-						tailored according to locale, using the </i>locale identifier
-					definition in [<a href="#UTS35">UTS35</a>], <i>Section 3. <a
-						href="http://unicode.org/reports/tr35/#Identifiers">Identifiers</a>.
-				</i></td>
-			</tr>
-		</table>
-		<p>As just described, there must be the capability of turning this
-			support on or off.</p>
-		<h3>
-			3.2 <a name="Tailored_Graphemes_Clusters"
-				href="#Tailored_Graphemes_Clusters">Tailored Grapheme
-				Clusters</a>
-		</h3>
-		<table class="noborder">
-			<tr>
-				<td class="rule_head"><a name="RL3.2" href="#RL3.2">RL3.2</a></td>
-				<td class="rule_head">Tailored Grapheme Clusters</td>
-			</tr>
-			<tr>
-				<td class="rule_body"></td>
-				<td class="rule_body"><i>To meet this requirement, an
-						implementation shall provide for collation grapheme clusters
-						matches based on a locale&#39;s collation order.</i></td>
-			</tr>
-		</table>
-		<p>
-			Tailored grapheme clusters may be somewhat different than the
-			extended grapheme clusters discussed in Level 2. They are coordinated
-			with the collation ordering for a given language in the following
-			way. A collation ordering determines a <i>collation grapheme
-				cluster</i>, which is a sequence of characters that is treated as a unit
-			by the ordering. For example, <i>ch</i> is a collation grapheme
-			cluster for a traditional Spanish ordering.
-		</p>
-		<p>The tailored grapheme clusters for a particular locale are the
-			collation grapheme clusters for the collation ordering for that
-			locale. The determination of tailored grapheme clusters requires the
-			regular expression engine to either draw upon the platform&#39;s
-			collation data, or incorporate its own tailored data for each
-			supported locale.</p>
-		<p>
-			For example, an implementation could interpret <span class="regex">\u{es-u-co-trad}</span>
-			as matching a collation grapheme cluster for a traditional Spanish
-			ordering, or use a switch to change the meaning of <strong>\X</strong>
-			during some span of the regular expression.
-		</p>
-		<p>
-			See <em>Section 9.9, Handling Collation Graphemes</em> in UTS #10, <em>Unicode
-				Collation Algorithm</em> [<a href="#UTS10">UTS10</a>] for the definition
-			of collation grapheme clusters, and <a
-				href="#Sample_Collation_Character_Code"><em>Annex B: Sample
-					Collation Grapheme Cluster Code</em></a> for sample code.
-		</p>
-		<h3>
-			3.3 <a name="Tailored_Word_Boundaries" href="#Tailored_Word_Boundaries">
-				Tailored Word Boundaries</a>
-		</h3>
-		<table class="noborder">
-			<tr>
-				<td class="rule_head"><a name="RL3.3" href="#RL3.3">RL3.3</a></td>
-				<td class="rule_head">Tailored Word Boundaries</td>
-			</tr>
-			<tr>
-				<td class="rule_body"></td>
-				<td class="rule_body"><i>To meet this requirement, an
-						implementation shall allow for the ability to have word boundaries
-						to be tailored according to locale.</i></td>
-			</tr>
-		</table>
-		<p>
-			For example, an implementation could interpret <span class="regex">\b{x:…}</span>
-			as matching the word break positions according to the locale
-			information in CLDR [<a href="#UTS35">UTS35</a>] (which are
-			tailorings of word break positions in [<a href="#UAX29">UAX29</a>]).
-			Thus it could interpret expressions as show here:
-		</p>
-		<div align="center">
-			<table class="subtle">
-				<tr>
-					<th>Expression</th>
-					<th>Matches</th>
-				</tr>
-				<tr>
-					<td><span class="regex">\b{w:und}</span></td>
-					<td rowspan="2" style="vertical-align:middle">a <em>root</em> word break</td>
-				</tr>
-				<tr>
-					<td><span class="regex">\b{w}</span></td>
-				</tr>
-				<tr>
-					<td><span class="regex">\b{w:ja}</span></td>
-					<td>a Japanese word break</td>
-				</tr>
-				<tr>
-					<td><span class="regex">\b{l:ja}</span></td>
-					<td>a Japanese line break</td>
-				</tr>
-			</table>
-		</div>
-		<p>
-			Alternatively, it could use a switch to change the meaning of <strong>\b</strong>
-			and <strong>\B</strong> during some span of the regular expression.
-		</p>
-		<p>Semantic analysis may be required for correct word boundary
-			detection in languages that do not require spaces, such as Thai. This
-			can require fairly sophisticated support if Level 3 word boundary
-			detection is required, and usually requires drawing on platform OS
-			services.</p>
-		<h3>
-			3.4 <a name="Tailored_Loose_Matches" href="#Tailored_Loose_Matches">
-				Tailored Loose Matches</a> (Retracted)
-		</h3>
-		<table class="noborder">
-			<tr>
-				<td class="rule_head"><a name="RL3.4" href="#RL3.4">RL3.4</a></td>
-				<td class="rule_head">Tailored Loose Matches (Retracted)</td>
-			</tr>
-		</table>
-		<p>
-			Previous versions of RL3.4 described loose matches based on collation
-			order. However, for most full-featured regular expression engines, it
-			is quite difficult to match under code point equivalences that are
-			not 1:1. For more discussion of this, see 1.5 <a
-				href="#Simple_Loose_Matches">Simple Loose Matches</a> and 2.1 <a
-				href="#Canonical_Equivalents">Canonical Equivalents</a>. Thus RL3.4
-			has been retracted.
-		</p>
-		<h3>
-			3.5 <a name="Tailored_Ranges" href="#Tailored_Ranges">Tailored
-				Ranges</a> (Retracted)
-		</h3>
-		<table class="noborder">
-			<tr>
-				<td class="rule_head"><a name="RL3.5" href="#RL3.5">RL3.5</a></td>
-				<td class="rule_head">Tailored Ranges (Retracted)</td>
-			</tr>
-		</table>
-		<p>
-			Previous versions of RL3.5 described ranges based on collation order.
-			However, tailored ranges can be quite difficult to implement
-			properly, and can have very unexpected results in practice. For
-			example, languages may also vary whether they consider lowercase
-			below uppercase or the reverse. This can have some surprising
-			results: <span class="regex">[a-Z]</span> may not match anything if <i>Z
-				&lt; a</i> in that locale. Thus RL3.5 has been retracted.
-		</p>
-		<h3>
-			3.6 <a name="Context_Matching" href="#Context_Matching">Context
-				Matching</a>
-		</h3>
-		<table class="noborder">
-			<tr>
-				<td class="rule_head"><a name="RL3.6" href="#RL3.6">RL3.6</a></td>
-				<td class="rule_head">Context Matching</td>
-			</tr>
-			<tr>
-				<td class="rule_body"></td>
-				<td class="rule_body"><i>To meet this requirement, an
-						implementation shall provide for a restrictive match against input
-						text, allowing for context before and after the match.</i></td>
-			</tr>
-		</table>
-		<p>
-			For parallel, filtered transformations, such as those involved in
-			script transliteration, it is important to restrict the matching of a
-			regular expression to a substring of a given string, and yet allow
-			for context before and after the affected area. Here is a sample API
-			that implements such functionality, where m is an extension of a
-			Regex <a
-				href="http://download.oracle.com/javase/6/docs/api/java/util/regex/Matcher.html">Matcher</a>.
-		</p>
-		<blockquote>
-		<pre>if (m.matches(text, contextStart, targetStart, targetLimit, contextLimit)) {
-  int end = p.getMatchEnd();
-}</pre>
-  		</blockquote>
-		<p>
-			The range of characters between <span class="regex">contextStart</span>
-			and <span class="regex">targetStart</span> define a <i>precontext</i>;
-			the characters between <span class="regex">targetStart</span> and <span
-				class="regex">targetLimit</span> define a <i>target</i>, and the
-			offsets between <span class="regex">targetLimit</span> and <span
-				class="regex">contextLimit</span> define a <i>postcontext</i>. Thus
-			<span class="regex">contextStart</span> ≤ <span class="regex">targetStart</span>
-			≤ <span class="regex">targetLimit</span> ≤ <span class="regex">contextLimit</span>.
-			The meaning of this function is that:
-		</p>
-		<ul>
-			<li>a match is attempted beginning at <span class="regex">targetStart</span>.
-			</li>
-			<li>the match will only succeed with an endpoint at or less than
-				<span class="regex">targetLimit</span>.
-			</li>
-			<li>any zero-width look-arounds (look-aheads or look-behinds)
-				can match characters inside or outside of the target, but cannot
-				match characters outside of the context.</li>
-		</ul>
-		<p>
-			Examples are shown in the following table. In these examples, the text in the pre- and postcontext is italicized
-			and the target is underlined. In the output column, the text 
-			shown with a <span class="gray_background">gray background</span>
-			is the matched portion. The pattern syntax &quot;(←x)&quot; means a
-			backwards match for <i>x</i> (without moving the cursor) This would
-			be <span class="regex">(?&lt;=x)</span> in Perl. The pattern
-			&quot;(→x)&quot; means a forwards match for <i>x</i> (without moving
-			the cursor). This would be <span class="regex">(?=x)</span> in Perl.
-		</p>
-		<div align="center">
-				<table class="subtle">
-					<tr>
-						<th>Pattern</th>
-						<th>Input</th>
-						<th>Output</th>
-						<th>Comment</th>
-					</tr>
-					<tr>
-						<td nowrap>/(←a) (bc)* (→d)/</td>
-						<td>1<i>a</i><u>bcbc</u><i>d</i>2
-						</td>
-						<td>1<i>a</i><u><span class="gray_background">bcbc</span></u><i>d</i>2
-						</td>
-						<td>matching with context</td>
-					</tr>
-					<tr>
-						<td nowrap>/(←a) (bc)* (→bcd)/</td>
-						<td>1<i>a</i><u>bcbc</u><i>d</i>2
-						</td>
-						<td>1<i>a</i><u><span class="gray_background">bc</span>bc</u><i>d</i>2
-						</td>
-						<td>stops early, because otherwise &#39;d&#39;
-							would not match</td>
-					</tr>
-					<tr>
-						<td>/(bc)*d/</td>
-						<td>1<i>a</i><u>bcbc</u><i>d</i>2
-						</td>
-						<td><i>no match</i></td>
-						<td>'d' cannot be matched in the
-							target, only in the postcontext</td>
-					</tr>
-					<tr>
-						<td nowrap>/(←a) (bc)* (→d)/</td>
-						<td>1a<u>bcbc</u><i>d</i>2
-						</td>
-						<td><i>no match</i></td>
-						<td>'a' cannot be matched, because it
-							is before the precontext (which is zero-length, in this case)</td>
-					</tr>
-				</table>
-		</div>
-		<p>While it would be possible to simulate this API call with other
-			regular expression calls, it would require subdividing the string and
-			making multiple regular expression engine calls, significantly
-			affecting performance.</p>
-		<p>
-			There should also be pattern syntax for matches (like ^ and $) for
-			the <span class="regex">contextStart</span> and <span class="regex">contextLimit</span>
-			positions.
-		</p>
-		<blockquote>
-			<p>
-				Internally, this can be implemented by modifying the regular
-				expression engine so that all matches are limited to characters
-				between <span class="regex">contextStart</span> and <span
-					class="regex">contextLimit</span>, and so that all matches that are
-				not zero-width look-arounds are limited to the characters between <span
-					class="regex">targetStart</span> and <span class="regex">targetLimit</span>.
-			</p>
-		</blockquote>
-		<h3>
-			3.7 <a name="Partial_Matches" href="#Partial_Matches">Incremental
-				Matches</a>
-		</h3>
-		<table class="noborder">
-			<tr>
-				<td class="rule_head"><a name="RL3.7" href="#RL3.7">RL3.7</a></td>
-				<td class="rule_head">Incremental Matches</td>
-			</tr>
-			<tr>
-				<td class="rule_body"></td>
-				<td class="rule_body"><i>To meet this requirement, an
-						implementation shall provide for incremental matching.</i></td>
-			</tr>
-		</table>
-		<p>
-			For buffered matching, one needs to be able to return whether there
-			is a partial match; that is, whether there <i>would be</i> a match if
-			additional characters were added after the <span class="regex">targetLimit</span>.
-			This can be done with a separate method having an enumerated return
-			value: <i>match</i>, <i>no_match</i>, or <i>partial_match</i>.
-		</p>
-		<blockquote>
-		<pre>if (m.incrementalmatches(text, cs, ts, tl, cl) == Matcher.MATCH) {
-  ...
-}</pre>
-  		</blockquote>
-		<p>
-			Thus performing an incremental match of <span class="regex">/bcbce(→d)/</span>
-			against &quot;1a<u>bcbc</u><i>d</i>2&quot; would return a <i>partial_match</i>
-			because the addition of an <i>e</i> to the end of the target would
-			allow it to match. Note that <span class="regex">/(bc)*(→d)/</span>
-			would <i> also</i> return a partial match, because if <i>bc</i> were
-			added at the end of the target, it would match.
-		</p>
-		<p>The following table shows the same patterns as shown above in 
-			<i>Section 3.6, <a href="#Context_Matching">Context Matching</a></i>, but with the results for when an incremental match method is
-			called:</p>
-		<div align="center">
-		<table class="subtle">
-			<tr>
-				<th>Pattern</th>
-				<th>Input</th>
-				<th>Output</th>
-				<th>Comment</th>
-			</tr>
-			<tr>
-				<td nowrap>/(←a) (bc)* (→d)/</td>
-				<td>1<i>a</i><u>bcbc</u><i>d</i>2
-				</td>
-				<td><i>partial match</i></td>
-				<td>&#39;bc&#39; could be inserted</td>
-			</tr>
-			<tr>
-				<td nowrap>/(←a) (bc)* (→bcd)/</td>
-				<td>1<i>a</i><u>bcbc</u><i>d</i>2</td>
-				<td><i>partial match</i></td>
-				<td>&#39;bc&#39; could be inserted</td>
-			</tr>
-			<tr>
-				<td>/(bc)*d/</td>
-				<td>1<i>a</i><u>bcbc</u><i>d</i>2</td>
-				<td><i>partial match</i></td>
-				<td>&#39;d&#39; could be inserted</td>
-			</tr>
-			<tr>
-				<td nowrap>/(←a) (bc)* (→d)/</td>
-				<td>1a<u>bcbc</u><i>d</i>2</td>
-				<td><i>no match</i></td>
-				<td>as with the matches function; the backwards
-					search for &#39;a&#39; fails</td>
-			</tr>
-		</table>
-		</div>
-		<p>The typical usage of incremental matching is to make a series
-			of incremental match calls, marching through a buffer with each
-			successful match. At the end, if there is a partial match, one loads
-			another buffer (or waits for other input). When the process
-			terminates (no more buffers or input are available), then a regular
-			match call is made.</p>
-		<p>
-			Internally, incremental matching can be implemented in the regular
-			expression engine by detecting whether the matching process ever
-			fails when the current position is at or after <span class="regex">targetLimit</span>,
-			and setting a flag if so. If the overall match fails, and this flag
-			is set, then the return value is set to <i>partial_match</i>.
-			Otherwise, either <i>match</i> or <i>no_match</i> is returned, as
-			appropriate.
-		</p>
-		<p>
-			The return value <i>partial_match</i> indicates that there was a
-			partial match: if further characters were added there could be a
-			match to the resulting string. It may be useful to divide this return
-			value into two, instead:
-		</p>
-		<ul>
-			<li><i>extendable_match</i>: in addition to there being a
-				partial match, there was also a match somewhere in the string. For
-				example, when matching /(ab)*/ against &quot;aba&quot;, there is a
-				match, <i>and</i> if other characters were added (&quot;a&quot;,
-				&quot;aba&quot;,...) there could also be another match.</li>
-			<li><i>only_partial_match</i>: there was no other match in the
-				string. For example, when matching /abcd/ against &quot;abc&quot;,
-				there is only a partial match; there would be no match unless
-				additional characters were added.</li>
-		</ul>
-		<h3>
-			3.8 <a name="Unicode_Set_Sharing" href="#Unicode_Set_Sharing">Unicode
-				Set Sharing</a> (Retracted)
-		</h3>
-		<p>
-			Previous versions described a technique to reduce memory consumption
-			by sharing the underlying implementation data structures for character classes.
-			That technique has been retracted because it assumed a very specific implementation environment and
-			did not specify any Unicode related pattern or matching features.
-		</p>
-		<h3>
-			3.9 <a name="Possible_Match_Sets" href="#Possible_Match_Sets">Possible
-				Match Sets</a>
-		</h3>
-		<table class="noborder">
-			<tr>
-				<td class="rule_head"><a name="RL3.9" href="#RL3.9">RL3.9</a></td>
-				<td class="rule_head">Possible Match Sets</td>
-			</tr>
-			<tr>
-				<td class="rule_body"></td>
-				<td class="rule_body"><i>To meet this requirement, an
-						implementation shall provide for the generation of possible match
-						sets from any regular expression pattern.</i></td>
-			</tr>
-		</table>
-		<p>There are a number of circumstances where additional functions
-			on regular expression patterns can be useful for performance or
-			analysis of those patterns. These are functions that return
-			information about the sets of characters that a regular expression
-			can match.</p>
-		<p>When applying a list of regular expressions (with replacements)
-			against a given piece of text, one can do that either serially or in
-			parallel. With a serial application, each regular expression is
-			applied the text, repeatedly from start to end. With parallel
-			application, each position in the text is checked against the entire
-			list, with the first match winning. After the replacement, the next
-			position in the text is checked, and so on.</p>
-		<p>For such a parallel process to be efficient, one needs to be
-			able to winnow out the regular expressions that simply could not
-			match text starting with a given code point. For that, it is very
-			useful to have a function on a regular expression pattern that
-			returns a set of all the code points that the pattern would partially
-			or fully match.</p>
-		<pre>   myFirstMatchingSet = pattern.getFirstMatchSet(Regex.POSSIBLE_FIRST_CODEPOINT);</pre>
-		<p>
-			For example, the pattern <span class="regex">/[[\u{0}-\u{FF}]
-				&amp;&amp; [:Latin:]] * [0-9]/</span> would return the set {0..9, A..Z,
-			a..z}. Logically, this is the set of all code points that would be at
-			least partial matches (if considered in isolation).
-		</p>
-		<blockquote>
-			<p>
-				<b>Note:</b> An additional useful function would be one that
-				returned the set of all code points that could be matched at any
-				point. Thus a code point outside of this set cannot be in any part
-				of a matching range.
-			</p>
-		</blockquote>
-		<p>The second useful case is the set of all code points that could
-			be matched in any particular group, that is, that could be set in the
-			standard $0, $1, $2, ... variables.</p>
-		<pre>   myAllMatchingSet = pattern.getAllMatchSet(Regex.POSSIBLE_IN$0);</pre>
-		<p>
-			Internally, this can be implemented by analysing the regular
-			expression (or parts of it) recursively to determine which characters
-			match. For example, the first match set of an alternation <i>(a |
-				b)</i> is the union of the first match sets of the terms <i>a</i> and <i>b</i>.
-		</p>
-		<p>
-			The set that is returned is only guaranteed to <i>include</i> all
-			possible first characters; if an expression gets too complicated it
-			could be a proper superset of all the possible characters.
-		</p>
-		<h3>
-			3.10 <a name="Folded_Matching" href="#Folded_Matching">Folded
-				Matching</a> (Retracted)
-		</h3>
-		<table class="noborder">
-			<tr>
-				<td class="rule_head"><a name="RL3.10" href="#RL3.10">RL3.10</a></td>
-				<td class="rule_head">Folded Matching</td>
-			</tr>
-		</table>
-		<p>
-			Previous versions of RL3.10 described tailored folding. However, for
-			most full-featured regular expression engines, it is quite difficult
-			to match under folding equivalences that are not 1:1. For more
-			discussion of this, see 1.5 <a href="#Simple_Loose_Matches">Simple
-				Loose Matches</a> and 2.1 <a href="#Canonical_Equivalents">Canonical
-				Equivalents</a>. Thus RL3.10 has been retracted.
-		</p>
-		<h3>
-			3.11 <a name="Submatchers" href="#Submatchers">Submatchers</a>
-		</h3>
-		<table class="noborder">
-			<tr>
-				<td class="rule_head"><a name="RL3.11" href="#RL3.11">RL3.11</a></td>
-				<td class="rule_head">Submatchers</td>
-			</tr>
-			<tr>
-				<td class="rule_body"></td>
-				<td class="rule_body"><i>To meet this requirement, an
-						implementation shall provide for general registration of matching
-						functions for providing matching for general linguistic features.</i></td>
-			</tr>
-		</table>
-		<p>There are over 70 properties in the Unicode character database,
-			yet there are many other sequences of characters that users may want
-			to match, many of them specific to given languages. For example,
-			characters that are used as vowels may vary by language. This goes
-			beyond single-character properties, because certain sequences of
-			characters may need to be matched; such sequences may not be easy
-			themselves to express using regular expressions. Extending the
-			regular expression syntax to provide for registration of arbitrary
-			properties of characters allows these requirements to be handled.</p>
-		<p>The following provides an example of this. The actual function
-			is just for illustration.</p>
-		<pre>class MultipleMatcher implements RegExSubmatcher {
-<span class="CComment">// from RegExFolder, must be overridden in subclasses
-  /**
-   * Returns -1 if there is no match; otherwise returns the endpoint;
-   * an offset indicating how far the match got.
-   * The endpoint is always between targetStart and targetLimit, inclusive.
-   * Note that there may be zero-width matches.
-   */</span>
-int match(String text, int contextStart, int targetStart, int targetLimit, int contextLimit) {
-<span class="CComment">// code for matching numbers according to numeric value.</span>
-}
-
-<span class="CComment">// from RegExFolder, may be overridden for efficiency
-  /**
-   * The parameter is a number. The match will match any numeric value that is a multiple.
-   * Example: for &quot;2.3&quot;, it will match &quot;0002.3000&quot;, &quot;4.6&quot;, &quot;11.5&quot;, and any non-Western
-   * script variants, like Indic numbers.
-   */</span>
-RegExSubmatcher clone(String parameter, Locale locale) {...}
-}
-  ...
-
-  RegExSubmatcher.registerMatcher(&quot;multiple&quot;, new MultipleMatcher());
-
-  ...
-
-  p = Pattern.compile(&quot;xxx<span style="color: #0000FF">\M{multiple=2.3}</span>xxx&quot;);</pre>
-		<p>In this example, the match function can be written to parse
-			numbers according to the conventions of different locales, based on
-			OS functions available for such parsing. If there are mechanisms for
-			setting a locale for a portion of a regular expression, then that
-			locale would be used; otherwise the default locale would be used.</p>
-		<blockquote>
-			<p align="left">
-				<b>Note:</b> It might be advantageous to make the Submatcher API
-				identical to the Matcher API; that is, only have one base class
-				&quot;Matcher&quot;, and have user extensions derive from the base
-				class. The base class itself can allow for nested matchers.
-			</p>
-		</blockquote>
-	  </div>
-		<hr>
+		<p>This section has been retracted. It last appeared in <a href="https://www.unicode.org/reports/tr18/tr18-19.html">version 19</a>.</p>
+    	
+   		<hr>
 		<h2>
 			<a name="Character_Blocks" href="#Character_Blocks">Annex A:
 				Character Blocks</a>
@@ -4352,8 +3300,8 @@ RegExSubmatcher clone(String parameter, Locale locale) {...}
 					CJK Compatibility Forms, Kangxi Radicals, CJK Radicals Supplement,
 					Enclosed CJK Letters and
 					Months, Small Form Variants, Bopomofo, Bopomofo Extended, 
-					<span class='changed'>CJK Unified Ideographs Extension F, 
-					CJK Unified Ideographs Extension G,</span> ...</td>
+					CJK Unified Ideographs Extension F, 
+					CJK Unified Ideographs Extension G, ...</td>
 			</tr>
 		</table>
 		</div>
@@ -4368,44 +3316,8 @@ RegExSubmatcher clone(String parameter, Locale locale) {...}
 				href="#Sample_Collation_Character_Code">Annex B: Sample
 				Collation Grapheme Cluster Code</a>
 		</h2>
-		<p class='changed'><em>This annex was retracted at the same time that Level 3 was retracted.</em></p>
-		<div class='removed'><p>The following provides sample code for doing Level 3 collation
-			grapheme cluster detection. This code is meant to be illustrative,
-			and has not been optimized. Although written in Java, it could be
-			easily expressed in any programming language that allows access to
-			the Unicode Collation Algorithm mappings.</p>
-		<pre>
-			<span style="color: #0000FF">/**
- * Return the end of a collation grapheme cluster.
- * @param s         the source string
- * @param start     the position in the string to search
- *                  forward from
- * @param collator  the collator used to produce collation elements.
- * This can either be a custom-built one, or produced from
- * the factory method Collator.getInstance(someLocale).
- * @return          the end position of the collation grapheme cluster
- */</span>
-
-static int getLocaleCharacterEnd(String s,
-  int start, RuleBasedCollator collator) {
-    int lastPosition = start;
-    CollationElementIterator it
-      = collator.getCollationElementIterator(
-          s.substring(start, s.length()));
-    it.next(); <span style="color: #0000FF">// discard first collation element</span>
-int primary;
-
-<span style="color: #0000FF">// accumulate characters until we get to a non-zero primary</span>
-
-do {
-        lastPosition = it.getOffset();
-        int ce = it.next();
-        if (ce == CollationElementIterator.NULLORDER) break;
-        primary = CollationElementIterator.primaryOrder(ce);
-    } while (primary == 0);
-    return lastPosition;
-}</pre>
-	  </div>
+		<p><em>This annex was retracted at the same time that Level 3 was retracted.</em></p>
+		
 		<h2>
 			<a name="Compatibility_Properties" href="#Compatibility_Properties">Annex
 				C: Compatibility Properties</a>
@@ -4440,10 +3352,10 @@ do {
 					(Me, Mn, Mc) are required for words of many languages. While they
 					could be applied to non-alphabetics, their principal use is on
 					alphabetics. See <a
-					href="http://www.unicode.org/Public/UCD/latest/ucd/DerivedCoreProperties.txt">
+					href="https://www.unicode.org/Public/UCD/latest/ucd/DerivedCoreProperties.txt">
 						DerivedCoreProperties</a> for
 					Alphabetic. See also <a
-					href="http://www.unicode.org/Public/UCD/latest/ucd/extracted/DerivedGeneralCategory.txt">DerivedGeneralCategory</a>. Alphabetic should <i>not</i>
+					href="https://www.unicode.org/Public/UCD/latest/ucd/extracted/DerivedGeneralCategory.txt">DerivedGeneralCategory</a>. Alphabetic should <i>not</i>
 					be used as an approximation for word boundaries: see <a
 					href="#word">word</a> below.
 				</td>
@@ -4453,7 +3365,7 @@ do {
 				<td colspan="2" class="recommended"><span class="regex">\p{Lowercase}</span></td>
 				<td>Lowercase includes more than gc = Lowercase_Letter (Ll).
 					See <a
-					href="http://www.unicode.org/Public/UCD/latest/ucd/DerivedCoreProperties.txt">DerivedCoreProperties</a>.
+					href="https://www.unicode.org/Public/UCD/latest/ucd/DerivedCoreProperties.txt">DerivedCoreProperties</a>.
 				</td>
 			</tr>
 			<tr>
@@ -4478,7 +3390,7 @@ do {
 				<td>Non-decimal numbers (like Roman numerals) are normally
 					excluded. In U4.0+, the recommended column is the same as gc =
 					Decimal_Number (Nd). See <a
-					href="http://www.unicode.org/Public/UCD/latest/ucd/extracted/DerivedNumericType.txt">DerivedNumericType</a>.
+					href="https://www.unicode.org/Public/UCD/latest/ucd/extracted/DerivedNumericType.txt">DerivedNumericType</a>.
 				</td>
 			</tr>
 			<tr>
@@ -4502,7 +3414,7 @@ do {
 				<td><b><a name="space" href="#space">space</a> (\s)</b></td>
 				<td colspan="2"><span class="regex">\p{Whitespace}</span></td>
 				<td>See <a
-					href="http://www.unicode.org/Public/UCD/latest/ucd/PropList.txt">PropList</a>
+					href="https://www.unicode.org/Public/UCD/latest/ucd/PropList.txt">PropList</a>
 					 for the definition of Whitespace.
 				</td>
 			</tr>
@@ -4576,7 +3488,7 @@ do {
 		</table>
 		</div>
 
-	  <div class='changed'>
+
 		<h2><a name="Resolving_Character_Ranges_with_Strings" href="#Resolving_Character_Ranges_with_Strings">Annex D:
 		Resolving Character Classes with Strings</a> </h2>
 		<p>Matching the negation of set of strings is  problematic, and needs to be disallowed in regex expressions [see <a href="https://github.com/tc39/proposal-regexp-unicode-sequence-properties#why-ban-the-use-of-these-properties-within-character-classes"> <u>why-ban-the-use-of-these-properties-within-character-classes</u></a>]. However, the negation of a Character Class with strings or of a property of strings is allowed <em><strong>internal</strong></em> to a boolean expression as long as the fully resolved version of that expression is not a negation Character Class with strings. </p>
@@ -4661,7 +3573,7 @@ do {
    </td>
   </tr>
   <tr>
-   <td rowspan="4" >A && B
+   <td rowspan="4" >A &amp;&amp; B
    </td>
    <td>➕
    </td>
@@ -4750,9 +3662,9 @@ do {
 <blockquote><strong>
 Note: the operation A ~~ B is handled in terms of other operations according to its definition: (A∪B)∖(A∩B)
         </strong>      </blockquote>
-	  </div>
 
-<div class="changed">
+
+
 	<h2>
 		  <a name="Notation_for_Properties_of_Strings" href="#Notation_for_Properties_of_Strings">
 		  Annex E: Notation for Properties of Strings</a></h2>
@@ -4783,8 +3695,6 @@ Note: the operation A ~~ B is handled in terms of other operations according to 
 	    <span class="regex">\p</span> as alternate syntax for properties of strings.</li>
     </ul>
 
-	</div>  
-
 	<hr>
 		<h2>
 			<a name="References" href="#References">References</a>
@@ -4801,8 +3711,8 @@ Note: the operation A ~~ B is handled in terms of other operations according to 
 					href="#CaseData">CaseData</a>]
 				</td>
 				<td class="noborder"><a
-					href="http://www.unicode.org/Public/UCD/latest/ucd/CaseFolding.txt">
-						http://www.unicode.org/Public/UCD/latest/ucd/CaseFolding.txt</a></td>
+					href="https://www.unicode.org/Public/UCD/latest/ucd/CaseFolding.txt">
+						https://www.unicode.org/Public/UCD/latest/ucd/CaseFolding.txt</a></td>
 			</tr>
 			<tr>
 				<td width="1" class="noborder">[<a name="Friedl" href="#Friedl">Friedl</a>]
@@ -4816,19 +3726,19 @@ Note: the operation A ~~ B is handled in terms of other operations according to 
 					href="#Glossary">Glossary</a>]
 				</td>
 				<td class="nb" valign="top">Unicode Glossary<a
-					href="http://www.unicode.org/glossary/"><br>
-						http://www.unicode.org/glossary/</a><br> <i>For explanations
+					href="https://www.unicode.org/glossary/"><br>
+						https://www.unicode.org/glossary/</a><br> <i>For explanations
 						of terminology used in this and other documents.</i></td>
 			</tr>
 			<tr>
 				<td width="1" class="noborder">[<a name="Perl" href="#Perl">Perl</a>]
 				</td>
-				<td class="noborder"><a href="http://perldoc.perl.org/">http://perldoc.perl.org/<br>
+				<td class="noborder"><a href="https://perldoc.perl.org/">https://perldoc.perl.org/<br>
 				</a>See especially:<br> <a
-					href="http://perldoc.perl.org/charnames.html">http://perldoc.perl.org/charnames.html</a><br>
-					<a href="http://perldoc.perl.org/perlre.html">http://perldoc.perl.org/perlre.html</a><br>
-					<a href="http://perldoc.perl.org/perluniintro.html">http://perldoc.perl.org/perluniintro.html</a><br>
-					<a href="http://perldoc.perl.org/perlunicode.html">http://perldoc.perl.org/perlunicode.html</a></td>
+					href="https://perldoc.perl.org/charnames.html">https://perldoc.perl.org/charnames.html</a><br>
+					<a href="https://perldoc.perl.org/perlre.html">https://perldoc.perl.org/perlre.html</a><br>
+					<a href="https://perldoc.perl.org/perluniintro.html">https://perldoc.perl.org/perluniintro.html</a><br>
+					<a href="https://perldoc.perl.org/perlunicode.html">https://perldoc.perl.org/perlunicode.html</a></td>
 			</tr>
 			<tr>
 				<td width="1" class="noborder">[<a name="POSIX" href="#POSIX">POSIX</a>]
@@ -4836,40 +3746,40 @@ Note: the operation A ~~ B is handled in terms of other operations according to 
 				<td class="noborder">The Open Group Base Specifications Issue
 					6, IEEE Std 1003.1, 2004 Edition, &quot;Locale&quot; chapter<br>
 					<a
-					href="http://www.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap07.html">
-						http://www.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap07.html</a>
+					href="https://pubs.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap07.html">
+						https://pubs.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap07.html</a>
 				</td>
 			</tr>
 			<tr>
 				<td width="1" class="noborder">[<a name="Prop" href="#Prop">Prop</a>]
 				</td>
 				<td class="noborder"><a
-					href="http://www.unicode.org/Public/UCD/latest/ucd/PropertyAliases.txt">
-						http://www.unicode.org/Public/UCD/latest/ucd/PropertyAliases.txt</a></td>
+					href="https://www.unicode.org/Public/UCD/latest/ucd/PropertyAliases.txt">
+						https://www.unicode.org/Public/UCD/latest/ucd/PropertyAliases.txt</a></td>
 			</tr>
 			<tr>
 				<td width="1" class="noborder">[<a name="PropValue"
 					href="#PropValue">PropValue</a>]
 				</td>
 				<td class="noborder"><a
-					href="http://www.unicode.org/Public/UCD/latest/ucd/PropertyValueAliases.txt">
-						http://www.unicode.org/Public/UCD/latest/ucd/PropertyValueAliases.txt</a></td>
+					href="https://www.unicode.org/Public/UCD/latest/ucd/PropertyValueAliases.txt">
+						https://www.unicode.org/Public/UCD/latest/ucd/PropertyValueAliases.txt</a></td>
 			</tr>
 			<tr>
 				<td width="1" class="noborder">[<a name="ScriptData"
 					href="#ScriptData">ScriptData</a>]
 				</td>
 				<td class="noborder"><a
-					href="http://www.unicode.org/Public/UCD/latest/ucd/Scripts.txt">
-						http://www.unicode.org/Public/UCD/latest/ucd/Scripts.txt</a></td>
+					href="https://www.unicode.org/Public/UCD/latest/ucd/Scripts.txt">
+						https://www.unicode.org/Public/UCD/latest/ucd/Scripts.txt</a></td>
 			</tr>
 			<tr>
 				<td width="1" class="noborder">[<a name="SpecialCasing"
 					href="#SpecialCasing">SpecialCasing</a>]
 				</td>
 				<td class="noborder"><a
-					href="http://www.unicode.org/Public/UCD/latest/ucd/SpecialCasing.txt">
-						http://www.unicode.org/Public/UCD/latest/ucd/SpecialCasing.txt</a></td>
+					href="https://www.unicode.org/Public/UCD/latest/ucd/SpecialCasing.txt">
+						https://www.unicode.org/Public/UCD/latest/ucd/SpecialCasing.txt</a></td>
 			</tr>
 			<tr>
 				<td class="noborder" valign="top">[<a name="UAX14"
@@ -4877,7 +3787,7 @@ Note: the operation A ~~ B is handled in terms of other operations according to 
 				</td>
 				<td class="noborder" valign="top">UAX #14, <i>Unicode Line
 						Breaking Algorithm</i><br> <a
-					href="http://www.unicode.org/reports/tr14/">http://www.unicode.org/reports/tr14/</a></td>
+					href="https://www.unicode.org/reports/tr14/">https://www.unicode.org/reports/tr14/</a></td>
 			</tr>
 			<tr>
 				<td class="noborder" valign="top">[<a name="UAX15"
@@ -4885,7 +3795,7 @@ Note: the operation A ~~ B is handled in terms of other operations according to 
 				</td>
 				<td class="noborder" valign="top">UAX #15, <i>Unicode
 						Normalization Forms</i><br> <a
-					href="http://www.unicode.org/reports/tr15/">http://www.unicode.org/reports/tr15/</a></td>
+					href="https://www.unicode.org/reports/tr15/">https://www.unicode.org/reports/tr15/</a></td>
 			</tr>
 			<tr>
 				<td class="noborder" valign="top">[<a name="UAX24"
@@ -4893,7 +3803,7 @@ Note: the operation A ~~ B is handled in terms of other operations according to 
 				</td>
 				<td class="noborder" valign="top">UAX #24, <i>Unicode
 						Script Property</i><br> <a
-					href="http://www.unicode.org/reports/tr24/">http://www.unicode.org/reports/tr24/</a></td>
+					href="https://www.unicode.org/reports/tr24/">https://www.unicode.org/reports/tr24/</a></td>
 			</tr>
 			<tr>
 				<td class="noborder" valign="top">[<a name="UAX29"
@@ -4901,7 +3811,7 @@ Note: the operation A ~~ B is handled in terms of other operations according to 
 				</td>
 				<td class="noborder" valign="top">UAX #29, <i>Unicode Text
 						Segmentation</i><br> <a
-					href="http://www.unicode.org/reports/tr29/">http://www.unicode.org/reports/tr29/</a></td>
+					href="https://www.unicode.org/reports/tr29/">https://www.unicode.org/reports/tr29/</a></td>
 			</tr>
 			<tr>
 				<td class="noborder" valign="top">[<a name="UAX31"
@@ -4909,7 +3819,7 @@ Note: the operation A ~~ B is handled in terms of other operations according to 
 				</td>
 				<td class="noborder" valign="top">UAX #31, <i>Unicode
 						Identifier and Pattern Syntax</i><br> <a
-					href="http://www.unicode.org/reports/tr31/">http://www.unicode.org/reports/tr31/</a></td>
+					href="https://www.unicode.org/reports/tr31/">https://www.unicode.org/reports/tr31/</a></td>
 			</tr>
 			<tr>
 				<td class="noborder" valign="top">[<a name="UAX38"
@@ -4917,41 +3827,41 @@ Note: the operation A ~~ B is handled in terms of other operations according to 
 				</td>
 				<td class="noborder" valign="top">UAX #38, <i>Unicode
 						Han Database (Unihan)</i><br> <a
-					href="http://www.unicode.org/reports/tr38/">http://www.unicode.org/reports/tr38/</a></td>
+					href="https://www.unicode.org/reports/tr38/">https://www.unicode.org/reports/tr38/</a></td>
 			</tr>
 			<tr>
 				<td class="nb" valign="top">[<a name="UAX44" href="#UAX44">UAX44</a>]
 				</td>
 				<td class="nb" valign="top">UAX #44, <em>Unicode Character
 						Database<br>
-				</em><a href="http://www.unicode.org/reports/tr44/">http://www.unicode.org/reports/tr44/</a></td>
+				</em><a href="https://www.unicode.org/reports/tr44/">https://www.unicode.org/reports/tr44/</a></td>
 			</tr>
 			<tr>
 				<td class="nb">[<a name="UData" href="#UData">UData</a>]
 				</td>
 				<td class="nb"><a
-					href="http://www.unicode.org/Public/UCD/latest/ucd/UnicodeData.txt">
-						http://www.unicode.org/Public/UCD/latest/ucd/UnicodeData.txt</a></td>
+					href="https://www.unicode.org/Public/UCD/latest/ucd/UnicodeData.txt">
+						https://www.unicode.org/Public/UCD/latest/ucd/UnicodeData.txt</a></td>
 			</tr>
 			<tr>
 				<td class="nb" valign="top">[<a name="Unicode" href="#Unicode">Unicode</a>]
 				</td>
 				<td class="nb" valign="top">The Unicode Standard<em><br>
 						For the latest version, see:<br> </em><a
-					href="http://www.unicode.org/versions/latest/">http://www.unicode.org/versions/latest/</a></td>
+					href="https://www.unicode.org/versions/latest/">https://www.unicode.org/versions/latest/</a></td>
 			</tr>
 			<tr>
       <td class="nb" valign="top" noWrap>[<a name="UTR50" href="#UTR50">UTR50</a>]</td>
       <td class="nb" valign="top">
         UTR #50, Unicode Vertical Text Layout<br>
-        <a href="http://www.unicode.org/reports/tr50/">http://www.unicode.org/reports/tr50/</a>
+        <a href="https://www.unicode.org/reports/tr50/">https://www.unicode.org/reports/tr50/</a>
       </td>
     		</tr>
 			<tr>
       <td class="nb" valign="top" noWrap>[<a name="UTR51" href="#UTR51">UTR51</a>]</td>
       <td class="nb" valign="top">
         UTR #51, Unicode Emoji<br>
-        <a href="http://www.unicode.org/reports/tr51/">http://www.unicode.org/reports/tr51/</a>
+        <a href="https://www.unicode.org/reports/tr51/">https://www.unicode.org/reports/tr51/</a>
       </td>
     		</tr>
 			<tr>
@@ -4959,28 +3869,28 @@ Note: the operation A ~~ B is handled in terms of other operations according to 
 				</td>
 				<td class="nb" valign="top">UTS #10, <i>Unicode Collation
 						Algorithm (UCA)<br>
-				</i> <a href="http://www.unicode.org/reports/tr10/">
-						http://www.unicode.org/reports/tr10/</a></td>
+				</i> <a href="https://www.unicode.org/reports/tr10/">
+						https://www.unicode.org/reports/tr10/</a></td>
 			</tr>
 			<tr>
 				<td class="nb" valign="top">[<a name="UTS35" href="#UTS35">UTS35</a>]
 				</td>
 				<td class="nb" valign="top">UTS #35, <i>Unicode Locale Data
 						Markup Language (LDML)</i><br> <a
-					href="http://www.unicode.org/reports/tr35/">http://www.unicode.org/reports/tr35/</a></td>
+					href="https://www.unicode.org/reports/tr35/">https://www.unicode.org/reports/tr35/</a></td>
 			</tr>
 			<tr>
 				<td class="nb" valign="top">[<a name="UTS39" href="#UTS39">UTS39</a>]
 				</td>
 				<td class="nb" valign="top">UTS #39, Unicode Security
-					Mechanisms<br> <a href="http://www.unicode.org/reports/tr39/">http://www.unicode.org/reports/tr39/</a>
+					Mechanisms<br> <a href="https://www.unicode.org/reports/tr39/">https://www.unicode.org/reports/tr39/</a>
 				</td>
 			</tr>
 			<tr>
 				<td class="nb" valign="top">[<a name="UTS46" href="#UTS46">UTS46</a>]
 				</td>
 				<td class="nb" valign="top">UTS #46, Unicode IDNA Compatibility
-					Processing<br> <a href="http://www.unicode.org/reports/tr46/">http://www.unicode.org/reports/tr46/</a>
+					Processing<br> <a href="https://www.unicode.org/reports/tr46/">https://www.unicode.org/reports/tr46/</a>
 				</td>
 			</tr>
 		</table>		<h2>
@@ -4989,11 +3899,11 @@ Note: the operation A ~~ B is handled in terms of other operations according to 
 		<p>Mark Davis created the initial version of this annex and
 			maintains the text, with significant contributions from Andy
 			Heninger.</p>
-		<p>Thanks to Julie Allen, <span class="changed">Mathias Bynens,</span>Tom Christiansen, <span class="changed"> David Corbett,</span> Michael D’Errico,
+		<p>Thanks to Julie Allen, Mathias Bynens,Tom Christiansen, David Corbett, Michael D’Errico,
 			Asmus Freytag, Jeffrey Friedl, Norbert Lindenberg, Peter Linsley,
-			Alan Liu, Kent Karlsson, Jarkko Hietaniemi, <span class="changed">Michael Saboff,</span> Gurusamy Sarathy, <span class="changed">Markus Scherer, </span>
+			Alan Liu, Kent Karlsson, Jarkko Hietaniemi, Michael Saboff, Gurusamy Sarathy, Markus Scherer, 
             Xueming Shen, Henry Spencer, Kento Tamura, Philippe Verdy, Tom Watson, 
-			Ken Whistler, Karl Williamson, and <span class='changed'>Richard Wordingham </span>for their feedback on the document.</p>
+			Ken Whistler, Karl Williamson, and Richard Wordingham for their feedback on the document.</p>
 
 
 		<h2 class="nonumber">
@@ -5003,13 +3913,13 @@ Note: the operation A ~~ B is handled in terms of other operations according to 
 		<p>The following summarizes modifications from the previous
 			revision of this document.</p>
 
-	  <p class='changed'>
-		<b >Revision 20</b></p>
-<p class='changed'>
+	  <p>
+		<b >Revision 21</b></p>
+<p>
 		<b>Summary:</b></p>
-<p class='changed'>Broadened the scope of properties for  regex to allow for properties of strings as well as properties of characters. In doing so, cleaned up the discussion of Character Classes with strings. Added a new annex to clarify exactly when negations of properties of strings and/or Character Classes with strings would invalidate a regular expression.</p>
-<p class='changed'>Updated the full property list to include newer UCD properties plus Emoji properties and UTS #39 properties. Removed some sections that are no longer useful, and added a number of clarifications.</p>
-		<ul class='changed'>
+<p>Broadened the scope of properties for  regex to allow for properties of strings as well as properties of characters. In doing so, cleaned up the discussion of Character Classes with strings. Added a new annex to clarify exactly when negations of properties of strings and/or Character Classes with strings would invalidate a regular expression.</p>
+<p>Updated the full property list to include newer UCD properties plus Emoji properties and UTS #39 properties. Removed some sections that are no longer useful, and added a number of clarifications.</p>
+		<ul>
 		  <li>General
 		    <ul>
 		      <li>The term &quot;character range&quot; has been replaced by Character Class. Character Class is more widely used (and less misleading).</li>
@@ -5103,17 +4013,17 @@ Note: the operation A ~~ B is handled in terms of other operations according to 
 		Resolving Character Classes with Strings</a> and <a href="#Notation_for_Properties_of_Strings">Annex E: Notation for Properties of Strings</a></li>
 	    </ul>
 
-		<p class='changed'>Modifications for previous versions are listed in those respective versions.</p>
+		<p>Modifications for previous versions are listed in those respective versions.</p>
 
 	<hr width="50%">
 		<p class="copyright">
-			Copyright © <span class='changed'>2020</span> Unicode, Inc. All
+			Copyright © 2020 Unicode, Inc. All
 			Rights Reserved. The Unicode Consortium makes no expressed or implied
 			warranty of any kind, and assumes no liability for errors or
 			omissions. No liability is assumed for incidental and consequential
 			damages in connection with or arising out of the use of the
 			information or programs contained or accompanying this technical
-			report. The Unicode <a href="http://www.unicode.org/copyright.html">Terms
+			report. The Unicode <a href="https://www.unicode.org/copyright.html">Terms
 				of Use</a> apply.
 		</p>
 		<p class="copyright">Unicode and the Unicode logo are trademarks
