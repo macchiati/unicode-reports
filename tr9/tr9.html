@@ -51,15 +51,13 @@
     </tr>
   </table>
 <div class="body">
-  <!--
   <h2 class="uaxtitle"><span class="changedspan">Proposed Update</span></h2>
--->
   <h2 class="uaxtitle">Unicode® Standard Annex #9</h2>
   <h1>Unicode Bidirectional Algorithm</h1>
   <table class="simple" width="90%">
     <tr>
       <td valign="top" width="20%">Version</td>
-      <td valign="top">Unicode 13.0.0</td>
+      <td valign="top">Unicode <span class="changedspan">14</span>.0.0 <span class="changedspan">(draft 1)</span></td>
     </tr>
     <tr>
       <td valign="top">Editors</td>
@@ -69,18 +67,18 @@
     </tr>
     <tr>
       <td valign="top">Date</td>
-      <td valign="top">2020-08-07</td>
+      <td valign="top" class="changed">2020-08-11</td>
     </tr>
     <tr>
       <td valign="top">This Version</td>
-      <td valign="top">
-	  <a href="http://www.unicode.org/reports/tr9/tr9-42.html">
-	  http://www.unicode.org/reports/tr9/tr9-42.html</a></td>
+      <td valign="top" class="changed">
+	  <a href="http://www.unicode.org/reports/tr9/tr9-43.html">
+	  http://www.unicode.org/reports/tr9/tr9-43.html</a></td>
     </tr>
     <tr>
       <td valign="top">Previous Version</td>
-      <td valign="top">
-	  <a href="http://www.unicode.org/reports/tr9/tr9-41.html">http://www.unicode.org/reports/tr9/tr9-41.html</a></td>
+      <td valign="top" class="changed">
+	  <a href="http://www.unicode.org/reports/tr9/tr9-42.html">http://www.unicode.org/reports/tr9/tr9-42.html</a></td>
     </tr>
     <tr>
       <td valign="top">Latest Version</td>
@@ -94,7 +92,7 @@
     </tr>
     <tr>
       <td valign="top">Revision</td>
-      <td valign="top"><a href="#Modifications">42</a></td>
+      <td valign="top"><a href="#Modifications"><span class="changedspan">43</span></a></td>
     </tr>
   </table>
   <h4 class="summary">Summary</h4>
@@ -102,19 +100,19 @@
   to left, such as Arabic or Hebrew.</i></p>
     <h4 class="status">Status</h4>
 
-	  <!-- NOT YET APPROVED 
+	  <!-- NOT YET APPROVED -->
 	  <p><i class="changed">This is a<b><font color="#ff3333"> draft </font></b>document which 
       may be updated, replaced, or superseded by other documents at any time. 
       Publication does not imply endorsement by the Unicode Consortium. This is 
       not a stable document; it is inappropriate to cite this document as other 
       than a work in progress.</i></p>
-	     END NOT YET APPROVED -->
-	  <!-- APPROVED --> 
+	  <!--   END NOT YET APPROVED -->
+	  <!-- APPROVED  
       <p><i>This document has been reviewed by Unicode members and other 
 	  interested parties, and has been approved for publication by the Unicode 
 	  Consortium. This is a stable document and may be used as reference 
 	  material or cited as a normative reference by other specifications.</i></p>
-      <!--  END APPROVED -->
+        END APPROVED -->
 
 			<blockquote>
     			<p><i><b>A Unicode Standard Annex (UAX)</b> forms an integral part of the 
@@ -2697,7 +2695,8 @@ subsequent versions. The online demo also does not handle supplemental character
   </ul>
 
   <h3>6.2 <a name="Vertical_Text" href="#Vertical_Text">Vertical Text</a><a name="bk3" href="#bk3"></a></h3>
-  <p>In the case of vertical line orientation, the Bidirectional Algorithm is still used to 
+
+  <p class="removed">In the case of vertical line orientation, the Bidirectional Algorithm is still used to 
   determine the levels of the text. However, these levels are not used to reorder the text, because 
   the characters are usually ordered uniformly from top to bottom. Instead, the levels are used to 
   determine the rotation of the text. Sometimes vertical lines follow a vertical baseline in which 
@@ -2706,11 +2705,33 @@ subsequent versions. The online demo also does not handle supplemental character
   vertical lines, it is more common to employ a horizontal baseline that is rotated by 90° 
   counterclockwise so that the characters are ordered from top to bottom. Latin text and numbers may 
   be rotated 90° clockwise so that the characters are also ordered from top to bottom.</p>
-  <p>The Bidirectional Algorithm is used when some characters are ordered from bottom 
+
+  <p class="removed">The Bidirectional Algorithm is used when some characters are ordered from bottom 
   to top. For example, this happens with a mixture of Arabic and Latin glyphs when all the glyphs 
   are rotated uniformly 90° clockwise. The Unicode Standard does not specify 
 	whether text is presented horizontally or vertically, or whether text is 
 	rotated. That is left up to higher-level protocols.</p>
+
+  <p class="changed">In the case of vertical line orientation, there are multiple ways 
+    to represent bidirectional text. Some
+methods use the Bidirectional Algorithm, and some do not. The Unicode Standard does not specify whether
+text is presented horizontally or vertically, or whether text is rotated. That is left up to higher-level protocols.
+For example, one of the common approaches for this layout orientation is to rotate all the glyphs 
+uniformly 90° clockwise. The
+Bidirectional Algorithm is used with this method. While some characters end up ordered from bottom to top,
+this method can represent a mixture of Arabic and Latin glyphs in the same way as occurs
+for horizontal line orientation.</p>
+
+  <p class="changed">Another possible approach is to render the text uniformly from top to bottom. 
+    This method has multiple
+variations to determine the orientation of characters. One variant uses the Bidirectional Algorithm to
+determine the level of the text, but then the levels are not used to reorder the text. Instead, the levels are
+used to determine the <i>rotation</i> of the text. Sometimes vertical lines follow a vertical baseline in which
+each character is oriented as normal (with no rotation), with characters ordered from top to bottom
+whether they are Hebrew, numbers, or Latin. When setting text using the Arabic script in vertical lines, it
+is more common to employ a horizontal baseline that is rotated by 90° counterclockwise so that the
+characters are ordered from top to bottom. Latin text and numbers may be rotated 90° clockwise so
+that those characters are also ordered from top to bottom.</p>
 
   <h3>6.3 <a name="Formatting" href="#Formatting">Formatting</a></h3>
   <p>Because of the implicit character types and the heuristics for resolving neutral and numeric 
@@ -2970,7 +2991,7 @@ subsequent versions. The online demo also does not handle supplemental character
 	Eric Mader, Ernest Cline, Gidi Shalom-Bendor (גידי שלום-בן דור), Gilead Almosnino (גלעד אלמוסנינו), Isai Scheinberg,
 	Israel Gidali (ישראל גידלי), Joe Becker, John McConnell, Jonathan Kew, Jonathan Rosenne (יונתן רוזן), 
 	Kamal Mansour (كمال منصور), Kenneth Whistler,
-	Khaled Sherif (خالد شريف), Laurențiu Iancu,
+	Khaled Sherif (خالد شريف), <span class="changedspan">Koji Ishii,</span> Laurențiu Iancu,
 	Maha Hassan (مها حسن), Markus Scherer, Martin Dürst, Mati Allouche (מתתיהו אלוש), Michel Suignard, Mike Ksar (ميشيل قصار),
 	Murray Sargent, Paul Nelson, Pedro Navarro, Peter Constable, Rick McGowan,
 	Robert Steen,
@@ -2985,13 +3006,19 @@ subsequent versions. The online demo also does not handle supplemental character
   <p>The following summarizes modifications from the previous version of this 
 	annex.</p>
 
-  <h3>Revision 42</h3>
+  <h3>Revision 43</h3>
     <ul>
+        <li><b>Proposed Update</b> for Unicode 14.0.0.</li>
+        <li>Updated <a href="#Vertical_Text">Section 6.2</a>, Vertical Text to clarify how
+          the Bidirectional Algorithm is (or is not) used when text is laid
+          out in vertical orientation.</li>
+    </ul>
+
+  <h3 class="removed">Revision 42</h3>
+    <ul class="removed">
         <li><b>Reissued</b> for Unicode 13.0.0.</li>
     </ul>
-<!--
-  <p>Revision 40 being a proposed update, only changes between versions 39 and 41 are noted here.</p>
--->
+
   <p>Previous revisions can be accessed with the “Previous Version” link in the header.</p>
 
   <hr>
