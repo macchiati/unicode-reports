@@ -57,7 +57,7 @@
   <table class="simple" width="90%">
     <tr>
       <td valign="top" width="20%">Version</td>
-      <td valign="top">Unicode <span class="changedspan">14</span>.0.0 <span class="changedspan">(draft 1)</span></td>
+      <td valign="top">Unicode <span class="changedspan">14</span>.0.0 <span class="changedspan">(draft 2)</span></td>
     </tr>
     <tr>
       <td valign="top">Editors</td>
@@ -67,7 +67,7 @@
     </tr>
     <tr>
       <td valign="top">Date</td>
-      <td valign="top" class="changed">2020-08-11</td>
+      <td valign="top" class="changed">2020-08-20</td>
     </tr>
     <tr>
       <td valign="top">This Version</td>
@@ -2713,20 +2713,23 @@ subsequent versions. The online demo also does not handle supplemental character
 	rotated. That is left up to higher-level protocols.</p>
 
   <p class="changed">In the case of vertical line orientation, there are multiple ways 
-    to represent bidirectional text. Some
+    to display bidirectional text. Some
 methods use the Bidirectional Algorithm, and some do not. The Unicode Standard does not specify whether
-text is presented horizontally or vertically, or whether text is rotated. That is left up to higher-level protocols.
-For example, one of the common approaches for this layout orientation is to rotate all the glyphs 
+text is presented with horizontal or vertical layout, or for vertical
+layout whether elements within the line are rotated. That is left up to higher-level protocols.
+For example, one of the common approaches for vertical line orientation is to rotate all the glyphs 
 uniformly 90° clockwise. The
 Bidirectional Algorithm is used with this method. While some characters end up ordered from bottom to top,
 this method can represent a mixture of Arabic and Latin glyphs in the same way as occurs
 for horizontal line orientation.</p>
 
-  <p class="changed">Another possible approach is to render the text uniformly from top to bottom. 
+  <p class="changed">Another possible approach is to render the text in a uniform
+  single direction from top to bottom. 
     This method has multiple
 variations to determine the orientation of characters. One variant uses the Bidirectional Algorithm to
 determine the level of the text, but then the levels are not used to reorder the text. Instead, the levels are
-used to determine the <i>rotation</i> of the text. Sometimes vertical lines follow a vertical baseline in which
+used to determine the <i>rotation</i> of each segment of the text. 
+Sometimes vertical lines follow a vertical baseline in which
 each character is oriented as normal (with no rotation), with characters ordered from top to bottom
 whether they are Hebrew, numbers, or Latin. When setting text using the Arabic script in vertical lines, it
 is more common to employ a horizontal baseline that is rotated by 90° counterclockwise so that the
