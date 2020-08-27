@@ -11,7 +11,7 @@
 
 <title>UAX #14: Unicode Line Breaking Algorithm</title>
 
-<link rel="stylesheet" type="text/css" href="http://www.unicode.org/reports/reports-v2.css">
+<link rel="stylesheet" type="text/css" href="https://www.unicode.org/reports/reports-v2.css">
 
 
 </head>
@@ -37,14 +37,14 @@
 
 
 <div class="body">
-  <h2 class="uaxtitle">Unicode® Standard Annex #14</h2>
+  <h2 class="uaxtitle"><span class="changedspan">Proposed Update </span>Unicode® Standard Annex #14</h2>
   <h1>Unicode Line Breaking Algorithm</h1>
 
 
   <table class="simple" width="90%">
     <tr>
       <td width="20%">Version</td>
-      <td>Unicode 13.0.0</td>
+      <td class="changed">Unicode 14.0.0 (draft 2)</td>
     </tr>
     <tr>
       <td>Editors</td>
@@ -52,20 +52,20 @@
     </tr>
     <tr>
       <td>Date</td>
-      <td>2020-02-17</td>
+      <td class='changed'>2020-08-27</td>
     </tr>
     <tr>
       <td>This Version</td>
       <td>
-        <a href="http://www.unicode.org/reports/tr14/tr14-45.html">
-		http://www.unicode.org/reports/tr14/tr14-45.html</a></td>
+        <a href="http://www.unicode.org/reports/tr14/tr14-46.html" class="changed">
+		http://www.unicode.org/reports/tr14/tr14-46.html</a></td>
     </tr>
     <tr>
       <td>Previous Version</td>
       <td>
-        <a href="http://www.unicode.org/reports/tr14/tr14-43.html">
-          http://www.unicode.org/reports/tr14/tr14-43.html</a></td>
-    </tr>
+        <a href="http://www.unicode.org/reports/tr14/tr14-45.html" class="changed">
+          http://www.unicode.org/reports/tr14/tr14-45.html</a></td>
+          </tr>
     <tr>
       <td>Latest Version</td>
       <td><a href="http://www.unicode.org/reports/tr14/">http://www.unicode.org/reports/tr14/</a></td>
@@ -77,7 +77,7 @@
     </tr>
     <tr>
       <td>Revision</td>
-      <td><a href="#Modifications">45</a></td>
+      <td><a href="#Modifications" class="changed">46</a></td>
     </tr>
   </table>
 
@@ -91,20 +91,20 @@
 
  <h4 class="status">Status</h4>
 
-	  <!-- NOT YET APPROVED 
+	  <!-- NOT YET APPROVED -->
 	  <p><i class="changed">This is a<b><font color="#ff3333"> draft </font></b>document which
       may be updated, replaced, or superseded by other documents at any time.
       Publication does not imply endorsement by the Unicode Consortium. This is
       not a stable document; it is inappropriate to cite this document as other
       than a work in progress.</i></p>
-       END NOT YET APPROVED -->
+       <!-- END NOT YET APPROVED -->
 
-	  <!-- APPROVED --> 
+	  <!-- APPROVED 
       <p><i>This document has been reviewed by Unicode members and other
 	  interested parties, and has been approved for publication by the Unicode
 	  Consortium. This is a stable document and may be used as reference
 	  material or cited as a normative reference by other specifications.</i></p>
-    <!-- END APPROVED -->
+    END APPROVED -->
 
   <blockquote>
     <p><i><b>A Unicode Standard Annex (UAX)</b> forms an integral part of the
@@ -2898,7 +2898,7 @@ CJ for small hiragana and katakana<br>SA for complex context scripts<br>JL, JV, 
     </table>
     <p>Pairs of RI characters are used to represent a two-letter ISO 3166 region code.</p>
 
-    <p> Runs of adjacent RI characters are grouped into pairs, begi<span class="removed">n</span>nning at the start of the run.
+    <p> Runs of adjacent RI characters are grouped into pairs, beginning at the start of the run.
          No break opportunity occurs within a pair; breaks can occur between adjacent pairs.
          When RI characters are adjacent to characters of other classes, breaks can occur before and after,
          except where forbidden by other rules.</p>
@@ -3770,7 +3770,7 @@ CJ for small hiragana and katakana<br>SA for complex context scripts<br>JL, JV, 
 
 <p class="rule"><a name="LB27" href="#LB27"></a><b>LB27</b> Treat a Korean Syllable Block the
 	same as <a class="charclass" href="#ID">ID</a>.</p>
-    <p style="text-align:center">(JL | JV | JT | H2 | H3) × IN</p>
+  <p style="text-align:center"><span class="removedspan">(JL | JV | JT | H2 | H3) × IN</span></p>
 	<p style="text-align:center">(JL | JV | JT | H2 | H3) × PO</p>
 	<p style="text-align:center">PR × (JL | JV | JT | H2 | H3)</p>
 	<p>When Korean uses SPACE for line breaking, the classes in rule
@@ -4853,27 +4853,17 @@ CJ for small hiragana and katakana<br>SA for complex context scripts<br>JL, JV, 
 
   <p>The following summarizes modifications from the previous revision of this 
   annex.</p>
-
-    <p><b>Revision 45:</b></p>
+  <div class='changed'>
+  <p><b>Revision 46:</b></p>
   <ul>
-    <li><b>Reissued</b> for Unicode 13.0.</li>
-    <li>Updated editor to Christopher Chapman.</li>
-    <li>Section 5, <a href="#Properties"><i>Line Breaking Properties</i></a>
+    <li><b>Proposed Update</b> for Unicode 14.0.</li>
+    <li>Section 6.1, <a href="#BreakingRules"><i>Non-tailorable Line Breaking Rules</i></a>
       <ul>
-        <li>Added text clarifying the tailoribility of line break classes.</li>
-        <li>Added a note that the East_Asian_Width property that rule <a href="#LB30">LB30</a>
-          depends on is also tailorable.</li>
+        <li>Removed the redundant rule (JL | JV | JT | H2 | H3) × IN from LB27.</li>
       </ul>
     </li>
-    <li>Section 6.2, <a href="#TailorableBreakingRules"><i>Tailorable Line Breaking Rules</i></a>
-      <ul>
-        <li>Changed <a href="#LB30">LB30</a> to exclude full-width CP and OP, and added a note about syntax up in Section 
-          6 <a href="#Algorithm"><i>Line Breaking Algorithm</i></a>
-        </li>
-        <li>Changed <a href="#LB22">LB22</a> to simply disallow breaking before elipsis, instead of checking characters before.</li>
-        </ul>
-    </li>
-    </ul>
+  </ul>
+  </div>
 
   <p>Modifications for previous versions are listed in those respective versions.</p>
 
