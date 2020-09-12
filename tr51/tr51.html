@@ -3621,13 +3621,14 @@
 		  <li>The valid region sequences are specified by <a href="http://www.unicode.org/reports/tr35/#unicode_region_subtag">Unicode
 		    region subtags</a> as defined in [<a href="#CLDR">CLDR</a>], with
 	      idStatus=regular, deprecated, or macroregion. For macroregions,
-	      only <strong>UN</strong> and <strong>EU</strong> are valid.</li>
-	  </ul>
+	      only <strong>UN</strong> and <strong>EU</strong> are valid.
+	  
 		<ol>
-		  <li><span class='changed'>Deprecated regions are included so that  deprecations in the future do not invalidate previously valid emoji flag sequences. Deprecated RGI emoji flag sequences are recommended for support, but other deprecated RGI emoji flag sequences</span> should not be generated.</li>
+		  <li><span class='changed'>Deprecated regions are included so that  deprecations in the future do not invalidate previously valid emoji flag sequences. RGI emoji flag sequences with deprecated regions are recommended for support, but other  RGI emoji flag sequences with deprecated regions</span> should not be generated.</li>
 		  <li>Macroregion region
 	      sequences  generally do not have official flags, with the exception of <strong>UN</strong> and <strong>EU</strong>.</li>
-      </ol>
+      </ol></li>
+			</ul>
 	  <p> Some region sequences represent countries (as recognized by the United
 		  Nations, for example); others represent territories that are
 		  associated with a country. Such territories may have flags of their own,
@@ -3768,7 +3769,7 @@
 	  </ol>
 		<p>Notes:</p>
 		<ol>
-		  <li><span class='changed'>Deprecated SD values are included so that  deprecations in the future do not invalidate previously valid emoji tag sequences. Deprecated RGI emoji tag sequences are recommended for support, but other deprecated RGI emoji tag sequences</span> should not be generated. </li>
+		  <li><span class='changed'>Deprecated SD values are included so that  deprecations in the future do not invalidate previously valid emoji tag sequences. RGI emoji tag sequences with deprecated SD values are recommended for support, but other  RGI emoji tag sequences with deprecated SD values</span> should not be generated. </li>
 		  <li>There is no hyphen in the <code>tag_spec</code>, unlike ISO subdivisions like &ldquo;GB-SCT&rdquo;.</li>
 		  <li>These flag emoji tag sequences are used to request an image for whatever is currently the flag of the specified subregion. Like the emoji flag sequences, they are not intended to provide a mechanism for <em>versioned</em> representations of any particular flag image.</li>
 		  <li>Specific platforms and programs decide which emoji extended flag sequences they will support. There is no requirement that any be supported, and no expectation that more than a small number be commonly supported by vendors.</li>
@@ -4186,7 +4187,7 @@
 		  </li>
 		  <li>Annex C: <a href="#valid-emoji-tag-sequences">Valid Emoji Tag Sequences</a>
 		    <ul>
-		      <li>Clarified use of deprecated emoji flag sequences and emoji tag sequences.</li>
+		      <li>Clarified use of  emoji flag sequences and emoji tag sequences with deprecated region or subdivision codes.</li>
 	        </ul>
 		  </li>
 		  <li><a href="#References">References</a>
