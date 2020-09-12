@@ -1,6 +1,6 @@
 # Unicode Reports
 
-This is a work area for edcom.  Note that the actual reports are located at: <https://www.unicode.org/reports/>
+This is a work area for edcom.  Note that the released versions of reports are located at: <https://www.unicode.org/reports/>
 
 Browsing within this repo you can see the source HTML files for the various reports. To view one of the HTML files from this repo as a Web page, go to <https://unicode-org.github.io/unicode-reports/> and browse from there.
 
