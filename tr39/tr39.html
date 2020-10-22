@@ -57,13 +57,14 @@ a:hover.plain {
 	</table>
 	<div class="body">
 		<h2 align="center">
+			<span class="changedspan">Proposed Update</span> 
 			<span class="uaxtitle">Unicode® Technical Standard #39</span>
 		</h2>
 		<h1>Unicode Security Mechanisms</h1>
 		<table class="simple" width="90%">
 			<tr>
 				<td width="20%">Version</td>
-				<td>13.0</td>
+				<td><span class="changedspan">14.0 (draft 1)</span></td>
 			</tr>
 			<tr>
 				<td>Editors</td>
@@ -72,18 +73,18 @@ a:hover.plain {
 			</tr>
 			<tr>
 				<td>Date</td>
-				<td>2020-02-06</td>
+				<td>2020-<span class="changedspan">10-22</span></td>
 			</tr>
 			<tr>
 				<td>This Version</td>
-				<td>
-				<a href="http://www.unicode.org/reports/tr39/tr39-22.html">http://www.unicode.org/reports/tr39/tr39-22.html</a></td>
+				<td class="changed">
+				<a href="http://www.unicode.org/reports/tr39/tr39-23.html">http://www.unicode.org/reports/tr39/tr39-23.html</a></td>
 			</tr>
 			<tr>
 				<td>Previous Version</td>
-				<td>
-				<a href="http://www.unicode.org/reports/tr39/tr39-20.html">
-				http://www.unicode.org/reports/tr39/tr39-20.html</a></td>
+				<td class="changed">
+				<a href="http://www.unicode.org/reports/tr39/tr39-22.html">
+				http://www.unicode.org/reports/tr39/tr39-22.html</a></td>
 			</tr>
 			<tr>
 				<td>Latest Version</td>
@@ -97,7 +98,7 @@ a:hover.plain {
 			</tr>
 			<tr>
 				<td>Revision</td>
-				<td><a href="#Modifications">22</a></td>
+				<td><a href="#Modifications"><span class="changedspan">23</span></a></td>
 			</tr>
 		</table>
 		<h3>
@@ -114,7 +115,7 @@ a:hover.plain {
 		<h3>
 			<i>Status</i>
 		</h3>
-		<!-- NOT YET APPROVED 
+		<!-- NOT YET APPROVED --> 
 		<p class="changed">
 			<i>This is a<b><font color="#ff3333"> draft </font></b>document
 				which may be updated, replaced, or superseded by other documents at
@@ -123,13 +124,13 @@ a:hover.plain {
 				cite this document as other than a work in progress.
 			</i>
 		</p>
-		END NOT YET APPROVED -->
-		<!-- APPROVED -->
+		<!-- END NOT YET APPROVED -->
+		<!-- APPROVED 
      	 <p><i>This document has been reviewed by Unicode members and other 
 	  	interested parties, and has been approved for publication by the Unicode 
 	 	 Consortium. This is a stable document and may be used as reference 
 	 	 material or cited as a normative reference by other specifications.</i></p>
-         <!-- END APPROVED -->
+          END APPROVED -->
 
 
 		<blockquote>
@@ -332,17 +333,42 @@ a:hover.plain {
 			3 <a name="Identifier_Characters" href="#Identifier_Characters">Identifier
 				Characters</a>
 		</h2>
+		<p class="changed">
+			Identifiers ("IDs") are strings used in particular application contexts
+			to refer to entities of certain significance in the given application. In a
+			given application, an identifier will map to at most one specific entity.
+			Many applications have security requirements related to identifiers. One
+			common example is user IDs, used to restrict access to certain data or
+			resources as appropriate. Another common example is URLs referring to pages
+			or other resources on the Internet: when a user wishes to access  a
+			resource, it is important that the user can be certain what resource they
+			are interacting with—for instance, that they are interacting with a
+			particular financial service and not some other entity that is spoofing the
+			intended service for malicious purposes. The latter is an example of a
+			general security concern for identifiers: potential ambiguity of strings.
+			While a machine has no difficulty distinguishing between any two different
+			character sequences, it could be very difficult or impossible for humans to
+			recognize and distinguish identifiers if an application permitted any
+			Unicode characters to be in identifiers. Mitigation of this issue is the
+			focus of this specification.
+		</p>
 		<p>
-			Identifiers are special-purpose strings used for
+			<span class="removed">Identifiers are special-purpose strings used for
 			identification—strings that are deliberately limited to particular
 			repertoires for that purpose. Exclusion of characters from
 			identifiers does not affect the general use of those characters, such
-			as within documents. Unicode Standard Annex #31,
-				&quot;Identifier and Pattern Syntax&quot; [<a href="#UAX31">UAX31</a>]
-				provides a recommended method of determining which strings should
-				qualify as identifiers. The UAX #31 specification extends the common
-				practice of defining identifiers in terms of letters and numbers to
-				the Unicode repertoire.
+			as within documents.</span>
+			<span class="changed">Restriction of the character repertoire that can be used in identifiers 
+			is an important security technique. Most applications will deliberately
+			limit characters that can be used in identifiers for that purpose. (Note
+			that exclusion of characters from identifiers does not affect the general
+			use of those characters for other purposes, such as within documents.)</span> 
+			Unicode Standard Annex #31,
+			&quot;Identifier and Pattern Syntax&quot; [<a href="#UAX31">UAX31</a>]
+			provides a recommended method of determining which strings should
+			qualify as identifiers. The UAX #31 specification extends the common
+			practice of defining identifiers in terms of letters and numbers to
+			the Unicode repertoire.
 		</p>
 		<p>
 			That specification also permits other protocols to use that method as
@@ -402,7 +428,7 @@ a:hover.plain {
 			<li>characters in limited use by very small communities</li>
 		</ul>
 		<p>
-			The principle has been to be more conservative initially, allowing
+			<span class="removed">The principle</span><span class="changed">A principle used in determining which characters to be Restricted</span> has been to be more conservative initially, allowing
 			for the set to be modified in the future as requirements for
 			characters are refined. For information on handling modifications
 			over time, see <i>Section 2.9.1, Backward
@@ -515,10 +541,23 @@ a:hover.plain {
 
 		<p>For stability considerations, see <a href="#Migrating_Persistent_Data">Migrating
 		Persistent Data</a>.</p>
-		<p>There may be multiple reasons for restricting a character. For clarity, Identifier_Type values of Not_Character, Deprecated, Default_Ignorable, and Not_NFKC cause values below them in the Restricted rows to be suppressed: for example, if a character is Deprecated, there is little value in also marking it as Uncommon_Use. For  the qualifiers on usage,
-Obsolete, Uncommon_Use and Technical, the distinctions among the Identifier_Type values is not strict and
-only one might be given. The important characteristic is the Identifier_Status:
-		whether or not the character is Restricted.</p>
+		<p>
+			There may be multiple reasons for restricting a character. <span class="removed">For clarity, 
+			Identifier_Type values of Not_Character, Deprecated, Default_Ignorable, and 
+			Not_NFKC cause values below them in the Restricted rows to be suppressed: 
+			for</span><span class="changed">There may be multiple reasons for restricting a character. For this reason,
+			the Identifier_Type property allows multiple  values that correspond with
+			Restricted. For example, some characters have Identifier_Type values of
+			Limited_Use and Technical. In the case of characters that have
+			Identifier_Type values of Not_Character, Deprecated, Default_Ignorable, or
+			Not_NFKC, other Identifier_Type property values listed below that value in
+			Table 1 are not also assigned as additional property values. For</span> 
+			example, if a character is Deprecated, there is little value in also 
+			marking it as Uncommon_Use. For  the qualifiers on usage, Obsolete, 
+			Uncommon_Use and Technical, the distinctions among the Identifier_Type values is not strict and
+			only one might be given. The important characteristic is the Identifier_Status:
+			whether or not the character is Restricted.
+		</p>
 		<p> <em>As more
 				information is gathered about characters, this data may change in
 				successive versions.</em> That can cause either the Identifier_Status
@@ -530,7 +569,7 @@ only one might be given. The important characteristic is the Identifier_Status:
 			case-insensitively and ignoring hyphens and underbars.
 		</p>
 		<p>
-			Restricted characters should be treated with caution in registration,
+			Restricted characters should be treated with caution <span class="removed">in registration</span><span class="changed">when considering possible use in identifiers</span>,
 			and disallowed unless there is good reason to allow them in the
 			environment in question. However, the set of Identifier_Status=Allowed
 			characters are not typically used as is by implementations. Instead,
@@ -2078,6 +2117,24 @@ only one might be given. The important characteristic is the Identifier_Status:
 		</h2>
 		<p>The following summarizes modifications from the previous
 			published version of this document.</p>
+<div class="changed">
+		<p><strong>Revision 23</strong></p>
+		<ul>
+          <li><b>Proposed Update</b> for Unicode 14.0</li>
+          <li><b>Section 3 <a href="#Identifier_Characters">Identifier Characters</a></b>
+          	<ul>
+          		<li>Adjusted text to better introduce the topic of identifiers.</li>
+          	</ul>
+          </li>
+  		  <li><b>Section 3.1 <a href="#General_Security_Profile">General
+    Security Profile for Identifiers</a></b>
+    		<ul>
+      			<li>Clarified the rationales for restricting a character.</li>
+      		</ul>
+  		  </li>
+		</ul>
+</div>
+<div class="removed">
 	  <p><strong>Revision 22</strong></p>
         <ul>
           <li><b>Reissued</b> for Unicode 13.0</li>
@@ -2093,6 +2150,7 @@ only one might be given. The important characteristic is the Identifier_Status:
       </ul>
   </li>
       </ul>
+</div>
 
 	  <p>Modifications for previous versions are listed in those respective versions.</p>
 
