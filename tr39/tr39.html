@@ -73,7 +73,7 @@ a:hover.plain {
 			</tr>
 			<tr>
 				<td>Date</td>
-				<td>2020-<span class="changedspan">10-22</span></td>
+				<td>2020-<span class="changedspan">10-23</span></td>
 			</tr>
 			<tr>
 				<td>This Version</td>
@@ -334,23 +334,23 @@ a:hover.plain {
 				Characters</a>
 		</h2>
 		<p class="changed">
-			Identifiers ("IDs") are strings used in particular application contexts
-			to refer to entities of certain significance in the given application. In a
+			Identifiers ("IDs") are strings used in application contexts
+			to refer to specific entities of certain significance in the given application. In a
 			given application, an identifier will map to at most one specific entity.
-			Many applications have security requirements related to identifiers. One
-			common example is user IDs, used to restrict access to certain data or
-			resources as appropriate. Another common example is URLs referring to pages
+			Many applications have security requirements related to identifiers.  
+			A common example is URLs referring to pages
 			or other resources on the Internet: when a user wishes to access  a
 			resource, it is important that the user can be certain what resource they
-			are interacting with—for instance, that they are interacting with a
+			are interacting with. For example, they need to know that they are interacting with a
 			particular financial service and not some other entity that is spoofing the
-			intended service for malicious purposes. The latter is an example of a
+			intended service for malicious purposes. This illustrates a
 			general security concern for identifiers: potential ambiguity of strings.
 			While a machine has no difficulty distinguishing between any two different
-			character sequences, it could be very difficult or impossible for humans to
-			recognize and distinguish identifiers if an application permitted any
-			Unicode characters to be in identifiers. Mitigation of this issue is the
-			focus of this specification.
+			character sequences, it could be very difficult for humans to
+			recognize and distinguish identifiers if an application did not limit which
+			Unicode characters could be in identifiers. 
+			The focus of this specification is mitigation of such issues related
+			to the security of identifiers.
 		</p>
 		<p>
 			<span class="removed">Identifiers are special-purpose strings used for
@@ -358,11 +358,10 @@ a:hover.plain {
 			repertoires for that purpose. Exclusion of characters from
 			identifiers does not affect the general use of those characters, such
 			as within documents.</span>
-			<span class="changed">Restriction of the character repertoire that can be used in identifiers 
-			is an important security technique. Most applications will deliberately
-			limit characters that can be used in identifiers for that purpose. (Note
-			that exclusion of characters from identifiers does not affect the general
-			use of those characters for other purposes, such as within documents.)</span> 
+			<span class="changed">Deliberately restricting the characters that can be used in identifiers 
+			is an important security technique. 
+			The exclusion of characters from identifiers does not affect the general
+			use of those characters for other purposes, such as for general text in documents.</span> 
 			Unicode Standard Annex #31,
 			&quot;Identifier and Pattern Syntax&quot; [<a href="#UAX31">UAX31</a>]
 			provides a recommended method of determining which strings should
@@ -427,10 +426,12 @@ a:hover.plain {
 				letter-like symbols</li>
 			<li>characters in limited use by very small communities</li>
 		</ul>
-		<p>
-			<span class="removed">The principle</span><span class="changed">A principle used in determining which characters to be Restricted</span> has been to be more conservative initially, allowing
+
+		<p><span class="changedspan">The choice of which characters to specify as Restricted starts conservatively, but allows additions
+			in the future as requirements for characters are refined.</span> 
+			<span class="removed">The principle has been to be more conservative initially, allowing
 			for the set to be modified in the future as requirements for
-			characters are refined. For information on handling modifications
+			characters are refined.</span> For information on handling modifications
 			over time, see <i>Section 2.9.1, Backward
 				Compatibility</i> in <em>Unicode Technical Report #36,
 				&quot;Unicode Security Considerations&quot;</em> [<a href="#UTR36">UTR36</a>].
@@ -542,16 +543,14 @@ a:hover.plain {
 		<p>For stability considerations, see <a href="#Migrating_Persistent_Data">Migrating
 		Persistent Data</a>.</p>
 		<p>
-			There may be multiple reasons for restricting a character. <span class="removed">For clarity, 
+			There may be multiple reasons for restricting a character<span class="removed">. For clarity, 
 			Identifier_Type values of Not_Character, Deprecated, Default_Ignorable, and 
 			Not_NFKC cause values below them in the Restricted rows to be suppressed: 
-			for</span><span class="changed">There may be multiple reasons for restricting a character. For this reason,
+			for</span><span class="changed">; therefore,
 			the Identifier_Type property allows multiple  values that correspond with
 			Restricted. For example, some characters have Identifier_Type values of
-			Limited_Use and Technical. In the case of characters that have
-			Identifier_Type values of Not_Character, Deprecated, Default_Ignorable, or
-			Not_NFKC, other Identifier_Type property values listed below that value in
-			Table 1 are not also assigned as additional property values. For</span> 
+			Limited_Use and Technical. Multiple values are not assigned to characters with strong restrictions: Not_Character, Deprecated, Default_Ignorable, Not_NFKC.
+ For</span> 
 			example, if a character is Deprecated, there is little value in also 
 			marking it as Uncommon_Use. For  the qualifiers on usage, Obsolete, 
 			Uncommon_Use and Technical, the distinctions among the Identifier_Type values is not strict and
