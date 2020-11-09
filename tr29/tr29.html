@@ -31,13 +31,13 @@
 	</table>
 
 	<div class="body">
-		<h2 class="uaxtitle">Unicode® Standard Annex #29</h2>
+		<h2 class="uaxtitle"><span class="changed">Proposed Update </span>Unicode® Standard Annex #29</h2>
 		<h1>Unicode Text Segmentation</h1>
 
 		<table class="simple" width="90%">
 			<tr>
 				<td valign="top" width="20%">Version</td>
-				<td valign="top">Unicode 13.0.0</td>
+				<td valign="top" class="changed">Unicode 14.0.0</td>
 			</tr>
 			<tr>
 				<td valign="top">Editors</td>
@@ -46,19 +46,20 @@
 			</tr>
 			<tr>
 				<td valign="top">Date</td>
-				<td valign="top">2020-02-19</td>
+				<td valign="top" class="changed">2020-05-19</td>
 			</tr>
 			<tr>
 				<td valign="top">This Version</td>
-				<td valign="top">
-				<a href="http://www.unicode.org/reports/tr29/tr29-37.html">
-				http://www.unicode.org/reports/tr29/tr29-37.html</a></td>
+				<td valign="top" class="changed">
+				<a href="http://www.unicode.org/reports/tr29/tr29-38.html">
+				http://www.unicode.org/reports/tr29/tr29-38.html</a></td>
 			</tr>
 			<tr>
 				<td valign="top">Previous Version</td>
-				<td valign="top"><a href="http://www.unicode.org/reports/tr29/tr29-35.html">
-						http://www.unicode.org/reports/tr29/tr29-35.html</a></td>
-			</tr>
+				<td valign="top" class="changed">
+					<a href="http://www.unicode.org/reports/tr29/tr29-37.html">
+					http://www.unicode.org/reports/tr29/tr29-37.html</a></td>
+				</tr>
 			<tr>
 				<td valign="top">Latest Version</td>
 				<td valign="top"><a href="http://www.unicode.org/reports/tr29/">http://www.unicode.org/reports/tr29/</a></td>
@@ -71,7 +72,7 @@
 			</tr>
 			<tr>
 				<td valign="top">Revision</td>
-				<td valign="top"><a href="#Modifications">37</a></td>
+				<td valign="top"><a href="#Modifications" class="changed">38</a></td>
 			</tr>
 		</table>
 
@@ -87,7 +88,7 @@
 
 		<h4 class="status">Status</h4>
 
-		<!-- NOT YET APPROVED
+		<!-- NOT YET APPROVED -->
 		<p class="changed">
 			<i>This is a<b><font color="#ff3333"> draft </font></b>document
 				which may be updated, replaced, or superseded by other documents at
@@ -96,13 +97,13 @@
 				cite this document as other than a work in progress.
 			</i>
 		</p>
-		END NOT YET APPROVED -->
-		<!-- APPROVED -->
+		<!-- END NOT YET APPROVED -->
+		<!-- APPROVED 
       <p><i>This document has been reviewed by Unicode members and other 
 	  interested parties, and has been approved for publication by the Unicode 
 	  Consortium. This is a stable document and may be used as reference 
 	  material or cited as a normative reference by other specifications.</i></p>
-        <!-- END APPROVED -->
+        END APPROVED -->
 
 		<blockquote>
 			<p>
@@ -2651,12 +2652,13 @@
 		<p>An important rule for the default word and sentence
 			specifications ignores Extend and Format characters. The main purpose
 			of this rule is to always treat a grapheme cluster as a single
-			character—that is, as if it were simply the first character of the
-			cluster. Both word and sentence specifications do not distinguish
+			character—that is, <span class="removed">as if it were simply the first character of the
+			cluster.  B</span><span class="changed">to not break a single grapheme cluster across two higher-level segments. For
+			example, b</span>oth word and sentence specifications do not distinguish
 			between L, V, T, LV, and LVT: thus it does not matter whether there
-			is a sequence of these or a single one. In addition, there is a
+			is a sequence of these or a single one. <span class="removed">In addition, there is a
 			specific rule to disallow breaking within CRLF. Thus ignoring Extend
-			is sufficient to disallow breaking within a grapheme cluster. Format
+			is sufficient to disallow breaking within a grapheme cluster. </span>Format
 			characters are also ignored by default, because these characters are
 			normally irrelevant to such boundaries.</p>
 		<p>The “Ignore” rule is then equivalent to making the following
@@ -3211,41 +3213,17 @@
 		</h2>
 		<p>The following summarizes modifications from the previous
 			published version of this annex.</p>
-			<h3>Revision 37</h3>
+			<div class='changed'>
+			<h3>Revision 38</h3>
 			<ul>
-				<li><strong>Reissued</strong> for Unicode 13.0.0.</li>
-				<li><strong>General</strong>				
-				  <ul>
-				    <li>Added Christopher Chapman as editor.</li>
-				    <li>Added Johan Curcio Lindström to <a href="#Acknowledgments">Acknowledgments.</a></li>
-				    <li>Removed references to [<a
-				href="../tr41/tr41-26.html#UTS51">UTS51</a>] that are unnecessary, because the emoji character properties are in the UCD in version 13.0.</li>
-			      </ul>
-				</li>
-				<li><strong>Section 3 <a href="#Grapheme_Cluster_Boundaries">Grapheme Cluster Boundaries</a></strong>
+				<li><strong>Proposed Update</strong> for Unicode 14.0.0.</li>
+				<li><strong>Section 6.2 <a href="#Grapheme_Cluster_and_Format_Rules">Replacing Ignore Rules</a></strong>
 					<ul>
-						<li>Added text to clarify why ZWNJ does not break a grapheme cluster.</li>
-						<li><a href="#Grapheme_Cluster_Break_Property_Values"> Table 2, <em>Grapheme_Cluster_Break Property Values</em></a>
-							<ul>
-								<li>Excluded prepended concatenation marks from <a href="#Control">Control</a>.</li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li><strong>Section 4 <a href="#Word_Boundaries">Word Boundaries</a></strong>
-					<ul>
-						<li><a href="#Table_Word_Break_Property_Values">Table 3, <em>Word_Break Property Values</em></a>
-							<ul>
-								<li>Added U+02E5..U+02EB, U+055A, U+058A, U+A708..U+A716 to <a href="#ALetter">ALetter</a>.</li>
-								<li>Added a review note to <a href="#ALetter">ALetter</a>.</li>
-								<li>Added U+055F to <a href="#MidLetter">MidLetter</a>. </li>
-								<li>Added a review note to <a href="#MidLetter">MidLetter</a>.</li>
-								<li>Added a review note to <a href="#MidNum">MidNum</a>.</li>
-							</ul>
-						</li>
+						<li>Modified the first paragraph as recommended in <a href="https://www.unicode.org/L2/L2020/20108r-properties-feedback.pdf">L2/20-108.</a></li>
 					</ul>
 				</li>
 			</ul>
+			</div>
 	  <p>Modifications for previous versions are listed in those respective versions.</p>
 
 		<hr width="50%">
