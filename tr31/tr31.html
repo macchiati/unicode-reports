@@ -30,12 +30,13 @@
 	</table>
 
 	<div class="body">
+		<h2 class="uaxtitle"><span class="changedspan">Proposed Update</span></h2>
 		<h2 class="uaxtitle">Unicode® Standard Annex #31</h2>
 		<h1>Unicode Identifier and Pattern Syntax</h1>
 		<table class="simple" width="90%">
 			<tr>
 				<td width="20%">Version</td>
-				<td>Unicode 13.0.0</td>
+				<td class="changed">Unicode 14.0.0 (draft 1)</td>
 			</tr>
 			<tr>
 				<td>Editors</td>
@@ -43,19 +44,19 @@
 			</tr>
 			<tr>
 				<td>Date</td>
-				<td>2020-02-13</td>
+				<td>2020-<span class="changedspan">11-24</span></td>
 			</tr>
 			<tr>
 				<td>This Version</td>
-				<td>
-				<a href="http://www.unicode.org/reports/tr31/tr31-33.html">
-				http://www.unicode.org/reports/tr31/tr31-33.html</a></td>
+				<td class="changed">
+				<a href="http://www.unicode.org/reports/tr31/tr31-34.html">
+				http://www.unicode.org/reports/tr31/tr31-34.html</a></td>
 			</tr>
 			<tr>
 				<td>Previous Version</td>
-				<td>
-				<a href="http://www.unicode.org/reports/tr31/tr31-31.html">
-				http://www.unicode.org/reports/tr31/tr31-31.html</a></td>
+				<td class="changed">
+				<a href="http://www.unicode.org/reports/tr31/tr31-33.html">
+				http://www.unicode.org/reports/tr31/tr31-33.html</a></td>
 			</tr>
 			<tr>
 				<td>Latest Version</td>
@@ -67,7 +68,7 @@
 			</tr>
 			<tr>
 				<td>Revision</td>
-				<td><a href="#Modifications">33</a></td>
+				<td><a href="#Modifications"><span class="changedspan">34</span></a></td>
 			</tr>
 		</table>
 
@@ -80,21 +81,21 @@
 		</p>
 		<h4>Status</h4>
 
-		<!-- NOT YET APPROVED  
+		<!-- NOT YET APPROVED --> 
 			<p class="changed"><i>This is a<b><font color="#ff3333"> draft </font></b>document
 				which may be updated, replaced, or superseded by other documents at
 				any time. Publication does not imply endorsement by the Unicode
 				Consortium. This is not a stable document; it is inappropriate to
 				cite this document as other than a work in progress.
 			</i></p>
-		  END NOT YET APPROVED -->
-		<!-- APPROVED -->  
+		<!--  END NOT YET APPROVED -->
+		<!-- APPROVED   
 			<p><i>This document has been reviewed by Unicode members and other
 				interested parties, and has been approved for publication by the
 				Unicode Consortium. This is a stable document and may be used as
 				reference material or cited as a normative reference by other
 				specifications.</i></p>
-		<!-- END APPROVED -->
+		 END APPROVED -->
 
 		<blockquote>
 			<p>
@@ -250,7 +251,7 @@
 			classes is more complex and contains additional types of characters,
 			due to the universal scope of the Unicode Standard.</p>
 		<p>
-			This annex also provides guidelines for the user of normalization and
+			This annex also provides guidelines for the use<span class="removedspan">r</span> of normalization and
 			case insensitivity with identifiers, expanding on a section that was
 			originally in Unicode Standard Annex #15, “Unicode Normalization
 			Forms” [<a href="../tr41/tr41-26.html#UAX15">UAX15</a>].
@@ -423,7 +424,7 @@
 		<p>
 			Implementations may use a format for <em>displaying</em> identifiers
 			that differs from the internal form used to <em>compare</em>
-			identifiers. For example, an implementation might display format what
+			identifiers. For example, an implementation might display <span class="removedspan">format</span> what
 			the user has entered, but use a normalized format for comparison.
 			Examples of this include:
 		</p>
@@ -1303,6 +1304,10 @@
 					<td><code>\p{script=Cprt}</code></td>
 					<td>Cypriot</td>
 				</tr>
+				<tr class="changed">
+					<td><code>\p{script=Cpmn}</code></td>
+					<td>Cypro-Minoan</td>
+				</tr>
 				<tr>
 					<td><code>\p{script=Diak}</code></td>
 					<td>Dives Akuru</td>
@@ -1912,6 +1917,10 @@
 				<tr>
 				  <td><code>\p{script=Tfng}</code></td>
 				  <td>Tifinagh</td>
+			  	</tr>
+				<tr class="changed">
+				  <td><code>\p{script=Toto}</code></td>
+				  <td>Toto</td>
 			  	</tr>
 				<tr>
 					<td><code>\p{script=Vaii}</code></td>
@@ -2841,37 +2850,18 @@
 
 		<p>The following summarizes modifications from the previously published version
 			of this annex.</p>
-	  <p><b>Revision 33</b></p>
-	  <ul>
-	  	<li><b>Reissued</b> for Unicode 13.0.</li>
-	    <li>Section 2, <a href="#Default_Identifier_Syntax">Default Identifiers</a>
-		<ul>
-          <li>Added a qualification to the example under <i><b><a href="#R1">UAX31-R1</a></b>. <b>Default
-		  Identifiers</b></i>.</li>
-          </ul>
-	    </li>
-	    <li>Section 2.3, <a href="#Layout_and_Format_Control_Characters">Layout
-		and Format Control Characters</a>
-	      <ul>
-	        <li>Fixed typo in <a href="#A2">A2</a></li>
-          </ul>
-	    </li>
-	    <li>Table 4, <a href="#Table_Candidate_Characters_for_Exclusion_from_Identifiers">Excluded Scripts</a>
-	      <ul>
-	        <li>Changed title from &quot;Candidate Characters for Exclusion from Identifiers&quot;</li>
-	        <li>Added four new scripts for Unicode 13.0</li>
-	        <li>Removed rows that were not scripts (to go into <em>UTS #39, Unicode Security Mechanisms</em> [<a href="../tr41/tr41-26.html#UTS39">UTS39</a>])</li>
-	        <li>Adjusted wording.</li>
-	        <li>Added qualifying text below the table, with a pointer to <em>UTS #39, Unicode Security Mechanisms</em> [<a href="../tr41/tr41-26.html#UTS39">UTS39</a>].</li>
-          </ul>
-	    </li>
-	    <li>Section 6, <a href="#hashtag_identifiers">Hashtag Identifiers</a>
-	    	<ul>
-	    		<li>Fixed inconsistency in definition of Continue in <a href="#R8">UAX31-R8</a>.</li>
-	    	</ul>
-	    </li>
+	  <p class="changed"><b>Revision 34</b></p>
+	  <ul class="changed">
+	  	<li><b>Proposed Update</b> for Unicode 14.0.</li>
+	    <li>Section 2.4, <a href="#Specific_Character_Adjustments">Specific Character Adjustments</a>
+		    <ul>
+		    	<li>Added Cypro-Minoan to Table 4, <a href="#Table_Candidate_Characters_for_Exclusion_from_Identifiers">Excluded Scripts</a>.</li>
+		    	<li>Added Toto to Table 7, <a href="#Table_Limited_Use_Scripts">Limited Use Scripts</a>.</li>
+		    </ul>
+		</li>
 	    <li>Minor editorial corrections.</li>
-	    </ul>
+	  </ul>
+
 	  <p>Modifications for previous versions are listed in those respective versions.</p>
 
 		<hr width="50%">
