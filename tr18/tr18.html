@@ -217,6 +217,7 @@ a:hover.plain {
 		Resolving Character Classes with Strings</a></li>
 			<li><a href="#Notation_for_Properties_of_Strings">
 				Annex E: Notation for Properties of Strings</a></li>
+			<li class='changed'><a href="#Parsing_Character_Classes">Annex F. Parsing Character Classes</a></li>
 			<li><a href="#References">References</a></li>
 			<li><a href="#Acknowledgments">Acknowledgments</a></li>
 			<li><a href="#Modifications">Modifications</a></li>
@@ -347,27 +348,71 @@ a:hover.plain {
         <a href="#Character_Ranges_with_Strings">Character Classes with Strings</a></em> the set can include sequences of characters as well.
         The following syntax for Character Classes is used and extended in
 			successive sections.</p>
-		<blockquote>
-<pre>CHARACTER_CLASS  := &quot;[&quot; NEGATION? ITEM (OPERATOR? ITEM)* &quot;]&quot;
-
-ITEM             := &quot;[&quot; CHARACTER_CLASS &quot;]&quot;
-                 := CODE_POINT2
-                 := CODE_POINT2 &quot;-&quot; CODE_POINT2 // range
-
-CODE_POINT2      := ESCAPE CODE_POINT
-                 := CODE_POINT
-
-NEGATION         := &quot;^&quot;
-
-OPERATOR         := &quot;&quot;   // union (no separator): A∪B
-                 := &quot;||&quot; // union (where desired for clarity): A∪B
-
-ESCAPE           := &quot;\&quot;</pre>
-	  </blockquote>
-		<p>CODE_POINT refers to any Unicode code point from U+0000 to
-			U+10FFFF. Whitespace is allowed between any elements,
-			but to simplify the presentation the many occurrences of sequences
-			of spaces (&quot; &quot;*) are omitted.</p>
+		<p class='reviewnote'><span data-mce-style="font-style: italic;">REVIEW NOTE: The revised rules severely limit the set of characters allowed to be ESCAPEd, compared with the old rules, for better consistency with general practice.</span>		</p>
+		<div class='changed'>
+		<table class="subtle">
+		  <tr>
+		    <th>Nonterminal</th>
+		    <th>Production Rule</th>
+		    <th>Comments & Constraints</th>
+	      </tr>
+		  <tr>
+		    <td class='code'>CHARACTER_CLASS  </td>
+		    <td><span class="code">:=</span> '[' COMPLEMENT? SEQUENCE ']'</td>
+		    <td>COMPLEMENT is also known as negation</td>
+	      </tr>
+		  <tr>
+		    <td> SEQUENCE <br></td>
+		    <td><span style="text-align: center"> := ITEM+</span></td>
+		    <td>union of items: A∪B… This is replaced with operators in <a target="_blank" href="https://unicode.org/reports/tr18/#Subtraction_and_Intersection" rel="noopener" data-mce-href="https://unicode.org/reports/tr18/#Subtraction_and_Intersection">RL1.3Subtraction and Intersection</a></td>
+	      </tr>
+		  <tr>
+		    <td>ITEM </td>
+		    <td> := LITERAL ('-' LITERAL)?<br>
+	        := CHARACTER_CLASS<br></td>
+		    <td>Constraint: parse error if in range with 1st literal ≥ 2nd literal (some Regex Engines may allow ==)•</td>
+	      </tr>
+		  <tr>
+		    <td>LITERAL</td>
+		    <td>:= ESCAPE (SYNTAX_CHAR | SPECIAL_CHAR)<br>
+:= NON_SYNTAX_CHAR<br></td>
+		    <td>Different variants of SYNTAX_CHAR, SPECIAL_CHAR, and NON_SYNTAX_CHAR can be used for particular contexts to maintain compatibility</td>
+	      </tr>
+		  <tr>
+		    <td>COMPLEMENT</td>
+		    <td> := '^'<br></td>
+		    <td>&nbsp;</td>
+	      </tr>
+		  <tr>
+		    <td>ESCAPE</td>
+		    <td> := '\'<br></td>
+		    <td>&nbsp;</td>
+	      </tr>
+		  <tr>
+		    <td>SYNTAX_CHAR</td>
+		    <td> := [\-\[\]\}\/\\\^]<br></td>
+		    <td>&nbsp;</td>
+	      </tr>
+		  <tr>
+		    <td>SPECIAL_CHAR</td>
+		    <td> := [abcefnrtu]<br></td>
+		    <td>The exact set of SPECIAL_CHAR may vary across Regex engines.</td>
+	      </tr>
+		  <tr>
+		    <td>NON_SYNTAX_CHAR</td>
+		    <td> := [^SYNTAX_CHAR]<br></td>
+		    <td>[^SYNTAX_CHAR] means all valid Unicode code points except for those in SYNTAX_CHAR</td>
+	      </tr>
+		  <tr>
+		    <td>SP</td>
+		    <td> := ' '+</td>
+		    <td>&nbsp;</td>
+	      </tr>
+      </table>
+		<p >The EBNF can be modified for compatibility with existing syntax, or enhanced with other features. For example, to allow ignored spaces for readability, it can add \u{20} to SYNTAX_CHAR, and add SP? around various elements, change ITEM+ to SP? ITEM (SP? ITEM)+, etc. In this document, SP is allowed between any elements,
+			but to simplify the presentation  those instances  are omitted.</p>
+		<p>In subsequent sections of this document, additional EBNF lines will be added for additional features. In one case, marked in a comment, one of the above lines will be replaced.	  </p>
+	  </div>
 		<p>Negation affects the entire value in square brackets. That is, [^a…z] = [^[a…z]]. </p>
 		<p>For the purpose of regular expressions, in this document the terms “character” and 
 		“code point” are used interchangeably. Similarly, the terms “string” and “sequence of code points” are used interchangeably. Typically the code points of interest will be those
@@ -638,7 +683,7 @@ ESCAPE           := &quot;\&quot;</pre>
 		<p>
 			The syntax must use the code point in its hexadecimal representation.
 			For example, syntax such as \uD834\uDD1E or \xF0\x9D\x84\x9E does not
-			meet this requirement for expressing U+<strong>1D11E</strong> (𝄞)
+			meet this requirement for expressing U+<strong>1D11E</strong> ( 𝄞 )
 			because &quot;<strong>1D11E</strong>&quot; does not appear in the
 			syntax. In contrast, syntax such as \U000<strong>1D11E,</strong> \x{<strong>1D11E</strong>}
 			or \u{<strong>1D11E</strong>} does satisfy the requirement for
@@ -650,15 +695,38 @@ ESCAPE           := &quot;\&quot;</pre>
 			by &quot;}&quot;, with multiple characters indicated by separating
 			the hex digits by spaces. This would provide for the following
 			addition:</p>
-		<blockquote>
-		<pre>&lt;codepoint&gt;  := &lt;character&gt;
-&lt;codepoint&gt;  := &quot;\u&quot; HEX_CHAR HEX_CHAR HEX_CHAR HEX_CHAR
-&lt;codepoint&gt;  := &quot;\u{&quot; HEX_CHAR+ &quot;}&quot;
-&lt;codepoints&gt; := &quot;\u{&quot; HEX_CHAR+ (SEP HEX_CHAR+)* &quot;}&quot;
-SEP          := \s+
-
-</pre>
-		</blockquote>
+		<div class='changed'>
+		<table class="subtle">
+		  <tr>
+		    <th>Nonterminal</th>
+		    <th>Production Rule</th>
+		    <th>Comments & Constraints</th>
+	      </tr>
+		  <tr>
+		    <td class='code'>LITERAL</td>
+		    <td>:= HEX</td>
+		    <td><span data-mce-style="font-style: italic;">Adds to</span> previous <span class="code">LITERAL</span> rules.</td>
+	      </tr>
+		  <tr>
+		    <td class='code'>HEX</td>
+		    <td>:= '\u' HEX_CHAR{4}                 <br>
+	        := '\u{' CODEPOINT (SP CODEPOINT)* '}'</td>
+		    <td>\u{3b1 3b3 3b5 3b9}<br>
+	        ==<br>\u{3b1}\u{3b3}\u{3b5}\u{3b9}</td>
+	      </tr>
+		  <tr>
+		    <td class='code'>HEX_CHAR</td>
+		    <td><span class="code">:= [0-9A-Fa-f]</span></td>
+		    <td>&nbsp;</td>
+	      </tr>
+		  <tr>
+		    <td class='code'>CODEPOINT </td>
+		    <td><span class="code">:= '10' HEX_CHAR{4} | HEX_CHAR{1,5}</span></td>
+		    <td>&nbsp;</td>
+	      </tr>
+      </table>
+		<blockquote>NOTE: \u{​​3b1 3b3 3b5 3b9} is semantic sugar — useful for readability and concision but not a requirement. It can be used anywhere the equivalent individual hex escapes could be, thus [a-\u{3b1 3b3}-ζ] behaves like [a-\u{3b1}\u{3b3}-ζ] == [a-αγ-ζ]</blockquote>
+	  </div>
 		<p>
 			The following table gives examples of this hex notation:
 		</p>
@@ -1107,18 +1175,43 @@ Expressions involving List properties may be tested for containment, but may hav
 			to indicate a positive match, and uppercase to indicate a negative
 			match.
 		</p>
-		<blockquote>
-		<pre>CHARACTER_CLASS := POSITIVE_SPEC | NEGATIVE_SPEC
-
-ITEM            := POSITIVE_SPEC | NEGATIVE_SPEC<br>
-POSITIVE_SPEC   := (&quot;\p{&quot; PROP_SPEC &quot;}&quot;) | (&quot;[:&quot; PROP_SPEC &quot;:]&quot;)<br> 
-NEGATIVE_SPEC   := (&quot;\P{&quot; PROP_SPEC &quot;}&quot;) | (&quot;[:^&quot; PROP_SPEC &quot;:]&quot;)<br> 
-PROP_SPEC&nbsp;      := &lt;binary_unicode_property&gt;<br> 
-PROP_SPEC&nbsp;      := &lt;unicode_property&gt; (&quot;:&quot; | &quot;=&quot; | &quot;≠&quot; | &quot;!=&quot; ) PROP_VALUE<br> 
-PROP_SPEC&nbsp;      := &lt;script_or_category_property_value&gt;&nbsp;(&quot;|&quot; &lt;script_or_category_property_value&gt;)*<br> 
-PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicode_property_value&gt;)*
-		</pre>
-		</blockquote>
+		<table class="subtle changed" >
+		  <tr>
+		    <th>Nonterminal</th>
+		    <th>Production Rule</th>
+		    <th>Comments & Constraints</th>
+	      </tr>
+		  <tr>
+		    <td class='code'>CHARACTER_CLASS</td>
+		    <td> := '\' [pP] '{' PROP_SPEC '}'<br>:= '[:' PROP_SPEC ':]' </td>
+		    <td><span data-mce-style="font-style: italic;">Adds to</span> previous CHARACTER_CLASS rules.</td>
+	      </tr>
+		  <tr>
+		    <td class='code'>PROP_SPEC</td>
+		    <td> := PROP_NAME (RELATION PROP_VALUE)?</td>
+		    <td>&nbsp;</td>
+	      </tr>
+		  <tr>
+		    <td class='code'>PROP_NAME</td>
+		    <td>         := ID_CHAR+ </td>
+		    <td>Constraint: PROP_NAME = valid Unicode property name or alias, or extended property name or alias.<br>See <a target="_blank" href="https://unicode.org/reports/tr18/#RL1.2" rel="noopener" data-mce-href="https://unicode.org/reports/tr18/#RL1.2">RL1.2 Properties</a>, <a target="_blank" href="https://unicode.org/reports/tr18/#Full_Properties" rel="noopener" data-mce-href="https://unicode.org/reports/tr18/#Full_Properties">2.7 Full Properties</a>, <a target="_blank" href="https://unicode.org/reports/tr18/#RL2.7" rel="noopener" data-mce-href="https://unicode.org/reports/tr18/#RL2.7">RL2.7 Full Properties</a>, and <a target="_blank" href="https://unicode.org/reports/tr18/#optional_properties" rel="noopener" data-mce-href="https://unicode.org/reports/tr18/#optional_properties">2.8 Optional Properties</a></td>
+	      </tr>
+		  <tr>
+		    <td class='code'>ID_CHAR</td>
+		    <td> := [A-Za-z0-9\ \-_] </td>
+		    <td>&nbsp;</td>
+	      </tr>
+		  <tr>
+		    <td class='code'>RELATION</td>
+		    <td> := ':' | '=' | '≠' | '!=' </td>
+		    <td>&nbsp;</td>
+	      </tr>
+		  <tr>
+		    <td class='code'>PROP_VALUE</td>
+		    <td> := LITERAL*</td>
+		    <td>Constraint: PROP_VALUE = valid Unicode property value for that PROP_NAME</td>
+	      </tr>
+      </table>
 		<p>The following table shows examples of this extended syntax to match properties:</p>
 		<div align="center">
 		<table class="subtle">
@@ -1716,20 +1809,35 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 			</tr>
 		</table>
 		<p>The following is an example of a syntax extension to handle set operations:</p>
-		<blockquote>
-			<pre>OPERATOR := &quot;&amp;&amp;&quot; // intersection: A∩B<br>
-         := &quot;--&quot; // set difference: A∖B<br>
-         := &quot;~~&quot; // symmetric difference: (A∪B)\(A∩B)<br></pre>
-		</blockquote>
-		<p>
+		<table class="subtle changed" >
+		  <tr>
+		    <th>Nonterminal</th>
+		    <th>Production Rule</th>
+		    <th>Comments & Constraints</th>
+	      </tr>
+		  <tr>
+		    <td class='code'>SEQUENCE</td>
+		    <td> := ITEM (SEQ_EXTEND)*</td>
+		    <td><span data-mce-style="font-style: italic;">Replaces</span> SEQUENCE definition above which has just ITEM+</td>
+	      </tr>
+		  <tr>
+		    <td class='code'>SEQ_EXTEND</td>
+		    <td> := OPERATOR CHARACTER_CLASS | ITEM</td>
+		    <td>&nbsp;</td>
+	      </tr>
+		  <tr>
+		    <td class='code'>OPERATOR</td>
+		    <td> := '||'<br>:= '&amp;&amp;'<br>:= '--'<br>:= '~~'</td>
+		    <td>union: A∪B (explicit operator where desired for clarity)<br>intersection: A∩B<br>set difference: A∖B<br>symmetric difference: A⊖B = (A∪B)\(A∩B)</td>
+	      </tr>
+      </table>
+		<p class='changed'>For better backwards compatibility (and clarity), this syntax requires a character class after an operator. So [ab&amp;&amp;[bc]] is valid, but [ab&amp;&amp;bc] is not.  If there might be an ITEM to the right of the operator, [ab--cd] could be interpreted as [[ab-c]d]. So it reduces the ambiguity to require a CHARACTER_CLASS and not just an ITEM. However, the exact way that operator precedence is handled may differ by regex implementation.	    </p>
+		<p class='changed'> To increase the odds that older regex expressions don't accidentally collide with the new syntax, it is typical to use doubled symbols, and require a CHARACTER_CLASS on both sides of the OPERATOR, such as [[abc]--[cde]], while disallowing [abc--cde].</p>
+	  <p>
 			The <a
 				href="https://mathworld.wolfram.com/SymmetricDifference.html">symmetric
-		difference</a> of two sets is defined as being the union minus the intersection, that is (A∪B)\(A∩B), or equivalently, the union of the asymmetric differences (A\B)∪(B\A).</p>
-		<p> There are two ways of adding syntax while maintaining backwards compatibility. One choice is to double the symbols, as in the 
-			above notation, which allows the operators
-		to appear adjacent to ranges without ambiguity, such as <span
-				class="regex">[\p{letter}--a-z]</span>. Alternatively, an engine can have  syntax that requires that both sides of every operator be sets or property expressions: <span class="regex">[\p{letter}-[a-z]</span>], which is arguably clearer.</p>
-		<p>For discussions of support by various engines, see:</p>
+		difference</a> of two sets is defined as being the union minus the intersection, that is (A∪B)\(A∩B), or equivalently, the union of the asymmetric differences (A\B)∪(B\A).		</p>
+	  <p>For discussions of support by various engines, see:</p>
 		<ul>
 		  <li><a href="https://www.regular-expressions.info/charclassintersect.html">https://www.regular-expressions.info/charclassintersect.html</a></li>
 		  <li><a href="https://www.regular-expressions.info/charclasssubtract.html">https://www.regular-expressions.info/charclasssubtract.html</a></li>
@@ -2377,9 +2485,18 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 			likely to match user expectations for many languages. One mechanism
 			for doing that is to have explicit syntax for strings in Character Classes, as in
 			the following addition to the syntax of Section <a href="#character_ranges">0.1.1 Character Classes</a>:</p>
-		<blockquote>
-			<pre>ITEM := &quot;\q{&quot; (CODE_POINT (SP CODE_POINT)*)? &quot;}&quot;<br>SP   := \u{20}</pre>
-		</blockquote>
+		<table class="subtle changed" >
+		  <tr>
+		    <th>Nonterminal</th>
+		    <th>Production Rule</th>
+		    <th>Comments & Constraints</th>
+	      </tr>
+		  <tr>
+		    <td class='code'>ITEM</td>
+		    <td> := '\q{' LITERAL* '}'</td>
+		    <td><span data-mce-style="font-style: italic;">Adds to</span> previous ITEM rules.<br>literal string of characters</td>
+	      </tr>
+	  </table>
 		<p>The following table shows examples of use of the \q syntax:</p>
 		<div align="center">
 		<table class="subtle">
@@ -2655,10 +2772,20 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 		<p>The following provides syntax for specifying a code point by
 			supplying the precise name. This syntax specifies a single code
 	  point, which can thus be used wherever \u{...} can be used.</p>
-		<blockquote>
-			<pre>&lt;codepoint&gt; := &quot;\N{&quot; &lt;character_name&gt; &quot;}&quot;</pre>
-		</blockquote>
-		<p>The \N syntax is related to the syntax \p{name=...}, but there
+		<table class="subtle changed" >
+		  <tr>
+		    <th>Nonterminal</th>
+		    <th>Production Rule</th>
+		    <th>Comments & Constraints</th>
+	      </tr>
+		  <tr>
+		    <td class='code'>LITERAL</td>
+		    <td>:= '\N{' ID_CHAR+ '}'</td>
+		    <td><span data-mce-style="font-style: italic;">Adds to</span> previous LITERAL rules.<br>
+			Constraint: ID_CHAR+ = valid Unicode name or alias</td>
+	      </tr>
+	  </table>
+	  <p>The \N syntax is related to the syntax \p{name=...}, but there
 			are important distinctions:</p>
 		<ol>
 			<li>\N matches a single character, while \p
@@ -2725,12 +2852,19 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 			whether the property values match the regular expression. The regular
 			expression must support at least wildcards; other regular expressions
 			features are recommended but optional.</p>
-		<blockquote>
-			<pre>PROP_VALUE := &lt;value&gt;
-            | &quot;/&quot; &lt;regex expression&gt; &quot;/&quot;
-            | &quot;@&quot; &lt;unicode_property&gt; &quot;@&quot;</pre>
-		</blockquote>
-		<blockquote>
+		<table class="subtle changed" >
+		  <tr>
+		    <th>Nonterminal</th>
+		    <th>Production Rule</th>
+		    <th>Comments & Constraints</th>
+	      </tr>
+		  <tr>
+		    <td class='code'>PROP_VALUE</td>
+		    <td>        := ‘/’ &lt;regex expression&gt; ‘/’<br>:= ‘@’ FUNCTION ‘@’</td>
+		    <td> • Constraint: FUNCTION is a PROP_NAME or an extended function like toNFC.</td>
+	      </tr>
+	  </table>
+	  <blockquote>
 			<p>
 				<b>Note:</b> Where regular expressions are used in matching, the
 				case, spaces, hyphen, and underbar are significant; it is presumed
@@ -3498,164 +3632,178 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
         </ul>
         <p>A narrowed set of single characters can always be represented by intersecting with the set of single characters, such as <strong>[<span class="regex">\p{Basic_Emoji}&amp;&amp;</span>\p{any}]</strong>. </p>
         <p>The following describes how a boolean expression can be resolved to  a Character Class with <em>only</em> characters, a Character Class with strings, or a negated Character Class with <em>only</em> characters. As usual, this is a logical expression of the process; implementations can optimize as long as they get the same results.</p>
-        <p>When incrementally parsing and building a resolved boolean expression, the process can be analyzed in terms of a series of core operations. In parsing Character Classes, the intermediate objects are logically <em>enhanced sets</em> of strings, such as A and B. The enhancement is the addition of a boolean flag to indicate whether the set is negated or not. The symbol ➕ stands for the flag value true/normal. The symbol ➖ stands for the flag value false/negative.</p>
-        <h3>Creation and Unary Operations</h3>
+        <p>When incrementally parsing and building a resolved boolean expression, the process can be analyzed in terms of a series of core operations. In parsing Character Classes, the intermediate objects are logically <span style="font-style: italic;"><em>enhanced sets</em></span> of strings, such as A and B. The enhancement is the addition of a <span class="removed">boolean</span> flag to indicate whether the <span class='changed'>internal</span> set is <span style="font-style: italic;"><em>complemented</em></span> or not. The symbol ➕ stands for the flag value <span class='changed'>= <span style="font-style: italic;"><em>normal</em></span></span>. The symbol ➖  stands for the flag value <span class='changed'>= <em>complemented</em> (aka negated)</span>.</p>
+        <p>Thus:</p>
+		<div span class='changed'>
+        <p>➕ means that the internal set is treated normally; the enhanced set is the same as the internal set</p>
+        <p>➖ means that the internal set is complemented; the logical contents of the enhanced set are every possible string <span style="font-style: italic;"><em>except those in the internal set</em>.</span> Where 𝕊 stands for the set of all strings, and {α, β} is the internal set, then the semantics is: (𝕊 ∖ {α, β}), that is, the set of all strings <span style="font-style: italic;">except for</span> {α, β}.</p>
+        <p>When the flag is complemented, adding or removing from the enhanced set has the reverse effect on the internal set.</p>
         <ul>
-          <li>
-            [expression] and \p{expression} (without negation) create enhanced sets with the sets corresponding to the expression, and the flag set to ➕.
-          </li>
-          <li>
-            [^expression] and \P{expression} (with negation) create enhanced sets with the sets corresponding to the expression, and the flag set to ➖.
-          </li>
-          <li>
-            [^A] where A is an enhanced set with (set, flag) results in the flag being inverted: ➕ ⇔ ➖</li>
+          <li><span style="font-style: italic;">adding</span> β to (𝕊 ∖ {α, β}) is the same as <span style="font-style: italic;">removing</span> from the internal set: ⇒ (𝕊 ∖ {α}) </li>
+          <li><span style="font-style: italic;">removing</span> γ from (𝕊 ∖ {α, β}) is the same as <span style="font-style: italic;">adding</span> to the internal set: ⇒ (𝕊 ∖ {α, β, γ}) </li>
         </ul>
+        <p>For brevity in the table below, ¬{α, β} is used to express (𝕊 ∖ {α, β}).</p>
+        <p>While logically the enhanced set can contain an infinite set of strings, internally there is only ever a finite set.</p>
+		</div>
+      <h3>Creation and Unary Operations</h3>
+        <ul>
+          <li>[expression] and \p{expression} (without negation) create enhanced sets with the <span class='changed'>internal</span> sets corresponding to the expression, and the flags set to ➕.</li>
+          <li>[^expression] and \P{expression} (with negation) create enhanced sets with the <span class="changed">internal</span> sets corresponding to the expression, and the flags set to ➖.</li>
+        </ul>
+        <p>[^A] where A is an enhanced set with (set, flag) results in the flag being <span class="changed">toggled</span>: ➕ ⇔ ➖</p>
 <h3>Binary Operations</h3>
-<p>The table shows operation of the binary operations, with the results being a set plus flag.</p>
-<div align='center'>
+<p>The table shows <span class='changed'>how to process</span> binary operations <span class='changed'>on enhanced sets</span>, with <span class='changed'>each</span> result being <span class='changed'>the internal set plus flag</span>.</p>
+<p  class='changed'>Examples are provided with two overlapping sets: A = {&alpha;, &beta;} and B = {&beta;, &gamma;}.</p>
+	  <div align='center'>
 <table class='subtle'>
-  <tr>
-   <td><strong>Syntax</strong>
-   </td>
-   <td><strong>Flag of A</strong>
-   </td>
-   <td><strong>Flag of B</strong>
-   </td>
-   <td><strong>Result Set</strong>
-   </td>
-   <td><strong>Flag of Result</strong>
-   </td>
-  </tr>
-  <tr>
-   <td rowspan="4" >A || B
-   </td>
-   <td>➕
-   </td>
-   <td>➕
-   </td>
-   <td>setA ∪ setB
-   </td>
-   <td>➕
-   </td>
-  </tr>
-  <tr>
-   <td>➕
-   </td>
-   <td>➖
-   </td>
-   <td>setB ∖ setA
-   </td>
-   <td>➖
-   </td>
-  </tr>
-  <tr>
-   <td>➖
-   </td>
-   <td>➕
-   </td>
-   <td>setA ∖ setB
-   </td>
-   <td>➖
-   </td>
-  </tr>
-  <tr>
-   <td>➖
-   </td>
-   <td>➖
-   </td>
-   <td>setA ∩ setB
-   </td>
-   <td>➖
-   </td>
-  </tr>
-  <tr>
-   <td rowspan="4" >A &amp;&amp; B
-   </td>
-   <td>➕
-   </td>
-   <td>➕
-   </td>
-   <td>setA ∩ setB
-   </td>
-   <td>➕
-   </td>
-  </tr>
-  <tr>
-   <td>➕
-   </td>
-   <td>➖
-   </td>
-   <td>setA ∖ setB
-   </td>
-   <td>➕
-   </td>
-  </tr>
-  <tr>
-   <td>➖
-   </td>
-   <td>➕
-   </td>
-   <td>setB ∖ setA
-   </td>
-   <td>➕
-   </td>
-  </tr>
-  <tr>
-   <td>➖
-   </td>
-   <td>➖
-   </td>
-   <td>setA ∪ setB
-   </td>
-   <td>➖
-   </td>
-  </tr>
-  <tr>
-   <td rowspan="4" >A -- B
-   </td>
-   <td>➕
-   </td>
-   <td>➕
-   </td>
-   <td>setA ∖ setB
-   </td>
-   <td>➕
-   </td>
-  </tr>
-  <tr>
-   <td>➕
-   </td>
-   <td>➖
-   </td>
-   <td>setA ∩ setB
-   </td>
-   <td>➕
-   </td>
-  </tr>
-  <tr>
-   <td>➖
-   </td>
-   <td>➕
-   </td>
-   <td>setA ∪ setB
-   </td>
-   <td>➖
-   </td>
-  </tr>
-  <tr>
-   <td>➖
-   </td>
-   <td>➖
-   </td>
-   <td>setB ∖ setA
-   </td>
-   <td>➕
-   </td>
-  </tr>
-</table>
+<tr>
+<td style='text-align: center' ><span style="font-weight: bold;">Syntax</span></td>
+<td style='text-align: center' ><span style="font-weight: bold;">Flag of A</span></td>
+<td style='text-align: center' ><span style="font-weight: bold;">Flag of B</span></td>
+<td style='text-align: center' ><span style="font-weight: bold;">Result Set</span></td>
+<td style='text-align: center' ><span style="font-weight: bold;">Flag of Result</span></td>
+<td class='changed' style='text-align: center' ><span style="font-weight: bold;">Example Input</span></td>
+<td class='changed' style='text-align: center' ><span style="font-weight: bold;">Example Result</span></td>
+</tr>
+<tr>
+<td rowspan='4' style='text-align: center'>A || B<br>
+  <span class='changed'>(union)</span></td>
+<td style='text-align: center'>➕</td>
+<td style='text-align: center'>➕</td>
+<td style='text-align: center'>setA &cup; setB</td>
+<td style='text-align: center'>➕</td>
+<td class='changed' style='text-align: center'>{&alpha;, &beta;} &cup; {&beta;, &gamma;}</td>
+<td class='changed' style='text-align: center'>{&alpha;, &beta;, &gamma;}</td>
+</tr>
+<tr>
+<td style='text-align: center'>➕</td>
+<td style='text-align: center'>➖</td>
+<td style='text-align: center'>setB ∖ setA</td>
+<td style='text-align: center'>➖</td>
+<td class='changed' style='text-align: center'>{&alpha;, &beta;} &cup; &not;{&beta;, &gamma;}</td>
+<td class='changed' style='text-align: center'>&not;{&gamma;}</td>
+</tr>
+<tr>
+<td style='text-align: center'>➖</td>
+<td style='text-align: center'>➕</td>
+<td style='text-align: center'>setA ∖ setB</td>
+<td style='text-align: center'>➖</td>
+<td class='changed' style='text-align: center'>&not;{&alpha;, &beta;} &cup; {&beta;, &gamma;}</td>
+<td class='changed' style='text-align: center'>&not;{&alpha;}</td>
+</tr>
+<tr>
+<td style='text-align: center'>➖</td>
+<td style='text-align: center'>➖</td>
+<td style='text-align: center'>setA &cap; setB</td>
+<td style='text-align: center'>➖</td>
+<td class='changed' style='text-align: center'>&not;{&alpha;, &beta;} &cup; &not;{&beta;, &gamma;}</td>
+<td class='changed' style='text-align: center'>&not;{&beta;}</td>
+</tr>
+<tr>
+<td rowspan='4' style='text-align: center'>A &amp;&amp; B<br>
+  <span class='changed'>(intersection)</span></td>
+<td style='text-align: center'>➕</td>
+<td style='text-align: center'>➕</td>
+<td style='text-align: center'>setA &cap; setB</td>
+<td style='text-align: center'>➕</td>
+<td class='changed' style='text-align: center'>{&alpha;, &beta;} &cap; {&beta;, &gamma;}</td>
+<td class='changed' style='text-align: center'>{&beta;}</td>
+</tr>
+<tr>
+<td style='text-align: center'>➕</td>
+<td style='text-align: center'>➖</td>
+<td style='text-align: center'>setA ∖ setB</td>
+<td style='text-align: center'>➕</td>
+<td class='changed' style='text-align: center'>{&alpha;, &beta;} &cap; &not;{&beta;, &gamma;}</td>
+<td class='changed' style='text-align: center'>{&alpha;}</td>
+</tr>
+<tr>
+<td style='text-align: center'>➖</td>
+<td style='text-align: center'>➕</td>
+<td style='text-align: center'>setB ∖ setA</td>
+<td style='text-align: center'>➕</td>
+<td class='changed' style='text-align: center'>&not;{&alpha;, &beta;} &cap; {&beta;, &gamma;}</td>
+<td class='changed' style='text-align: center'>{&gamma;}</td>
+</tr>
+<tr>
+<td style='text-align: center'>➖</td>
+<td style='text-align: center'>➖</td>
+<td style='text-align: center'>setA &cup; setB</td>
+<td style='text-align: center'>➖</td>
+<td class='changed' style='text-align: center'>&not;{&alpha;, &beta;} &cap; &not;{&beta;, &gamma;}</td>
+<td class='changed' style='text-align: center'>{&alpha;, &beta;, &gamma;}</td>
+</tr>
+<tr>
+<td rowspan='4' style='text-align: center'>A -- B<br>
+  <span class='changed'>(set difference)</span></td>
+<td style='text-align: center'>➕</td>
+<td style='text-align: center'>➕</td>
+<td style='text-align: center'>setA ∖ setB</td>
+<td style='text-align: center'>➕</td>
+<td class='changed' style='text-align: center'>{&alpha;, &beta;} ∖ {&beta;, &gamma;}</td>
+<td class='changed' style='text-align: center'>{&alpha;}</td>
+</tr>
+<tr>
+<td style='text-align: center'>➕</td>
+<td style='text-align: center'>➖</td>
+<td style='text-align: center'>setA &cap; setB</td>
+<td style='text-align: center'>➕</td>
+<td class='changed' style='text-align: center'>{&alpha;, &beta;} ∖ &not;{&beta;, &gamma;}</td>
+<td class='changed' style='text-align: center'>{&beta;}</td>
+</tr>
+<tr>
+<td style='text-align: center'>➖</td>
+<td style='text-align: center'>➕</td>
+<td style='text-align: center'>setA &cup; setB</td>
+<td style='text-align: center'>➖</td>
+<td class='changed' style='text-align: center'>&not;{&alpha;, &beta;} ∖ {&beta;, &gamma;}</td>
+<td class='changed' style='text-align: center'>&not;{&alpha;, &beta;, &gamma;}</td>
+</tr>
+<tr>
+<td style='text-align: center'>➖</td>
+<td style='text-align: center'>➖</td>
+<td style='text-align: center'>setB ∖ setA</td>
+<td style='text-align: center'>➕</td>
+<td class='changed' style='text-align: center'>&not;{&alpha;, &beta;} ∖ &not;{&beta;, &gamma;}</td>
+<td class='changed' style='text-align: center'>{&gamma;}</td>
+</tr>
+<tr class='changed'>
+<td rowspan='4' style='text-align: center'>A ~~ B<br>
+  <span class='changed'>(symmetric difference)</span></td>
+<td style='text-align: center'>➕</td>
+<td style='text-align: center'>➕</td>
+<td style='text-align: center'>setA ∖ setB</td>
+<td style='text-align: center'>➕</td>
+<td class='changed' style='text-align: center'>{&alpha;, &beta;} ⊖ {&beta;, &gamma;}</td>
+<td class='changed' style='text-align: center'>{&alpha;, &gamma;}</td>
+</tr>
+<tr class='changed'>
+<td style='text-align: center'>➕</td>
+<td style='text-align: center'>➖</td>
+<td style='text-align: center'>setA &cap; setB</td>
+<td style='text-align: center'>➕</td>
+<td style='text-align: center'>{&alpha;, &beta;} ⊖ &not;{&beta;, &gamma;}</td>
+<td style='text-align: center'>&not;{&alpha;, &gamma;}</td>
+</tr>
+<tr class='changed'>
+<td style='text-align: center'>➖</td>
+<td style='text-align: center'>➕</td>
+<td style='text-align: center'>setA &cup; setB</td>
+<td style='text-align: center'>➖</td>
+<td style='text-align: center'>&not;{&alpha;, &beta;} ⊖ {&beta;, &gamma;}</td>
+<td style='text-align: center'>&not;{&alpha;, &gamma;}</td>
+</tr>
+<tr class='changed'>
+<td style='text-align: center'>➖</td>
+<td style='text-align: center'>➖</td>
+<td style='text-align: center'>setB ∖ setA</td>
+<td style='text-align: center'>➕</td>
+<td style='text-align: center'>&not;{&alpha;, &beta;} ⊖ &not;{&beta;, &gamma;}</td>
+<td style='text-align: center'>{&alpha;, &gamma;}</td>
+</tr></table>
 </div>
-
-<blockquote><strong>
+<p class='changed'>The normal set equivalences hold, such as ¬(A ∪ B) = ¬A ∩ ¬B</p>
+<blockquote class='removed'><strong>
 Note: the operation A ~~ B is handled in terms of other operations according to its definition: (A∪B)∖(A∩B)
         </strong>      </blockquote>
 
@@ -3689,8 +3837,183 @@ Note: the operation A ~~ B is handled in terms of other operations according to 
 	  <li>Implementations that initially adopt <span class="regex">\m</span> only for properties of strings,
 	    then later add support for strings in character classes, should also add support for
 	    <span class="regex">\p</span> as alternate syntax for properties of strings.</li>
-    </ul>
-
+	  </ul>
+<div class='changed'>		
+<h2 ><a name="Parsing_Character_Classes" href="#Parsing_Character_Classes">Annex F. Parsing Character Classes</h2>
+<p>It is reasonably straightforward to build a parser for Character Classes. While there are many ways to do this, the following provides one example of how to do it. This describes a logical process; implementations can use optimized code, using a DFA (<a href="https://en.wikipedia.org/wiki/Deterministic_finite_automaton" target="_blank" rel="noopener">Deterministic Finite Automaton</a>) for processing, for example.  </p>
+<h3>Storage</h3>
+<p>The description uses Java syntax to illustrate the code, but of course could be expressed in other programming languages. At the core is a class (here called CharacterClass) that stores the information that is being built, typically a set of strings optimized for compact storage of ranges of characters (such as ICU&rsquo;s <a href="https://unicode-org.github.io/icu-docs/apidoc/dev/icu4j/com/ibm/icu/text/UnicodeSet.html" target="_blank" rel="noopener">UnicodeSet</a> (<a href="https://unicode-org.github.io/icu-docs/apidoc/released/icu4c/classicu_1_1UnicodeSet.html" target="_blank" rel="noopener">C++</a>)).</p>
+<p>The methods needed are the following:</p>
+<table class='subtle'>
+  <tbody>
+    <tr>
+      <th scope="col">Method</th>
+      <th scope="col">Meaning</th>
+    </tr>
+    <tr>
+      <td>void addAll(CharacterClass other);</td>
+      <td>A = A &cup; other</td>
+    </tr>
+    <tr>
+      <td>void retainAll(CharacterClass other);</td>
+      <td>A = A &cap; other</td>
+    </tr>
+    <tr>
+      <td>void removeAll(CharacterClass other);</td>
+      <td>A = A ∖ other</td>
+    </tr>
+    <tr>
+      <td>void complementAll(CharacterClass other); </td>
+      <td>A = A ⊖ other</td>
+    </tr>
+    <tr>
+      <td>void add(int cp);</td>
+      <td> A = A &cup; {cp}</td>
+    </tr>
+    <tr>
+      <td>void addRange(int cpStart, int cpEnd);</td>
+      <td>A = A &cup; {cpStart..cpEnd}</td>
+    </tr>
+    <tr>
+      <td>void addString(String stringToAdd);</td>
+      <td> A = A &cup; {stringToAdd}</td>
+    </tr>
+    <tr>
+      <td>void complement();</td>
+      <td>A = &not;A = 𝕊 ∖ A</td>
+    </tr>
+    <tr>
+      <td>void setToProperty(String propertyString);</td>
+      <td>A = propertySet</td>
+    </tr>
+  </tbody>
+</table>
+<h3>Building</h3>
+<p>At the top level a method parseCharacterClass can recognize and branch on &lsquo;\p{&rsquo;, &lsquo;\P{&rsquo;, &lsquo;[&rsquo;, and &lsquo;[^&rsquo; . For &lsquo;\p{&rsquo; and &lsquo;\P{&rsquo;, it calls a parseProperty method that parses up to an unescaped &lsquo;}&rsquo;, and returns a set based on Unicode properties. See <a href="https://unicode.org/reports/tr18/#RL1.2" target="_blank" rel="noopener">RL1.2 Properties</a>, <a href="https://unicode.org/reports/tr18/#Full_Properties" target="_blank" rel="noopener">2.7 Full Properties</a>, <a href="https://unicode.org/reports/tr18/#RL2.7" target="_blank" rel="noopener">RL2.7 Full Properties</a>, and <a href="https://unicode.org/reports/tr18/#optional_properties" target="_blank" rel="noopener">2.8 Optional Properties</a>.</p>
+<p>For &lsquo;[&rsquo;, and &lsquo;[^&rsquo;, it calls a parseSequence method that parses out items, stopping when it hits &lsquo;]&rsquo;. The type of each item can be determined by the initial characters. There is a special check for &lsquo;-&rsquo; so that it can be interpreted according to context. The targetSet is set to the first item. All successive items at that level are combined with the targetSet, according to the specified operation (union, intersection, etc.). (Note that other binding/precedence options would require somewhat more complicated parsing.)</p>
+<p>For the Character Class item, a recursive call is made on the parseCharacterClass method. The other initial characters that are branched on are &lsquo;\u{&rsquo;, &lsquo;\u&rsquo;, &lsquo;\q{&rsquo;, &lsquo;\N{&rsquo;, &lsquo;\&rsquo;, the operators, and literal and escaped characters.</p>
+<h4>Examples</h4>
+<p>In the following examples, ➗&nbsp; marks where the cursor is as the parsing progresses.</p>
+<h3>Example 1</h3>
+<div>
+<table>
+<tbody>
+<tr>
+<td><span style="font-weight: bold;">Input</span></td>
+<td><span style="font-weight: bold;">Current Result</span></td>
+<td><span style="font-weight: bold;">Comment</span></td>
+</tr>
+<tr>
+<td>➗[[abc] -- [[bcd] &amp;&amp; [cde]]]</td>
+<td>L0:</td>
+<td>Start</td>
+</tr>
+<tr>
+<td>[[a➗bc] -- [[bcd] &amp;&amp; [cde]]]</td>
+<td>L2: [a]</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>[[ab➗c] -- [[bcd] &amp;&amp; [cde]]]</td>
+<td>L2: [ab]</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>[[abc➗] -- [[bcd] &amp;&amp; [cde]]]</td>
+<td>L1: [a-c]</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>[[abc] -- [[b➗cd] &amp;&amp; [cde]]]</td>
+<td>L3: [b]</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>[[abc] -- [[bc➗d] &amp;&amp; [cde]]]&nbsp;</td>
+<td>L2: [bc]</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>[[abc] -- [[bcd➗] &amp;&amp; [cde]]]</td>
+<td>L3: [b-d]</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>[[abc] -- [[bcd]➗ &amp;&amp; [cde]]]</td>
+<td>L2: [b-d]</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>[[abc] -- [[bcd] &amp;&amp; [c➗de]]]</td>
+<td>L3: [c]</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>[[abc] -- [[bcd] &amp;&amp; [cd➗e]]]&nbsp;</td>
+<td>L3: [cd]</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>[[abc] -- [[bcd] &amp;&amp; [cde➗]]]</td>
+<td>L3: [c-e]</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>[[abc] -- [[bcd] &amp;&amp; [cde]➗]]&nbsp;</td>
+<td>L2: [cd]</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>[[abc] -- [[bcd] &amp;&amp; [cde]]]➗</td>
+<td>L0: [ab]</td>
+<td>Final result</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4>Example 2</h4>
+<div>
+<table>
+<tbody>
+<tr>
+<td><span style="font-weight: bold;">Input</span></td>
+<td><span style="font-weight: bold;">Current Result</span></td>
+<td><span style="font-weight: bold;">Comment</span></td>
+</tr>
+<tr>
+<td>➗[a-\u{3b1}\u{3b3}-&zeta;]</td>
+<td>L0:</td>
+<td>Start; &alpha; = U+03b1, &gamma; = U+303b3</td>
+</tr>
+<tr>
+<td>[a➗-\u{3b1}\u{3b3}-&zeta;] ➾&nbsp;</td>
+<td>L1: [a]</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>[a-\u{3b1}➗\u{3b3}-&zeta;]</td>
+<td>L1: [a-&alpha;]</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>[a-\u{3b1}\u{3b3}➗-&zeta;]</td>
+<td>L1: [a-&alpha;&gamma;]</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>[a-\u{3b1}\u{3b3}-&zeta;➗]</td>
+<td>L1: [a-&alpha;&gamma;-&zeta;]</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>[a-\u{3b1}\u{3b3}-&zeta;]➗</td>
+<td>L0: [a-&alpha;&gamma;-&zeta;]</td>
+<td>Final result</td>
+</tr>
+</tbody>
+</table>
+</div>
+	</div>
 	<hr>
 		<h2>
 			<a name="References" href="#References">References</a>
