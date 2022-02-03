@@ -225,8 +225,10 @@ a:hover.plain {
 		<h2>
 			0 <a name="Introduction" href="#Introduction">Introduction</a>
 		</h2>
-		<p>Regular expressions are a powerful tool for using patterns to search and modify text. They are a key component of many programming languages, databases, and spreadsheets. Starting in 1999, this document has supplied guidelines and conformance levels for supporting Unicode in regular expressions.The following
-		issues are involved in supporting Unicode.</p>
+		<p>Regular expressions are a powerful tool for using patterns to search and modify text. 
+		They are a key component of many programming languages, databases, and spreadsheets. 
+		Starting in 1999, this document has supplied guidelines and conformance levels for supporting Unicode in regular expressions. 
+		The following issues are involved in supporting Unicode.</p>
 		<ul>
 			<li>Unicode is a large character set—regular expression engines
 				that are only adapted to handle small character sets will not scale
@@ -835,7 +837,7 @@ SEP          := \s+
 			equivalent characters) in transmission, out of the control of the 
 			authors of that text. For example, a regular expression may
 			contain a sequence of literal characters &#39;u&#39; and <i>grave</i>,
-			such as the expression [aeiou◌̀◌́◌̈] (the last three character being
+			such as the expression [aeiou◌̀◌́◌̈] (the last three characters being
 			U+0300 (&nbsp;◌̀&nbsp;) COMBINING GRAVE ACCENT,
 			U+0301 (&nbsp;◌́&nbsp;) COMBINING ACUTE ACCENT, and
 			U+0308 (&nbsp;◌̈&nbsp;) COMBINING DIAERESIS. In transmission, the two
@@ -861,7 +863,7 @@ SEP          := \s+
 Because Unicode is a large character set that is regularly extended, a regular expression engine needs to provide for the recognition of whole categories of characters as well as simply literal sets of characters and strings; otherwise the listing of characters becomes impractical, out of date, and error-prone. This is done by providing syntax for sets of characters based on the Unicode character properties, as well as related properties and functions. Examples of such syntax are \p{Script=Greek} and [:Script=Greek:], which both stand for the set of characters that have the Script value of Greek. In addition to the basic syntax, regex engines also need to allow them to be combined with other sets defined by properties or with literal sets of characters and strings. An example is [\p{Script=Greek}--\p{General_Category=Letter}], which stands for the set of characters that have the Script value of Greek <em>and</em> that do not have the General_Category value of Letter.
 </p>
 <p>
-Many character properties are defined in the Unicode Character Database (UCD), which also provides the official data for mapping Unicode characters (and code points) to property values. See UAX #44, <em>Unicode Character Database</em>[<a href="#UAX44">UAX44</a>] and Chapter 4 in <em>The Unicode Standard</em> <a href="#Unicode">[Unicode</a>]. For use in regular expressions, properties can also be considered to be defined by Unicode definitions and algorithms, and by data files and definitions associated with other Unicode Technical Standards, such as UTS #51, <em>Unicode Emoji</em>. For example, this includes the <strong>Basic_Emoji</strong> definition from UTS #51. The full list of recommended properties is in Section 2.7, <a href="#Full_Properties"><em>Full Properties</em></a>.</p>
+Many character properties are defined in the Unicode Character Database (UCD), which also provides the official data for mapping Unicode characters (and code points) to property values. See UAX #44, <em>Unicode Character Database</em> [<a href="#UAX44">UAX44</a>] and Chapter 4 in <em>The Unicode Standard</em> <a href="#Unicode">[Unicode</a>]. For use in regular expressions, properties can also be considered to be defined by Unicode definitions and algorithms, and by data files and definitions associated with other Unicode Technical Standards, such as UTS #51, <em>Unicode Emoji</em>. For example, this includes the <strong>Basic_Emoji</strong> definition from UTS #51. The full list of recommended properties is in Section 2.7, <a href="#Full_Properties"><em>Full Properties</em></a>.</p>
 <p>
 UAX #44, <em>Unicode Character Database</em> [UAX44] divides character properties into several types: Catalog, Enumeration, Binary, String, Numeric, and Miscellaneous. Those categories are not all precisely defined or immediately relevant to regular expressions. Some are more pertinent to the maintenance of the Unicode Character Database.
 </p>
@@ -887,7 +889,7 @@ Negations of properties of strings or Character Classes with strings may not be 
 The values (codomain) of properties of characters (or strings) have the following simple types: Binary, Enumerated, Numeric, Code Point, and String. Properties can also have multivalued types: a Set or List of other types.
 </p>
 <p>
-The Binary type is a special case of an Enumerated type limited to precisely the two values "True" and "False"  In general, a property of Enumerated type has a longer list of defined values. Those defined values are abstractions, but they are identified in the Unicode Character Database with labels known as aliases. Thus, the Script value "Devanagari" may also be identified by the abbreviated alias "Deva"—both refer to the same enumerated value, even though the exact label for that value may differ.
+The Binary type is a special case of an Enumerated type limited to precisely the two values "True" and "False". In general, a property of Enumerated type has a longer list of defined values. Those defined values are abstractions, but they are identified in the Unicode Character Database with labels known as aliases. Thus, the Script value "Devanagari" may also be identified by the abbreviated alias "Deva"—both refer to the same enumerated value, even though the exact label for that value may differ.
 </p>
 <p>
 The Code Point type is a special case of a String type where the values are always limited to single-code point strings.
@@ -1229,7 +1231,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 					</ul> The values for these properties must follow the Unicode
 					definitions, and include the property and property value aliases
 					from the UCD. Matching of Binary, Enumerated, Catalog, and Name
-					values, must follow the <a
+					values must follow the <a
 					href="https://www.unicode.org/reports/tr44/#Matching_Rules">Matching
 						Rules</a> from [<a href="#UAX44">UAX44</a>] with one exception:
                     implementations are not required to ignore an initial prefix string of "is" in property values.
@@ -1261,7 +1263,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 			for the corresponding property listed in <a href="#RL1.2">RL1.2</a>.</p>
 		<p>
 			Implementers may add aliases beyond those recognized in the UCD. For
-			example, in the case of the the Age property an implementation could
+			example, in the case of the Age property an implementation could
 			match the defined aliases <strong>&quot;3.0&quot;</strong> and <strong>&quot;V3_0&quot;</strong>,
 			but also match <strong>&quot;3&quot;, &quot;3.0.0&quot;,
 				&quot;V3.0&quot;</strong>, and so on. However, implementers must be aware
@@ -1326,7 +1328,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 		</blockquote>
 		<p>
 			The General_Category property values are listed below. For more
-			information on the meaning of these values, see see UAX #44, <em>Unicode
+			information on the meaning of these values, see UAX #44, <em>Unicode
 					Character Database</em> [<a href="#UAX44">UAX44</a>].
 		</p>
 		<div align="center">
@@ -1870,7 +1872,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 				Simple Loose Matches</a>
 		</h3>
 		<p>Most regular expression engines offer caseless matching as the
-			only loose matching. If the engine does offers this, then it needs to
+			only loose matching. If the engine does offer this, then it needs to
 			account for the large range of cased Unicode characters outside of
 			ASCII.</p>
 		<table class="noborder">
@@ -1945,8 +1947,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 			In practice, regex APIs are not set up to match parts of characters.
 			For this reason, full case equivalence is difficult to handle with
 			regular expressions. For more information, see <em>Section 2.1,
-				<a href="#Canonical_Equivalents">Canonical Equivalents</a>
-			</em>.
+				<a href="#Canonical_Equivalents">Canonical Equivalents</a></em>.
 		</p>
 		<p>For case-insensitive matching:</p>
 		<ol>
@@ -2631,7 +2632,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 			introduced.</p>
 		<p>Previous versions of this specification recommended supporting
 			ISO control names from the Unicode 1.0 name field. These names are
-			now covered by the name aliases (see <a href="https://www.unicode.org/Public/UCD/latest/ucd/NameAliases.txt">NameAliases.txt</a>).In four cases, the name field
+			now covered by the name aliases (see <a href="https://www.unicode.org/Public/UCD/latest/ucd/NameAliases.txt">NameAliases.txt</a>). In four cases, the name field
 			included both the ISO control name as well as an abbreviation in
 			parentheses.</p>
 <blockquote>
@@ -3147,8 +3148,8 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 				href="https://www.unicode.org/reports/tr44/#Name_Alias">Name_Alias</a>
 			properties are used in \p{name=…} and \N{…}. The data in
 			NamedSequences.txt is also used in \N{…}. For more information see <em>Section
-				2.5, <a href="#Name_Properties">Name Properties</a>
-			</em>. The <a href="https://www.unicode.org/reports/tr44/#Script">Script</a>
+				2.5, <a href="#Name_Properties">Name Properties</a></em>.
+				The <a href="https://www.unicode.org/reports/tr44/#Script">Script</a>
 			and <a href="https://www.unicode.org/reports/tr44/#Script_Extensions">Script_Extensions</a>
 			properties are used in \p{scx=…}. For more information, see <em>Section
 				1.2.6, <a href="#Script_Property">Script and Script Extensions Properties</a></em>.</p>
