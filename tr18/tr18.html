@@ -144,6 +144,9 @@ a:hover.plain {
 					  <ul class="toc">
 					    <li><a href="#character_ranges">0.1.1 Character Classes</a></li>
 				      </ul>
+					  <ul class="toc changed">
+				      	  <li >0.1.2 <a href="#property_examples">Property Examples</a></h3>
+				      </ul>
 					</li>
 					<li>0.2 <a href="#Conformance">Conformance</a>
 				</ul>
@@ -467,7 +470,8 @@ ESCAPE           := &quot;\&quot;</pre>
 			  simply choose a delimiter that is not in the particular regular
 			  expression.
 	  </p>
-	  <p class='changed'>Note that all examples of properties being equivalent to certain literal character classes are illustrative. 
+	  		<h3 class='changed'>0.1.2 <a name="property_examples" href="#property_examples">Property Examples</a></h3>
+	  <p class='changed'>All examples of properties being equivalent to certain literal character classes are illustrative. 
 	  They were generated at a point in time, and are not updated with each release.
 	   Thus when an example contains “\p{sc=Hira} = [ぁ-ゖゝ-ゟ𛀁🈀]”, 
 	   that does not imply the identity expression would be true for the current version of Unicode.
@@ -860,7 +864,8 @@ SEP          := \s+
 		</h3>
 
 	  <p>
-Because Unicode is a large character set that is regularly extended, a regular expression engine needs to provide for the recognition of whole categories of characters as well as simply literal sets of characters and strings; otherwise the listing of characters becomes impractical, out of date, and error-prone. This is done by providing syntax for sets of characters based on the Unicode character properties, as well as related properties and functions. Examples of such syntax are \p{Script=Greek} and [:Script=Greek:], which both stand for the set of characters that have the Script value of Greek. In addition to the basic syntax, regex engines also need to allow them to be combined with other sets defined by properties or with literal sets of characters and strings. An example is [\p{Script=Greek}--\p{General_Category=Letter}], which stands for the set of characters that have the Script value of Greek <em>and</em> that do not have the General_Category value of Letter.
+Because Unicode is a large character set that is regularly extended, a regular expression engine needs to provide for the recognition of whole categories of characters as well as simply literal sets of characters and strings; otherwise the listing of characters becomes impractical, out of date, and error-prone. This is done by providing syntax for sets of characters based on the Unicode character properties, as well as related properties and functions. 
+Examples of such syntax are \p{Script=Greek} and [:Script=Greek:], which both stand for the set of characters that have the Script value of Greek. In addition to the basic syntax, regex engines also need to allow them to be combined with other sets defined by properties or with literal sets of characters and strings. An example is [\p{Script=Greek}--\p{General_Category=Letter}], which stands for the set of characters that have the Script value of Greek <em>and</em> that do not have the General_Category value of Letter.
 </p>
 <p>
 Many character properties are defined in the Unicode Character Database (UCD), which also provides the official data for mapping Unicode characters (and code points) to property values. See UAX #44, <em>Unicode Character Database</em> [<a href="#UAX44">UAX44</a>] and Chapter 4 in <em>The Unicode Standard</em> <a href="#Unicode">[Unicode</a>]. For use in regular expressions, properties can also be considered to be defined by Unicode definitions and algorithms, and by data files and definitions associated with other Unicode Technical Standards, such as UTS #51, <em>Unicode Emoji</em>. For example, this includes the <strong>Basic_Emoji</strong> definition from UTS #51. The full list of recommended properties is in Section 2.7, <a href="#Full_Properties"><em>Full Properties</em></a>.</p>
@@ -1645,6 +1650,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 			</tr>
 		</table>
 		</div>
+		<p class='changed'>See <i>Section 0.1.2 <a href="#property_examples">Property Examples</a></i> about the contents of the above lists of characters.</p>
 		<p>
 			The expression <span class="regex">\p{scx=Hira}</span> contains not
 				only the characters in <span class="regex">\p{script=Hira}</span>, but many other characters
@@ -1742,7 +1748,8 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 		<p> There are two ways of adding syntax while maintaining backwards compatibility. One choice is to double the symbols, as in the 
 			above notation, which allows the operators
 		to appear adjacent to ranges without ambiguity, such as <span
-				class="regex">[\p{letter}--a-z]</span>. Alternatively, an engine can have  syntax that requires that both sides of every operator be sets or property expressions: <span class="regex">[\p{letter}-[a-z]</span>], which is arguably clearer.</p>
+				class="regex">[\p{letter}--a-z]</span>. Alternatively, an engine can have  syntax that requires that both sides of every operator be sets or property expressions: 
+				<span class="regex">[\p{letter}-[a-z]</span>], which is arguably clearer.</p>
 		<p>For discussions of support by various engines, see:</p>
 		<ul>
 		  <li><a href="https://www.regular-expressions.info/charclassintersect.html">https://www.regular-expressions.info/charclassintersect.html</a></li>
@@ -2657,6 +2664,8 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
           <li>U+1F47D ( 👽 ) EXTRATERRESTRIAL ALIEN,</li>
           <li>U+1F47E ( 👾 ) ALIEN MONSTER	</li>
         </ul>
+		<p class='changed'>See <i>Section 0.1.2 <a href="#property_examples">Property Examples</a></i> about the contents of the above lists of characters.</p>
+        
         <p>The namespace for the \p{name=...} syntax is the namespace
 		for character names plus name aliases. </p>
 
@@ -2808,9 +2817,6 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 				</td>
 			</tr>
 			<tr>
-				<td colspan="2" class="gray_background"></td>
-			</tr>
-			<tr>
 				<td colspan="2" class="gray_background">Characters with names containing
 						&quot;VARIATION&quot; or &quot;VARIANT&quot;:</td>
 			</tr>
@@ -2854,6 +2860,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 			</tr>
 		</table>
 		</div>
+		<p class='changed'>See <i>Section 0.1.2 <a href="#property_examples">Property Examples</a></i> about the contents of the above lists of characters.</p>
 		<p>The lists in the examples above were extracted on the basis of Unicode 5.0; different
 			Unicode versions may produce different results.</p>
 		<p>The following table some additional samples, illustrating various sets. A
@@ -3153,8 +3160,10 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
 			and <a href="https://www.unicode.org/reports/tr44/#Script_Extensions">Script_Extensions</a>
 			properties are used in \p{scx=…}. For more information, see <em>Section
 				1.2.6, <a href="#Script_Property">Script and Script Extensions Properties</a></em>.</p>
-		<p>To test whether a <em>string</em> is in a normalization format such as NFC requires special code. However, there are "quick-check" properties that can detect whether characters are allowed in a normalization format at all. Those can be used for cases like the following, which removes characters that cannot occur in NFC: [\p{<a href="https://www.unicode.org/reports/tr44/#Alphabetic">Alphabetic</a>}--\p{<a href="https://www.unicode.org/reports/tr44/#NFC_Quick_Check">NFC_Quick_Check</a>=No}]</p>
-		<p>The  Emoji properties can be used to precisely parse text for valid emoji of different kinds, while the <a href="https://unicode.org/reports/tr44/#Equivalent_Unified_Ideograph">Equivalent_Unified_Ideograph</a> can be used to find radicals for unified ideographs (or vice versa): \p{<a href="https://unicode.org/reports/tr44/#Equivalent_Unified_Ideograph">Equivalent_Unified_Ideograph</a>=⼚} matches [⼚⺁厂].</p>
+		<p>To test whether a <em>string</em> is in a normalization format such as NFC requires special code. However, there are "quick-check" properties that can detect whether characters are allowed in a normalization format at all. Those can be used for cases like the following, which removes characters that cannot occur in NFC:
+		 [\p{<a href="https://www.unicode.org/reports/tr44/#Alphabetic">Alphabetic</a>}--\p{<a href="https://www.unicode.org/reports/tr44/#NFC_Quick_Check">NFC_Quick_Check</a>=No}]</p>
+		<p>The  Emoji properties can be used to precisely parse text for valid emoji of different kinds, while the <a href="https://unicode.org/reports/tr44/#Equivalent_Unified_Ideograph">Equivalent_Unified_Ideograph</a> can be used to find radicals for unified ideographs (or vice versa): 
+		\p{<a href="https://unicode.org/reports/tr44/#Equivalent_Unified_Ideograph">Equivalent_Unified_Ideograph</a>=⼚} matches [⼚⺁厂].</p>
 		<p align="left">See also <a
 				href="#Name_Properties">2.5 Name Properties</a> and <a
 				href="#Wildcard_Properties">2.6 Wildcards in Property Values</a>. </p>
@@ -3213,6 +3222,7 @@ PROP_VALUE      :=&nbsp;&lt;unicode_property_value&gt; (&quot;|&quot; &lt;unicod
             <td>See UCD description</td>
           </tr>
         </table>
+		<p class='changed'>See <i>Section 0.1.2 <a href="#property_examples">Property Examples</a></i> about the contents of the above lists of characters.</p>
 
 
 		<hr>
