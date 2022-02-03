@@ -691,7 +691,7 @@ SEP          := \s+
 			to use the Unicode character name for readability. See <a
 				href="#Name_Properties">2.5 Name Properties</a>.
 		</p>
-		<p>For comparison, the following table shows some additional, current examples of escape
+		<p>For comparison, the following table shows some additional<span class='removed'>, current</span> examples of escape
 			syntax for Unicode code points:</p>
 		<div align="center">
 		<table class="subtle">
@@ -719,15 +719,6 @@ SEP          := \s+
 				<td>U+1F47D U+20AC U+00A3 U+0061 U+0009</td>
 			</tr>
 			<tr>
-				<td>CSS†</td>
-				<td>\1F47D</td>
-				<td>\20AC</td>
-				<td>\A3</td>
-				<td>\61</td>
-				<td>\9</td>
-				<td>\1F47D \20AC \A3 \61 \9</td>
-			</tr>
-			<tr>
 				<td>UTS18, Ruby</td>
 				<td>\u{1F47D}</td>
 				<td>\u{20AC}</td>
@@ -736,26 +727,26 @@ SEP          := \s+
 				<td>\u{9}</td>
 				<td>\u{1F47D 20AC A3 61 9}</td>
 			</tr>
+			<tr class='changed'>
+				<td>Javascript (ECMAScript)</td>
+				<td>\u{1F47D}</td>
+				<td>\u{20AC}</td>
+				<td>\u{A3}</td>
+				<td>\u{61}</td>
+				<td>\u{9}</td>
+				<td>\u{1F47D}\u{20AC}\u{A3}\u{61}\u{9}</td>
+			</tr>
 			<tr>
-				<td>Perl</td>
+				<td>Perl, Java, ICU</td>
 				<td>\x{1F47D}</td>
 				<td>\x{20AC}</td>
 				<td>\x{A3}</td>
 				<td>\x{61}</td>
 				<td>\x{9}</td>
-				<td>\x{1F47D}\x{20AC}\x{A3}\u{61}</td>
+				<td>\x{1F47D}\x{20AC}\x{A3}\<span class='changed'>x{61}\x{9}</span></td>
 			</tr>
 			<tr>
-				<td>XML/HTML</td>
-				<td>&amp;#x1F47D;</td>
-				<td>&amp;#x20AC;</td>
-				<td>&amp;#xA3;</td>
-				<td>&amp;#x61;</td>
-				<td>&amp;#x9;</td>
-				<td>&amp;#x1F47D;&amp;#x20AC;&amp;#xA3;&amp;#x61;&amp;#x9;</td>
-			</tr>
-			<tr>
-				<td>C++/Python/ICU</td>
+				<td>C++, Python</td>
 				<td>\U0001F47D</td>
 				<td>\u20AC</td>
 				<td>\u00A3</td>
@@ -764,13 +755,22 @@ SEP          := \s+
 				<td>\U0001F47D\u20AC\u00A3\u0061\u0009</td>
 			</tr>
 			<tr>
-				<td>Java/JS/ICU*</td>
-				<td>\uD83D\uDC7D</td>
-				<td>\u20AC</td>
-				<td>\u00A3</td>
-				<td>\u0061</td>
-				<td>\u0009</td>
-				<td>\uD83D\uDC7D\u20AC\u00A3\u0061\u0009</td>
+				<td>XML, HTML</td>
+				<td>&amp;#x1F47D;</td>
+				<td>&amp;#x20AC;</td>
+				<td>&amp;#xA3;</td>
+				<td>&amp;#x61;</td>
+				<td>&amp;#x9;</td>
+				<td>&amp;#x1F47D;&amp;#x20AC;&amp;#xA3;&amp;#x61;&amp;#x9;</td>
+			</tr>
+			<tr>
+				<td>CSS†</td>
+				<td>\1F47D</td>
+				<td>\20AC</td>
+				<td>\A3</td>
+				<td>\61</td>
+				<td>\9</td>
+				<td>\1F47D \20AC \A3 \61 \9</td>
 			</tr>
 			<tr>
 				<td>URL*</td>
@@ -781,8 +781,17 @@ SEP          := \s+
 				<td>%09</td>
 				<td>%F0%9F%91%BD%E2%82%AC%C2%A3%61%09</td>
 			</tr>
-			<tr>
-				<td>XML/HTML*</td>
+			<tr class='removed'>
+				<td>Java/JS/ICU*</td>
+				<td>\uD83D\uDC7D</td>
+				<td>\u20AC</td>
+				<td>\u00A3</td>
+				<td>\u0061</td>
+				<td>\u0009</td>
+				<td>\uD83D\uDC7D\u20AC\u00A3\u0061\u0009</td>
+			</tr>
+			<tr class='removed'>
+				<td>XML, HTML*</td>
 				<td>&amp;#128125;</td>
 				<td>&amp;#8364;</td>
 				<td>&amp;#163;</td>
@@ -794,8 +803,7 @@ SEP          := \s+
 		</div>
 		<blockquote>
 		<p>
-			† Following whitespace is consumed.<br> 
-			* Does not satisfy <a href="#RL1.1">RL1.1</a>
+			† Following whitespace is consumed.
 		</p>
 		</blockquote>
 		<h4>
@@ -1088,8 +1096,8 @@ Expressions involving List properties may be tested for containment, but may hav
             <a href="#PropValue">PropertyValueAliases.txt</a>. There
 			are both abbreviated names and longer, more descriptive names. It is
 			strongly recommended that both names be recognized, and that loose
-			matching of property names be used, whereby the case distinctions,
-		whitespace, hyphens, and underbar are ignored.</p>
+			matching of property names and values <span class='changed'> be implemented following the guidelines in 
+			<a href='https://www.unicode.org/reports/tr44/#Matching_Rules'>Section 5.9 Matching Rules</a> in [<a href="#UAX44">UAX44</a>]</span>.</p>
 		<blockquote>
 			<p>
 				<b>Note:</b> It may be a useful implementation technique to
